@@ -1,0 +1,614 @@
+{
+  "schema": "phyguard.sionna.formal825.upstream_sensitivity.final_freeze.v1",
+  "status": "PASS",
+  "purpose": "Freeze the preregistered three-detector candidate-interval sensitivity analysis, paired detector-conditioned diagnosis, and uncertainty analyses used to address the reviewer concern about realistic upstream candidate intervals.",
+  "formal_scope": {
+    "causal_valid_sample_count": 825,
+    "physical_localization_sample_count": 706,
+    "control_sample_count": 119,
+    "detector_count": 3,
+    "model_repeat_count": 5,
+    "proposal_count": 2475,
+    "localization_evaluation_count": 2118,
+    "detector_conditioned_prediction_count": 12375,
+    "paired_locked_interval_prediction_count": 4125,
+    "paired_bootstrap_repetitions": 10000
+  },
+  "lineage": {
+    "formal825_parent_archive_sha256": "5d08fc3b8265789819b0f49c1f93a9c79c8fe44ce7ec4aec8f1fa603a08c241b",
+    "upstream_protocol_archive_sha256": "a0aecfcb798a4c6113992abb39686c4d9140e03bc6a5c3ee9e4d6946c62d9053",
+    "upstream_protocol_sha256": "4a9b09b82e82efa4940602a73a25cddaa05361af4c5edee2ae73f46860996aa2",
+    "source_fitted_isolation_forest_sha256": "9ad52cf66ffff12f423959db37ff9ed7c5d7292d620023c531217c42c5040dd1",
+    "detector_script_sha256": "f38672d30a769aebeb0b0e156f187dceb9daa7317fe97fc32faaec0186f54311",
+    "feature_script_sha256": "b665765bbdb317f0568d77a5004e41075e4a2e037fc5f6caa8102f6c932fc4f7",
+    "evaluation_common_sha256": "afa1f3387c272dee075f72f481e012572813892976c54dc860901114f8080cdd",
+    "threshold_contract_sha256": "cfdf67e558196294557e33b9f736c606c53aeea2ea0b532b0f08222806423107"
+  },
+  "validated_results": {
+    "robust_energy": {
+      "localization": {
+        "mean_iou": 0.7235183638223275,
+        "event_recall_iou_ge_0_3": 0.7889518413597734,
+        "event_recall_iou_ge_0_5": 0.7804532577903682
+      },
+      "diagnosis": {
+        "selected_accuracy": 0.4779686208691419,
+        "delta_selected_accuracy": -0.1261785076816917,
+        "delta_selected_accuracy_ci95": [
+          -0.1541410353333387,
+          -0.0985686985434547
+        ],
+        "physical_exact_diagnosis_rate": 0.3141643059490085,
+        "delta_physical_exact_diagnosis_rate": -0.0841359773371104,
+        "control_abstention_rate": 0.6067226890756303,
+        "delta_control_abstention_rate": -0.2941176470588235,
+        "false_specific_rate": 0.3932773109243698,
+        "delta_false_specific_rate": 0.2941176470588235
+      },
+      "interval_sensitivity": {
+        "iou_zero_delta_task_success": -0.4210526315789473,
+        "iou_ge_0_5_delta_task_success": 0.0018148820326678,
+        "iou_vs_task_success_spearman": 0.4762844440117604,
+        "iou_vs_prediction_change_spearman": -0.7035036616016409
+      },
+      "severity": {
+        "proposal_mean_iou": {
+          "mild": 0.6258194406737838,
+          "moderate": 0.7390653159288754,
+          "severe": 0.7999712310139917
+        },
+        "paired_task_success_delta": {
+          "control": -0.2941176470588236,
+          "mild": -0.0707964601769911,
+          "moderate": -0.0775,
+          "severe": -0.1033333333333333
+        }
+      }
+    },
+    "pca_reconstruction": {
+      "localization": {
+        "mean_iou": 0.7449613789585676,
+        "event_recall_iou_ge_0_3": 0.8328611898016998,
+        "event_recall_iou_ge_0_5": 0.8229461756373938
+      },
+      "diagnosis": {
+        "selected_accuracy": 0.5010190183956647,
+        "delta_selected_accuracy": -0.1031281101551689,
+        "delta_selected_accuracy_ci95": [
+          -0.128352821262813,
+          -0.0781642963352009
+        ],
+        "physical_exact_diagnosis_rate": 0.3178470254957507,
+        "delta_physical_exact_diagnosis_rate": -0.0804532577903682,
+        "control_abstention_rate": 0.7344537815126051,
+        "delta_control_abstention_rate": -0.1663865546218487,
+        "false_specific_rate": 0.2655462184873949,
+        "delta_false_specific_rate": 0.1663865546218487
+      },
+      "interval_sensitivity": {
+        "iou_zero_delta_task_success": -0.2412371134020618,
+        "iou_ge_0_5_delta_task_success": -0.0461273666092942,
+        "iou_vs_task_success_spearman": 0.4292062893905103,
+        "iou_vs_prediction_change_spearman": -0.6203926065738177
+      },
+      "severity": {
+        "proposal_mean_iou": {
+          "mild": 0.6149844248068348,
+          "moderate": 0.7880484517923506,
+          "severe": 0.824269271284333
+        },
+        "paired_task_success_delta": {
+          "control": -0.1663865546218487,
+          "mild": -0.0539823008849557,
+          "moderate": -0.0641666666666666,
+          "severe": -0.1216666666666667
+        }
+      }
+    },
+    "isolation_forest": {
+      "localization": {
+        "mean_iou": 0.6676933175495734,
+        "event_recall_iou_ge_0_3": 0.7280453257790368,
+        "event_recall_iou_ge_0_5": 0.71671388101983
+      },
+      "diagnosis": {
+        "selected_accuracy": 0.4290932690172062,
+        "delta_selected_accuracy": -0.1750538595336274,
+        "delta_selected_accuracy_ci95": [
+          -0.2051385028985652,
+          -0.1446177767132237
+        ],
+        "physical_exact_diagnosis_rate": 0.2648725212464589,
+        "delta_physical_exact_diagnosis_rate": -0.13342776203966,
+        "control_abstention_rate": 0.6470588235294118,
+        "delta_control_abstention_rate": -0.253781512605042,
+        "false_specific_rate": 0.3529411764705882,
+        "delta_false_specific_rate": 0.253781512605042
+      },
+      "interval_sensitivity": {
+        "iou_zero_delta_task_success": -0.4765714285714285,
+        "iou_ge_0_5_delta_task_success": -0.0051383399209486,
+        "iou_vs_task_success_spearman": 0.548397407071907,
+        "iou_vs_prediction_change_spearman": -0.7484856338335257
+      },
+      "severity": {
+        "proposal_mean_iou": {
+          "mild": 0.5646954410308793,
+          "moderate": 0.6843148782496442,
+          "severe": 0.7480614239046062
+        },
+        "paired_task_success_delta": {
+          "control": -0.253781512605042,
+          "mild": -0.1132743362831858,
+          "moderate": -0.1208333333333333,
+          "severe": -0.165
+        }
+      }
+    }
+  },
+  "model_records": [
+    {
+      "filename": "repeat_0_phyguard.joblib",
+      "path": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/results/full/evaluation_suite/models/repeat_0_phyguard.joblib",
+      "sha256": "6877df3e027ec8e7b1964e835c706c96f54a4a9bdbfcc5b230914773cc7332ff",
+      "size_bytes": 3417386
+    },
+    {
+      "filename": "repeat_1_phyguard.joblib",
+      "path": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/results/full/evaluation_suite/models/repeat_1_phyguard.joblib",
+      "sha256": "2a009ff1f590500d930e3eec0b62096978ba73d1b1eaf2b5fc3c320c5a70f627",
+      "size_bytes": 3378794
+    },
+    {
+      "filename": "repeat_2_phyguard.joblib",
+      "path": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/results/full/evaluation_suite/models/repeat_2_phyguard.joblib",
+      "sha256": "c875168c7d92449cc08335920723df5624bd066365c39eb36fab184111055e75",
+      "size_bytes": 3248810
+    },
+    {
+      "filename": "repeat_3_phyguard.joblib",
+      "path": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/results/full/evaluation_suite/models/repeat_3_phyguard.joblib",
+      "sha256": "ee74feb3e43e34f9149eaeee9797b94943275344c84b919a973f30fadc17ea99",
+      "size_bytes": 3467114
+    },
+    {
+      "filename": "repeat_4_phyguard.joblib",
+      "path": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/results/full/evaluation_suite/models/repeat_4_phyguard.joblib",
+      "sha256": "eb1319f18489287ae2aef3313824613e30108a95bd6e70d096e3c0d45bd84f2d",
+      "size_bytes": 3359018
+    }
+  ],
+  "integrity": {
+    "proposal_replay": "2475/2475 exact",
+    "proposal_feature_replay": "2475/2475 exact",
+    "detector_conditioned_prediction_replay": "12375/12375 exact",
+    "paired_cluster_unit": "sample_id",
+    "five_model_repeats_kept_together": true,
+    "protocol_locked_before_formal_proposals": true,
+    "all_three_detector_results_preserved": true
+  },
+  "methodological_boundary": {
+    "formal_test_model_fitting": false,
+    "downstream_model_training": false,
+    "threshold_tuning": false,
+    "threshold_calibration": false,
+    "detector_parameter_tuning": false,
+    "candidate_window_tuning": false,
+    "post_result_detector_selection": false,
+    "failed_sample_replacement": false,
+    "new_detector_contribution_claim": false,
+    "causal_iou_claim": false,
+    "sdr_or_ota_claim": false
+  },
+  "archive_entry_count": 69,
+  "files": [
+    {
+      "archive_name": "configs/sionna_formal825_upstream_detector_protocol_v1.json",
+      "source_path": "/root/phyguard_revision/configs/sionna_formal825_upstream_detector_protocol_v1.json",
+      "sha256": "4a9b09b82e82efa4940602a73a25cddaa05361af4c5edee2ae73f46860996aa2",
+      "size_bytes": 4724
+    },
+    {
+      "archive_name": "configs/sionna_formal_test840_plan_v1.json",
+      "source_path": "/root/phyguard_revision/configs/sionna_formal_test840_plan_v1.json",
+      "sha256": "830beb5ff2f079d3d620df73403ba5da6bd6db9cb4338521fa63dd7414d81eb7",
+      "size_bytes": 796991
+    },
+    {
+      "archive_name": "locked_assets/contracts/source_fixed_thresholds_locked.json",
+      "source_path": "/root/phyguard_revision/results/sionna_formal_test840_locked_phyguard/contracts/source_fixed_thresholds_locked.json",
+      "sha256": "cfdf67e558196294557e33b9f736c606c53aeea2ea0b532b0f08222806423107",
+      "size_bytes": 2379
+    },
+    {
+      "archive_name": "locked_assets/downstream_models/repeat_0_phyguard.joblib",
+      "source_path": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/results/full/evaluation_suite/models/repeat_0_phyguard.joblib",
+      "sha256": "6877df3e027ec8e7b1964e835c706c96f54a4a9bdbfcc5b230914773cc7332ff",
+      "size_bytes": 3417386
+    },
+    {
+      "archive_name": "locked_assets/downstream_models/repeat_1_phyguard.joblib",
+      "source_path": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/results/full/evaluation_suite/models/repeat_1_phyguard.joblib",
+      "sha256": "2a009ff1f590500d930e3eec0b62096978ba73d1b1eaf2b5fc3c320c5a70f627",
+      "size_bytes": 3378794
+    },
+    {
+      "archive_name": "locked_assets/downstream_models/repeat_2_phyguard.joblib",
+      "source_path": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/results/full/evaluation_suite/models/repeat_2_phyguard.joblib",
+      "sha256": "c875168c7d92449cc08335920723df5624bd066365c39eb36fab184111055e75",
+      "size_bytes": 3248810
+    },
+    {
+      "archive_name": "locked_assets/downstream_models/repeat_3_phyguard.joblib",
+      "source_path": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/results/full/evaluation_suite/models/repeat_3_phyguard.joblib",
+      "sha256": "ee74feb3e43e34f9149eaeee9797b94943275344c84b919a973f30fadc17ea99",
+      "size_bytes": 3467114
+    },
+    {
+      "archive_name": "locked_assets/downstream_models/repeat_4_phyguard.joblib",
+      "source_path": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/results/full/evaluation_suite/models/repeat_4_phyguard.joblib",
+      "sha256": "eb1319f18489287ae2aef3313824613e30108a95bd6e70d096e3c0d45bd84f2d",
+      "size_bytes": 3359018
+    },
+    {
+      "archive_name": "locked_assets/source_code/detector_proposals.py",
+      "source_path": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/scripts/detector_proposals.py",
+      "sha256": "f38672d30a769aebeb0b0e156f187dceb9daa7317fe97fc32faaec0186f54311",
+      "size_bytes": 5208
+    },
+    {
+      "archive_name": "locked_assets/source_code/evaluation_common.py",
+      "source_path": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/scripts/evaluation_common.py",
+      "sha256": "afa1f3387c272dee075f72f481e012572813892976c54dc860901114f8080cdd",
+      "size_bytes": 7076
+    },
+    {
+      "archive_name": "locked_assets/source_code/features.py",
+      "source_path": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/scripts/features.py",
+      "sha256": "b665765bbdb317f0568d77a5004e41075e4a2e037fc5f6caa8102f6c932fc4f7",
+      "size_bytes": 3570
+    },
+    {
+      "archive_name": "locked_assets/upstream/formal825_source_fitted_isolation_forest_v1.joblib",
+      "source_path": "/root/phyguard_revision/artifacts/frozen_upstream_detectors/formal825_source_fitted_isolation_forest_v1.joblib",
+      "sha256": "9ad52cf66ffff12f423959db37ff9ed7c5d7292d620023c531217c42c5040dd1",
+      "size_bytes": 3437778
+    },
+    {
+      "archive_name": "logs/50_audit_upstream_detector_assets.log",
+      "source_path": "/root/phyguard_revision/logs/50_audit_upstream_detector_assets.log",
+      "sha256": "85927b7e583ea0f9120a7e6276a004caed051432694b97ea3a520a1e1dbe7b5b",
+      "size_bytes": 3076
+    },
+    {
+      "archive_name": "logs/51_lock_formal825_upstream_detector_protocol.log",
+      "source_path": "/root/phyguard_revision/logs/51_lock_formal825_upstream_detector_protocol.log",
+      "sha256": "4b8645c93e6a338ef40bb87af04e9c0a9cf3592d496983cb1c08aa22ed7448f4",
+      "size_bytes": 1206
+    },
+    {
+      "archive_name": "logs/52_generate_formal825_locked_upstream_proposals.log",
+      "source_path": "/root/phyguard_revision/logs/52_generate_formal825_locked_upstream_proposals.log",
+      "sha256": "4948c7dbcc7364ea9e17c1a62e7733c9474e1ed8eed0f75047994a22443cab7d",
+      "size_bytes": 1181
+    },
+    {
+      "archive_name": "logs/53_evaluate_formal825_locked_upstream_proposals.log",
+      "source_path": "/root/phyguard_revision/logs/53_evaluate_formal825_locked_upstream_proposals.log",
+      "sha256": "f92a78f44e11ee884e69068dba6083f9c14cad78aad4f601adff479b4624d01b",
+      "size_bytes": 8008
+    },
+    {
+      "archive_name": "logs/54_run_formal825_detector_conditioned_diagnosis.log",
+      "source_path": "/root/phyguard_revision/logs/54_run_formal825_detector_conditioned_diagnosis.log",
+      "sha256": "8b8b530624929f902c44d8350ef0ef4c1fc52ef2046de0f23124c9190f34019b",
+      "size_bytes": 5599
+    },
+    {
+      "archive_name": "logs/55_analyze_formal825_detector_conditioned_diagnosis.log",
+      "source_path": "/root/phyguard_revision/logs/55_analyze_formal825_detector_conditioned_diagnosis.log",
+      "sha256": "8f11d3934cb847f57b1ec5df448ecb22588e24334f9b67b45187c5ef0bf25649",
+      "size_bytes": 11514
+    },
+    {
+      "archive_name": "manifests/formal825_upstream_detector_asset_audit.json",
+      "source_path": "/root/phyguard_revision/manifests/formal825_upstream_detector_asset_audit.json",
+      "sha256": "1863b9e91d76cc115bb5eb5ea0ee1d3b186a032741eb8d1cbfefd832c33c0a2c",
+      "size_bytes": 14650
+    },
+    {
+      "archive_name": "manifests/sionna_formal825_detector_conditioned_diagnosis_v1.json",
+      "source_path": "/root/phyguard_revision/manifests/sionna_formal825_detector_conditioned_diagnosis_v1.json",
+      "sha256": "c96189770f79fe612df5bc2350888d0275b8cb2145716a00f1b36f95c1442c7a",
+      "size_bytes": 2394
+    },
+    {
+      "archive_name": "manifests/sionna_formal825_detector_conditioned_statistics_v1.json",
+      "source_path": "/root/phyguard_revision/manifests/sionna_formal825_detector_conditioned_statistics_v1.json",
+      "sha256": "5c1a644f66cda5c264fa281a036e79bfef8ba1bda69c38e67085479d4753ca96",
+      "size_bytes": 3040
+    },
+    {
+      "archive_name": "manifests/sionna_formal825_upstream_detector_evaluation_v1.json",
+      "source_path": "/root/phyguard_revision/manifests/sionna_formal825_upstream_detector_evaluation_v1.json",
+      "sha256": "b865d5cb8beba903e7e428e621942940c8cf54291b1bb5617ee3eb50aa5f1cb2",
+      "size_bytes": 2676
+    },
+    {
+      "archive_name": "manifests/sionna_formal825_upstream_detector_proposals_v1.json",
+      "source_path": "/root/phyguard_revision/manifests/sionna_formal825_upstream_detector_proposals_v1.json",
+      "sha256": "2c0fe99d2cc4bbbae98adafcb748aa5f8377b06a18a6906311a2b9f240368a0a",
+      "size_bytes": 7949
+    },
+    {
+      "archive_name": "manifests/sionna_formal825_upstream_detector_protocol_lock_v1.json",
+      "source_path": "/root/phyguard_revision/manifests/sionna_formal825_upstream_detector_protocol_lock_v1.json",
+      "sha256": "636b75085470140963379ef53d135eae0af8d61e6b9684ccb367ff85ad11600c",
+      "size_bytes": 4793
+    },
+    {
+      "archive_name": "manifests/sionna_formal825_upstream_sensitivity_claims_v1.json",
+      "source_path": "/root/phyguard_revision/manifests/sionna_formal825_upstream_sensitivity_claims_v1.json",
+      "sha256": "c16aeaaf291cdb38a28033234f94d00f25d57b50fe3424d75ef51fd55a55d151",
+      "size_bytes": 7667
+    },
+    {
+      "archive_name": "manifests/sionna_formal825_upstream_sensitivity_environment_v1.json",
+      "source_path": "/root/phyguard_revision/manifests/sionna_formal825_upstream_sensitivity_environment_v1.json",
+      "sha256": "83e4fc87c70aa934ccb6f7f14a6264101047eea2bea0957b4a3e6d9347421789",
+      "size_bytes": 259
+    },
+    {
+      "archive_name": "manifests/sionna_formal_test840_causal_validation_v2.json",
+      "source_path": "/root/phyguard_revision/manifests/sionna_formal_test840_causal_validation_v2.json",
+      "sha256": "351d185bb9a022fbda07efc8cecdc431983705938e9591c084075d4d5057534a",
+      "size_bytes": 865716
+    },
+    {
+      "archive_name": "results/phyguard_sionna_formal825_locked_reconstruction_final.zip",
+      "source_path": "/root/phyguard_revision/results/phyguard_sionna_formal825_locked_reconstruction_final.zip",
+      "sha256": "5d08fc3b8265789819b0f49c1f93a9c79c8fe44ce7ec4aec8f1fa603a08c241b",
+      "size_bytes": 4546005
+    },
+    {
+      "archive_name": "results/phyguard_sionna_formal825_locked_reconstruction_final.zip.sha256",
+      "source_path": "/root/phyguard_revision/results/phyguard_sionna_formal825_locked_reconstruction_final.zip.sha256",
+      "sha256": "cee245079588b9e8bc54727a994792a5212803c96335099a0a60258c3d361f79",
+      "size_bytes": 124
+    },
+    {
+      "archive_name": "results/phyguard_sionna_formal825_upstream_detector_protocol_locked.zip",
+      "source_path": "/root/phyguard_revision/results/phyguard_sionna_formal825_upstream_detector_protocol_locked.zip",
+      "sha256": "a0aecfcb798a4c6113992abb39686c4d9140e03bc6a5c3ee9e4d6946c62d9053",
+      "size_bytes": 3446787
+    },
+    {
+      "archive_name": "results/phyguard_sionna_formal825_upstream_detector_protocol_locked.zip.sha256",
+      "source_path": "/root/phyguard_revision/results/phyguard_sionna_formal825_upstream_detector_protocol_locked.zip.sha256",
+      "sha256": "31a67657f50c81d129075f87e558a5ee28b6114ff52cf0adef0ff15d2ea11273",
+      "size_bytes": 130
+    },
+    {
+      "archive_name": "results/sionna_formal825_detector_conditioned_diagnosis_v1/audit.json",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_detector_conditioned_diagnosis_v1/audit.json",
+      "sha256": "34c7ca94be66e91f03cca5590a6602a69d364a72c25c77af043115e0ec6130a7",
+      "size_bytes": 2738
+    },
+    {
+      "archive_name": "results/sionna_formal825_detector_conditioned_diagnosis_v1/detector_summary.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_detector_conditioned_diagnosis_v1/detector_summary.csv",
+      "sha256": "c04ec23ac503fc18f7ebbd2832cacd0626a68adc709b4e1084f95c4ff585b8f9",
+      "size_bytes": 4204
+    },
+    {
+      "archive_name": "results/sionna_formal825_detector_conditioned_diagnosis_v1/per_repeat_deltas_vs_locked_interval.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_detector_conditioned_diagnosis_v1/per_repeat_deltas_vs_locked_interval.csv",
+      "sha256": "7e74fc30c0e26550164641833e63cfbbaea533a6c6a59bf3fa420dcf1dd986ae",
+      "size_bytes": 11651
+    },
+    {
+      "archive_name": "results/sionna_formal825_detector_conditioned_diagnosis_v1/per_repeat_metrics.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_detector_conditioned_diagnosis_v1/per_repeat_metrics.csv",
+      "sha256": "06e33ccc06753ea7a99d5de353b7d6beec5e951da3539548db6334491fb3d823",
+      "size_bytes": 3981
+    },
+    {
+      "archive_name": "results/sionna_formal825_detector_conditioned_diagnosis_v1/predictions.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_detector_conditioned_diagnosis_v1/predictions.csv",
+      "sha256": "23663d08fcb46289c195973cd68895d89fd6d155ca3ad287ee92689cadcfb064",
+      "size_bytes": 3825662
+    },
+    {
+      "archive_name": "results/sionna_formal825_detector_conditioned_statistics_v1/iou_diagnostic_associations.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_detector_conditioned_statistics_v1/iou_diagnostic_associations.csv",
+      "sha256": "79582bc5156553bfbc65953e0f09d8c42f7a164bc9a30d23137da48115c0bb74",
+      "size_bytes": 2411
+    },
+    {
+      "archive_name": "results/sionna_formal825_detector_conditioned_statistics_v1/paired_bootstrap_draws.npz",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_detector_conditioned_statistics_v1/paired_bootstrap_draws.npz",
+      "sha256": "47ea9e1227ee474af9a8e840e881e4e3088c2a4c2a2519f26e088951a16511bb",
+      "size_bytes": 2883138
+    },
+    {
+      "archive_name": "results/sionna_formal825_detector_conditioned_statistics_v1/paired_outcome_transitions.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_detector_conditioned_statistics_v1/paired_outcome_transitions.csv",
+      "sha256": "1ca1e6b04570054a170dd0d436b5de42562649bc1fc28c8383bc4ab9a372caae",
+      "size_bytes": 6552
+    },
+    {
+      "archive_name": "results/sionna_formal825_detector_conditioned_statistics_v1/paired_sample_cluster_bootstrap.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_detector_conditioned_statistics_v1/paired_sample_cluster_bootstrap.csv",
+      "sha256": "88f49637f43d9a31759a1adefb6c5d4cff7ea78edf7035fc742c358271fcd97d",
+      "size_bytes": 6317
+    },
+    {
+      "archive_name": "results/sionna_formal825_detector_conditioned_statistics_v1/repeat_level_delta_confidence_intervals.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_detector_conditioned_statistics_v1/repeat_level_delta_confidence_intervals.csv",
+      "sha256": "b110086086bdf532623acf4ff517b397cf2dd7c46d882e9cab526ab41e22ab90",
+      "size_bytes": 6031
+    },
+    {
+      "archive_name": "results/sionna_formal825_detector_conditioned_statistics_v1/stratified_diagnostic_metrics.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_detector_conditioned_statistics_v1/stratified_diagnostic_metrics.csv",
+      "sha256": "f76e0384783d8662ce34155999dab3d0a4e6170565fa9af6c2239397f2f1342a",
+      "size_bytes": 13924
+    },
+    {
+      "archive_name": "results/sionna_formal825_detector_conditioned_statistics_v1/stratified_sample_cluster_bootstrap.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_detector_conditioned_statistics_v1/stratified_sample_cluster_bootstrap.csv",
+      "sha256": "fc654378b3ac89224ed7d64c2546aa76ff0cb7e16b379058af0501ddf798b669",
+      "size_bytes": 77511
+    },
+    {
+      "archive_name": "results/sionna_formal825_detector_conditioned_statistics_v1/summary.json",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_detector_conditioned_statistics_v1/summary.json",
+      "sha256": "f10a78a161baae8237cb1c91f1d52e9feff0d0ac87b7f2219732e179fa5a0dba",
+      "size_bytes": 24660
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_evaluation_v1/proposal_bootstrap_confidence_intervals.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_evaluation_v1/proposal_bootstrap_confidence_intervals.csv",
+      "sha256": "b2e13ebfea3256c4449dbc67423088908908542680846f343a30eb26931d96e7",
+      "size_bytes": 9715
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_evaluation_v1/proposal_bootstrap_draws.npz",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_evaluation_v1/proposal_bootstrap_draws.npz",
+      "sha256": "568c2e330441f8830415f5673e97d68dff9094f0002ff274e3c4babc51f21cb0",
+      "size_bytes": 1903537
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_evaluation_v1/proposal_evaluations.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_evaluation_v1/proposal_evaluations.csv",
+      "sha256": "74cd0e278384db262080b35d3f5df216d70d335c18074d3a48b1c799d3a15e0c",
+      "size_bytes": 448191
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_evaluation_v1/proposal_metrics_overall.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_evaluation_v1/proposal_metrics_overall.csv",
+      "sha256": "ef12e57e7ba362e7664936a60110d525f6853074289538852aaff3f64d07b5c2",
+      "size_bytes": 945
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_evaluation_v1/proposal_metrics_stratified.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_evaluation_v1/proposal_metrics_stratified.csv",
+      "sha256": "fd5f0c19dfe2cf0789944d60152f1ea915d4261f279f89cbfd936d456acf4cb0",
+      "size_bytes": 7195
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_evaluation_v1/summary.json",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_evaluation_v1/summary.json",
+      "sha256": "cd544e2f43627915022e303cfae0cc0a44dfe28cebe56ab2ef79efdc1a355f94",
+      "size_bytes": 3623
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_proposals_v1/isolation_forest/features.npz",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_proposals_v1/isolation_forest/features.npz",
+      "sha256": "37875b4d4ea577acaf9c0a74bb3e7fef91b830743150457b6327db3f7fc6fc21",
+      "size_bytes": 259560
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_proposals_v1/isolation_forest/proposals.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_proposals_v1/isolation_forest/proposals.csv",
+      "sha256": "81268b4071b40a3e3201c2586566f97433b81803c8962c803a6e274d9c0cb2b9",
+      "size_bytes": 95475
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_proposals_v1/isolation_forest/scores.npz",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_proposals_v1/isolation_forest/scores.npz",
+      "sha256": "bdc57e09ee4c10af8e6c3eab836b64a3dacec6fc376572511f7a24e6b86e1d8a",
+      "size_bytes": 408988
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_proposals_v1/metadata.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_proposals_v1/metadata.csv",
+      "sha256": "b23272b6c0209c079e321419a591d8db9ecabab441131e1ecfab59a293e545c7",
+      "size_bytes": 149849
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_proposals_v1/pca_reconstruction/features.npz",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_proposals_v1/pca_reconstruction/features.npz",
+      "sha256": "318b953c00dfb1eb97943ab4abba0e7b036a665f80b31ffc235d9d4209b60e7d",
+      "size_bytes": 269780
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_proposals_v1/pca_reconstruction/proposals.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_proposals_v1/pca_reconstruction/proposals.csv",
+      "sha256": "75b8215e4e4ddda79aa0a556733012ff8fd3d964a69c09e7aca4a8b418d83bb3",
+      "size_bytes": 96486
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_proposals_v1/pca_reconstruction/scores.npz",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_proposals_v1/pca_reconstruction/scores.npz",
+      "sha256": "8b85c5346f76d514eceafa1e9c6ebc1ec3b64908848cdd6d0311e9264f8a9a8c",
+      "size_bytes": 256695
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_proposals_v1/robust_energy/features.npz",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_proposals_v1/robust_energy/features.npz",
+      "sha256": "56e129c050a281bb5138936f517240c13c18f589577d09f3bdd90ae23d8aa81f",
+      "size_bytes": 254487
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_proposals_v1/robust_energy/proposals.csv",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_proposals_v1/robust_energy/proposals.csv",
+      "sha256": "3e337e2fc1dc9725addf70808d98c49b37ccd3317a2f92fbe1f1c0d978754abf",
+      "size_bytes": 89591
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_proposals_v1/robust_energy/scores.npz",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_proposals_v1/robust_energy/scores.npz",
+      "sha256": "872b4ca2b85def3ff547057fb94e22e01d063405ff619184ce7138c7f9d50a4c",
+      "size_bytes": 246595
+    },
+    {
+      "archive_name": "results/sionna_formal825_upstream_detector_proposals_v1/summary.json",
+      "source_path": "/root/phyguard_revision/results/sionna_formal825_upstream_detector_proposals_v1/summary.json",
+      "sha256": "3ba16564129e8dbf3b1d9ebe3518d9fb9565506dc4b3d104b3e8722ba6e46560",
+      "size_bytes": 5383
+    },
+    {
+      "archive_name": "scripts/50_audit_upstream_detector_assets.py",
+      "source_path": "/root/phyguard_revision/scripts/50_audit_upstream_detector_assets.py",
+      "sha256": "0b67dab8f7b92c9e75cd9e730219f510ace4ac9ff6a0d18293e2ce32923d80dd",
+      "size_bytes": 15321
+    },
+    {
+      "archive_name": "scripts/51_lock_formal825_upstream_detector_protocol.py",
+      "source_path": "/root/phyguard_revision/scripts/51_lock_formal825_upstream_detector_protocol.py",
+      "sha256": "2d4bedf2ceda46892c8230ec79f9884f64a7fc988b865c9c195dea8dba7de018",
+      "size_bytes": 25310
+    },
+    {
+      "archive_name": "scripts/52_generate_formal825_locked_upstream_proposals.py",
+      "source_path": "/root/phyguard_revision/scripts/52_generate_formal825_locked_upstream_proposals.py",
+      "sha256": "19b3ce9b1df84a0aa947fe4f9260a841eec636e88dc444a7e07b67ce5f66de18",
+      "size_bytes": 26803
+    },
+    {
+      "archive_name": "scripts/53_evaluate_formal825_locked_upstream_proposals.py",
+      "source_path": "/root/phyguard_revision/scripts/53_evaluate_formal825_locked_upstream_proposals.py",
+      "sha256": "d03435bd538d6def567bf668ca346234d2bb4447b57fa3c2c1e34fca19b34cb0",
+      "size_bytes": 33715
+    },
+    {
+      "archive_name": "scripts/54_run_formal825_detector_conditioned_diagnosis.py",
+      "source_path": "/root/phyguard_revision/scripts/54_run_formal825_detector_conditioned_diagnosis.py",
+      "sha256": "d3e589de00f45516e796922ffefeea813f0d00b3c21d626a565fc9b1544716b3",
+      "size_bytes": 36617
+    },
+    {
+      "archive_name": "scripts/55_analyze_formal825_detector_conditioned_diagnosis.py",
+      "source_path": "/root/phyguard_revision/scripts/55_analyze_formal825_detector_conditioned_diagnosis.py",
+      "sha256": "35c0b7e565c5e20d2a92b415c4bd99d76aa465ebc9673258100669c2d8985b09",
+      "size_bytes": 53499
+    },
+    {
+      "archive_name": "scripts/56_freeze_formal825_upstream_sensitivity_final.py",
+      "source_path": "/root/phyguard_revision/scripts/56_freeze_formal825_upstream_sensitivity_final.py",
+      "sha256": "e3580e7f314b7d04c3fcb38f4e5768f142f85215ead65f492c3462fc58588a46",
+      "size_bytes": 37435
+    }
+  ]
+}

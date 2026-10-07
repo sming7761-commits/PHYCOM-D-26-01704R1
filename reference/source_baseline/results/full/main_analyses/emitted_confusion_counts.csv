@@ -1,0 +1,5 @@
+truth,interference,blockage,mobility,adaptation_mismatch
+interference,132,5,0,10
+blockage,0,144,0,1
+mobility,0,2,146,0
+adaptation_mismatch,14,2,0,143

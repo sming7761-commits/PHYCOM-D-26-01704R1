@@ -1,0 +1,76 @@
+{
+  "schema": "phyguard.physics_sensitivity_key_results.v1",
+  "status": "PASS",
+  "method": "Fixed-model sensitivity of the revision-time locked PhyGuard reconstruction.",
+  "default_reproduction": {
+    "prediction_match": true,
+    "prediction_row_count": 1080,
+    "metric_max_absolute_differences": {
+      "selected_accuracy": 1.1102230246251565e-16,
+      "coverage": 0.0,
+      "false_specific_rate": 7.632783294297951e-17,
+      "macro_f1": 0.0,
+      "balanced_accuracy": 0.0
+    }
+  },
+  "execution": {
+    "formula_variant_count": 13,
+    "fixed_model_inference_task_count": 65,
+    "training_task_count": 0,
+    "threshold_policy_count": 9,
+    "threshold_policy_evaluation_count": 45
+  },
+  "uncertainty": {
+    "bootstrap_replicates": 10000,
+    "cluster_count": 726,
+    "paired_comparison_count": 84,
+    "exact_signflip_minimum_nonzero_two_sided_p": 0.0625,
+    "confirmatory_significance_claim_allowed": false
+  },
+  "overall_nondefault_delta_envelope": {
+    "selected_accuracy": {
+      "delta_min": -0.006140501350169192,
+      "delta_max": 0.01637691272203079,
+      "max_abs_delta": 0.01637691272203079
+    },
+    "coverage": {
+      "delta_min": -0.01666666666666683,
+      "delta_max": 0.01805555555555549,
+      "max_abs_delta": 0.01805555555555549
+    },
+    "false_specific_rate": {
+      "delta_min": -0.0111111111111111,
+      "delta_max": 0.0194444444444445,
+      "max_abs_delta": 0.0194444444444445
+    },
+    "macro_f1": {
+      "delta_min": -0.000695211806217344,
+      "delta_max": 0.007996116319652358,
+      "max_abs_delta": 0.007996116319652358
+    },
+    "balanced_accuracy": {
+      "delta_min": -0.006944444444444309,
+      "delta_max": 0.011111111111111183,
+      "max_abs_delta": 0.011111111111111183
+    },
+    "physical_exact_match": {
+      "delta_min": -0.006944444444444198,
+      "delta_max": 0.011111111111111183,
+      "max_abs_delta": 0.011111111111111183
+    },
+    "control_abstention": {
+      "delta_min": -0.019444444444444375,
+      "delta_max": 0.011111111111111183,
+      "max_abs_delta": 0.019444444444444375
+    }
+  },
+  "integrity": {
+    "source_models_modified": false,
+    "source_features_modified": false,
+    "source_results_modified": false,
+    "test_used_for_threshold_selection": false,
+    "all_formula_configs_reported": true,
+    "all_threshold_policies_reported": true
+  },
+  "formal_hardware": "NVIDIA GeForce RTX 3080 10 GB"
+}

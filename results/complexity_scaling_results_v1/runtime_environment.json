@@ -1,0 +1,50 @@
+{
+  "created_at_utc": null,
+  "platform": "Linux-6.8.0-31-generic-x86_64-with-glibc2.39",
+  "python": "3.11.15 (main, Jun 11 2026, 15:20:16) [GCC 14.3.0]",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "sklearn": "1.8.0",
+  "processor": "x86_64",
+  "cpu_count_logical": 16,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "threadpool_info": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "filepath": "/root/anaconda3/envs/phyguard_sionna_sklearn180/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+      "version": "0.3.31.188.0",
+      "threading_layer": "pthreads",
+      "architecture": "SkylakeX"
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "filepath": "/root/anaconda3/envs/phyguard_sionna_sklearn180/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+      "version": "0.3.30",
+      "threading_layer": "pthreads",
+      "architecture": "SkylakeX"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libgomp",
+      "filepath": "/root/anaconda3/envs/phyguard_sionna_sklearn180/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+      "version": null
+    }
+  ],
+  "timer": "time.perf_counter_ns",
+  "feature_builder_sha256": "b665765bbdb317f0568d77a5004e41075e4a2e037fc5f6caa8102f6c932fc4f7",
+  "evaluate_suite_sha256": "7e39206a48dcd507d7b58e3ac8d1c57f20c8ad1b14ffa853aa46b2dd536afd65",
+  "model_sha256": "6877df3e027ec8e7b1964e835c706c96f54a4a9bdbfcc5b230914773cc7332ff"
+}

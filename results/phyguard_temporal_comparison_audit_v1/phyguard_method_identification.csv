@@ -1,0 +1,8 @@
+method,repeat_count,maximum_absolute_metric_difference,exact_core_match,name_contains_phyguard
+Gradient boosting,5,0.15277777777777768,False,False
+Logistic regression,5,0.11805555555555547,False,False
+PhyGuard,5,0.0,True,True
+PhyGuard without abstention,5,0.9722222222222223,False,True
+Random forest,5,0.06944444444444442,False,False
+Single-KPI rules,5,0.8192656451666281,False,False
+Two-stage without physics,5,0.08333333333333337,False,False

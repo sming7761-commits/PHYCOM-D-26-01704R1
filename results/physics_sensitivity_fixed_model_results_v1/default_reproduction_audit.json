@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "metric_max_absolute_differences": {
+    "selected_accuracy": 1.1102230246251565e-16,
+    "coverage": 0.0,
+    "false_specific_rate": 7.632783294297951e-17,
+    "macro_f1": 0.0,
+    "balanced_accuracy": 0.0
+  },
+  "tau_g_match": true,
+  "tau_c_match": true,
+  "prediction_match": true,
+  "prediction_row_count": 1080,
+  "manual_probability_path_used": true,
+  "source_models_modified": false
+}

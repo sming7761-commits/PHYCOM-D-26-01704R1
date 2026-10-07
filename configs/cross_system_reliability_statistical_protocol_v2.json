@@ -1,0 +1,283 @@
+{
+  "schema": "phyguard.cross_system_reliability_statistical_protocol.v2",
+  "created_at_utc": "2026-07-31T13:01:35.605878+00:00",
+  "status": "LOCKED_BEFORE_RELIABILITY_STATISTICAL_EXECUTION",
+  "scientific_question": "Does increasing SINR consistently correspond to decreasing link-error probability across the revision-time source reconstruction, the independent coded Sionna link, and public real O-RAN measurements?",
+  "claim_scope": {
+    "supported_claim": "The 48-bit uncoded PER quantity is a trend-level reliability proxy whose expected SINR-to-error direction can be compared with coded BLER and measured DL-BLER.",
+    "prohibited_claims": [
+      "The 48-bit PER proxy is numerically calibrated to post-LDPC BLER.",
+      "The 48-bit proxy reproduces HARQ failure probability.",
+      "Error-rate magnitudes are directly comparable across the three systems.",
+      "A significant association establishes causal equivalence between systems."
+    ]
+  },
+  "canonical_assets": {
+    "source_telemetry": "artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/data/full/telemetry.npz",
+    "source_metadata": "artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/data/full/metadata.csv",
+    "source_telemetry_sha256": "36320391567ab8d0f03424c457a42eac6a61eb8cf591aedf8395a41d070b371d",
+    "sionna_root": "data/sionna_formal_test840",
+    "sionna_analysis_ids": "artifacts/cross_system_reliability_metadata_contract_v1/sionna_analysis825_ids.txt",
+    "sionna_analysis_ids_sha256": "a8aa74f95df897a57c82f60ea0d2f23353eaa023ec0446b079dd8a88d7de462a",
+    "zenodo_inventory": "artifacts/cross_system_reliability_asset_inventory_v2/zenodo_canonical_inventory.csv",
+    "zenodo_inventory_sha256": "16c58a045bd8f95eb46e4b971c4a3412b2ac6f5878cabb5071843ef8df09d514",
+    "zenodo_file_count": 10
+  },
+  "common_preprocessing": {
+    "missing_values": "Use listwise deletion only for the variables required by the current endpoint. No imputation.",
+    "mcs_canonicalization": {
+      "source_and_sionna": "MCS must be finite and within 1e-6 of an integer. Canonicalize using nearest-integer rounding.",
+      "zenodo": "Treat phy_mcs as a continuous or aggregated telemetry variable. Do not round, discretize, bin, or threshold it.",
+      "metadata_basis": {
+        "source_noninteger_fraction": 0.0,
+        "sionna_noninteger_fraction": 0.0,
+        "zenodo_noninteger_fraction": 0.9629753503461654
+      }
+    },
+    "ties": "Use average ranks for tied values.",
+    "smoothing": false,
+    "temporal_resampling": false,
+    "lag_selection": false,
+    "sign_reversal": false,
+    "outlier_trimming": false,
+    "threshold_selection": false
+  },
+  "mcs_stratified_rank_correlation": {
+    "name": "MCS-stratified Spearman correlation",
+    "algorithm": [
+      "Within each independent sequence or recording file, divide observations by the canonical integer MCS value.",
+      "Discard an MCS stratum only when it has fewer than the preregistered minimum number of finite observations or when SINR or the error variable is constant.",
+      "Within each retained MCS stratum, replace SINR and the error variable by average ranks.",
+      "Center and standardize both rank variables within that MCS stratum.",
+      "Concatenate the standardized within-stratum ranks and compute their Pearson correlation."
+    ],
+    "interpretation": "This estimates a monotonic SINR-error association after removing between-MCS level differences.",
+    "expected_direction": "negative"
+  },
+  "source_analysis": {
+    "sample_count": 1080,
+    "sequence_shape": [
+      80,
+      10
+    ],
+    "predictor": "SINR_dB",
+    "outcome": "PER_proxy",
+    "stratification": "MCS",
+    "minimum_rows_per_mcs_stratum": 8,
+    "minimum_retained_rows_per_sequence": 24,
+    "primary_sequence_effect": "MCS-stratified Spearman correlation",
+    "primary_aggregate": "Median of eligible sequence-level correlations.",
+    "bootstrap": {
+      "iterations": 10000,
+      "seed": 60011,
+      "resampling_unit": "sequence",
+      "strata": "regime x label",
+      "interval": "percentile 95%"
+    },
+    "direction_test": {
+      "method": "Monte Carlo sign-flip test",
+      "iterations": 100000,
+      "seed": 60012,
+      "alternative": "aggregate correlation < 0",
+      "plus_one_correction": true
+    },
+    "support_rule": "The median correlation is negative and the upper bound of its 95% bootstrap interval is below zero.",
+    "secondary_descriptive_endpoints": [
+      "Sequence-level Spearman correlation between BER and PER_proxy; expected positive.",
+      "Absolute deviation between observed PER_proxy and 1-(1-BER)^48; descriptive only because bit errors need not be independent."
+    ]
+  },
+  "sionna_analysis": {
+    "generated_sample_count": 840,
+    "locked_analysis_sample_count": 825,
+    "physical_count": 706,
+    "control_count": 119,
+    "analysis_membership_sha256": "a8aa74f95df897a57c82f60ea0d2f23353eaa023ec0446b079dd8a88d7de462a",
+    "sequence_shape": [
+      80,
+      10
+    ],
+    "predictor": "SINR_dB",
+    "outcome": "BLER_post_LDPC",
+    "stratification": "MCS_index",
+    "minimum_rows_per_mcs_stratum": 8,
+    "minimum_retained_rows_per_sequence": 24,
+    "primary_sequence_effect": "MCS-stratified Spearman correlation",
+    "primary_aggregate": "Median of eligible sequence-level correlations.",
+    "bootstrap": {
+      "iterations": 10000,
+      "seed": 60021,
+      "resampling_unit": "sample",
+      "strata": "label",
+      "interval": "percentile 95%"
+    },
+    "direction_test": {
+      "method": "Monte Carlo sign-flip test",
+      "iterations": 100000,
+      "seed": 60022,
+      "alternative": "aggregate correlation < 0",
+      "plus_one_correction": true
+    },
+    "support_rule": "The median correlation is negative and the upper bound of its 95% bootstrap interval is below zero.",
+    "mandatory_subgroup_reporting": [
+      "all 825 samples",
+      "physical samples",
+      "control samples",
+      "interference",
+      "blockage",
+      "mobility",
+      "adaptation_mismatch",
+      "normal",
+      "nonphysical_goodput"
+    ],
+    "secondary_descriptive_endpoint": "Sequence-level Spearman correlation between pre-LDPC BER and post-LDPC BLER; expected positive."
+  },
+  "zenodo_analysis": {
+    "file_count": 10,
+    "predictor": "dl_sinr",
+    "outcome": "dl_bler",
+    "continuous_control": "phy_mcs",
+    "mcs_encoding": {
+      "classification": "CONTINUOUS_OR_AGGREGATED_MCS",
+      "finite_value_count": 59798,
+      "noninteger_value_count": 57584,
+      "noninteger_fraction": 0.9629753503461654,
+      "rounding_allowed": false,
+      "binning_allowed": false
+    },
+    "bler_unit_normalization": {
+      "ratio_rule": "When every finite BLER value is within [0,1+1e-8], retain it as a ratio.",
+      "percentage_rule": "Otherwise, when every finite value is within [0,100+1e-8] and at least one value exceeds 1+1e-8, divide all BLER values by 100.",
+      "invalid_rule": "Any other range fails the analysis.",
+      "post_normalization": "Clip only numerical tolerance violations within 1e-8 to [0,1]."
+    },
+    "minimum_complete_rows_per_file": 200,
+    "primary_file_effect": "Partial Spearman correlation between dl_sinr and dl_bler while controlling continuous phy_mcs.",
+    "partial_spearman_algorithm": [
+      "Within each recording file, retain rows with finite dl_sinr, normalized dl_bler, and phy_mcs.",
+      "Replace dl_sinr, normalized dl_bler, and phy_mcs by average ranks.",
+      "Regress the dl_sinr ranks on an intercept and the phy_mcs ranks using ordinary least squares.",
+      "Regress the dl_bler ranks on the same intercept and phy_mcs ranks.",
+      "Compute Pearson correlation between the two residual vectors."
+    ],
+    "eligibility_failures": [
+      "fewer than 200 complete rows",
+      "constant ranked dl_sinr",
+      "constant ranked dl_bler",
+      "constant ranked phy_mcs",
+      "zero residual variance",
+      "nonfinite partial correlation"
+    ],
+    "primary_aggregate": {
+      "transform": "Apply Fisher arctanh to each eligible file-level correlation.",
+      "weighting": "Equal weight per recording file",
+      "aggregate": "Arithmetic mean in Fisher-z space, transformed back using tanh."
+    },
+    "exact_direction_test": {
+      "method": "Enumerate all 2^10 sign-flip patterns over the ten independent file-level Fisher-z effects.",
+      "alternative": "aggregate correlation < 0",
+      "significance_level": 0.05
+    },
+    "cluster_bootstrap": {
+      "iterations": 10000,
+      "seed": 60031,
+      "resampling_unit": "recording file",
+      "within_file_rows_resampled": false,
+      "interval": "percentile 95%"
+    },
+    "support_rule": "All ten files must be eligible; the equal-weight Fisher-z aggregate partial Spearman correlation must be negative; the exact one-sided file sign-flip p-value must be below 0.05; and the upper bound of the file-cluster bootstrap interval must be below zero.",
+    "mandatory_reporting": [
+      "eligible file count",
+      "excluded file count and fixed reason",
+      "partial Spearman effect for every file",
+      "aggregate partial Spearman correlation",
+      "95% file-cluster bootstrap interval",
+      "exact one-sided p-value",
+      "number of files with negative effects",
+      "BLER unit decision for every file",
+      "complete-row count for every file",
+      "MCS encoding decision"
+    ],
+    "exploratory_secondary_endpoints": [
+      {
+        "name": "unadjusted_sinr_bler",
+        "variables": "dl_sinr versus dl_bler",
+        "expected_direction": "negative"
+      },
+      {
+        "name": "cqi_bler",
+        "variables": "mac_dl_cqi versus dl_bler",
+        "expected_direction": "negative"
+      },
+      {
+        "name": "spectral_efficiency_bler",
+        "variables": "se versus dl_bler",
+        "expected_direction": "negative"
+      },
+      {
+        "name": "sinr_mcs",
+        "variables": "dl_sinr versus phy_mcs",
+        "expected_direction": "positive"
+      }
+    ],
+    "secondary_multiplicity": {
+      "family_size": 4,
+      "correction": "Holm family-wise correction",
+      "role": "Exploratory only; no secondary endpoint may replace the primary endpoint."
+    }
+  },
+  "cross_system_interpretation": {
+    "full_directional_support": "Source, Sionna, and Zenodo all satisfy their preregistered support rules.",
+    "coded_and_real_support": "Sionna and Zenodo satisfy their support rules, supporting transfer of the reliability direction beyond the uncoded source proxy.",
+    "partial_support": "At least one but not all systems satisfy their support rules.",
+    "no_support": "None of the three systems satisfies its support rule.",
+    "magnitude_comparison_allowed": false,
+    "calibration_equivalence_allowed": false
+  },
+  "prohibited_posthoc_actions": [
+    "Reverse the expected SINR-error direction",
+    "Replace dl_bler as the Zenodo primary outcome",
+    "Replace the MCS-stratified primary endpoint",
+    "Change the frozen Sionna-825 membership",
+    "Choose a temporal lag after observing results",
+    "Smooth BLER or SINR after observing results",
+    "Remove recording files because their effects are unfavorable",
+    "Promote a secondary endpoint to primary",
+    "Select a diagnostic threshold using these reliability analyses",
+    "Claim equality between PER_proxy and coded BLER magnitudes",
+    "Round Zenodo phy_mcs to an integer after observing its encoding.",
+    "Bin or discretize Zenodo phy_mcs after observing results.",
+    "Replace continuous-MCS partial Spearman with the invalid V1 integer-stratified estimator."
+  ],
+  "methodological_boundary": {
+    "source_kpi_values_analyzed": false,
+    "sionna_kpi_values_analyzed": false,
+    "zenodo_mcs_encoding_values_inspected": true,
+    "zenodo_sinr_values_analyzed": false,
+    "zenodo_bler_values_analyzed": false,
+    "zenodo_sinr_bler_relationship_analyzed": false,
+    "correlations_computed_for_protocol_amendment": false,
+    "statistical_tests_computed_for_protocol_amendment": false,
+    "models_trained": false,
+    "thresholds_selected": false,
+    "predictor_changed": false,
+    "outcome_changed": false,
+    "expected_direction_changed": false,
+    "source_analysis_changed": false,
+    "sionna_analysis_changed": false,
+    "zenodo_mcs_rounded": false,
+    "zenodo_mcs_binned": false
+  },
+  "supersedes": {
+    "protocol": "configs/cross_system_reliability_statistical_protocol_v1.json",
+    "protocol_sha256": "5eb977e63747f9b24934e007a286bd34388e91fef4a0a02c53827bf2888b4cf0",
+    "reason": "The V1 protocol incorrectly assumed that Zenodo phy_mcs was a discrete integer index. A metadata-only encoding audit showed that 57584 of 59798 finite values were noninteger. No SINR-BLER association was inspected when making this amendment.",
+    "source_analysis_changed": false,
+    "sionna_analysis_changed": false,
+    "zenodo_predictor_changed": false,
+    "zenodo_outcome_changed": false,
+    "zenodo_expected_direction_changed": false,
+    "zenodo_control_variable_changed": false,
+    "zenodo_control_method_changed": true
+  }
+}

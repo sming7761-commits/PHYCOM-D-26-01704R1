@@ -1,0 +1,152 @@
+{
+  "schema": "phyguard.kuleuven.statistical_execution_contract.v1",
+  "created_at_utc": "2026-07-31T12:01:05.195171+00:00",
+  "status": "LOCKED_BEFORE_LABEL_JOIN_AND_STATISTICAL_ANALYSIS",
+  "dataset_snapshot_sha256": "0134ffb74c227ff41e4c10052045308d5b8cb61414f3ba54324c09815e6f0734",
+  "unlabeled_feature_snapshot_sha256": "7fc2b1b1330c9aa01c94df29afd7d179b14a6d497d9d1b8a131722461a7dde86",
+  "unlabeled_endpoint_snapshot_sha256": "6bf09fd1d793fc12ffe420870f74435716b0e07e9658c66a8feb4f248040a8be",
+  "population": {
+    "sequence_count": 160,
+    "activity_cluster_count": 32,
+    "positive_activity_count": 20,
+    "negative_activity_count": 12,
+    "repetitions_per_activity": 5,
+    "positive_sequence_count": 100,
+    "negative_sequence_count": 60,
+    "positive_prevalence": 0.625
+  },
+  "primary_endpoint": {
+    "name": "primary_best_rx_power_excursion_db",
+    "direction": "higher_values_indicate_blockage_event",
+    "confirmatory": true
+  },
+  "secondary_endpoints": {
+    "names": [
+      "deep_fade_occupancy_3db",
+      "maximum_contiguous_deep_fade_fraction",
+      "rx_beam_entropy_excursion",
+      "temporal_coherence_excursion",
+      "frequency_selectivity_excursion_db",
+      "mean_rx_beam_switch_rate",
+      "power_volatility_q95_db"
+    ],
+    "confirmatory": false,
+    "direction": "No directional alternative was fixed in Stage 59D; therefore all secondary permutation tests are two-sided.",
+    "multiplicity_adjustment": "Holm across the seven secondary endpoints"
+  },
+  "activity_aggregation": {
+    "method": "median across the five repetitions",
+    "grouping_key": "activity",
+    "aggregation_performed_after_label_join": true,
+    "missing_repetition_policy": "analysis failure; no imputation"
+  },
+  "reported_discrimination_metrics": {
+    "sequence_level": [
+      "AUROC",
+      "average_precision"
+    ],
+    "activity_level": [
+      "AUROC computed from the 32 activity-level median endpoint values"
+    ],
+    "score_orientation": "Raw endpoint orientation is preserved; scores are never multiplied by minus one after labels are observed.",
+    "average_precision_baseline": 0.625,
+    "thresholded_metrics": false
+  },
+  "bootstrap_contract": {
+    "method": "stratified activity-cluster bootstrap",
+    "resamples": 10000,
+    "confidence_level": 0.95,
+    "seed": 59031,
+    "interval": "percentile interval at 2.5% and 97.5%",
+    "sampling": {
+      "positive_clusters": "Sample 20 positive activities with replacement from the 20 positive activities.",
+      "negative_clusters": "Sample 12 negative activities with replacement from the 12 negative activities.",
+      "sequence_metrics": "Retain all five repetitions for every sampled activity-cluster occurrence.",
+      "activity_metric": "Use the median endpoint value of each sampled activity-cluster occurrence.",
+      "duplicate_cluster_occurrences": "Duplicated bootstrap clusters are treated as separate resampled cluster occurrences."
+    },
+    "metrics": [
+      "sequence_level_AUROC",
+      "sequence_level_average_precision",
+      "activity_level_AUROC"
+    ],
+    "invalid_resample_policy": "Not expected under stratified sampling; any invalid resample causes analysis failure."
+  },
+  "primary_permutation_test": {
+    "endpoint": "primary_best_rx_power_excursion_db",
+    "analysis_unit": "activity-level median",
+    "test_statistic": "activity-level AUROC",
+    "permutations": 100000,
+    "seed": 59032,
+    "alternative": "positive_greater",
+    "label_permutation": "Randomly assign exactly 20 of the 32 activity clusters to the positive class and the remaining 12 to the negative class.",
+    "p_value_formula": "(1 + count(permuted_AUROC >= observed_AUROC)) / (number_of_permutations + 1)"
+  },
+  "secondary_permutation_tests": {
+    "analysis_unit": "activity-level median",
+    "test_statistic": "absolute(activity-level AUROC - 0.5)",
+    "permutations_per_endpoint": 100000,
+    "seed_rule": "59040 plus the zero-based secondary endpoint index",
+    "alternative": "two_sided",
+    "label_permutation": "Randomly assign exactly 20 positive and 12 negative activity labels.",
+    "raw_p_value_formula": "(1 + count(abs(permuted_AUROC - 0.5) >= abs(observed_AUROC - 0.5))) / (number_of_permutations + 1)",
+    "adjustment": "Holm family-wise correction over seven tests"
+  },
+  "effect_size": {
+    "name": "Cliff's delta",
+    "analysis_unit": "activity-level median",
+    "orientation": "positive activities minus negative activities",
+    "formula": "(number of positive-negative pairs with positive value greater than negative value minus number with lower value) divided by 20 times 12",
+    "ties": "zero contribution"
+  },
+  "descriptive_statistics": {
+    "sequence_level_by_class": [
+      "count",
+      "median",
+      "interquartile range"
+    ],
+    "activity_level_by_class": [
+      "count",
+      "median",
+      "interquartile range"
+    ],
+    "printed_before_analysis_completion": false
+  },
+  "execution_order": [
+    "Verify frozen dataset, feature, endpoint, protocol, and contract hashes.",
+    "Read the frozen endpoint table and frozen opaque lineage table.",
+    "Read the Stage 59A author-defined label manifest for the first time.",
+    "Join labels by filename through the frozen lineage table.",
+    "Verify 160 one-to-one joins, 32 activities, five repetitions per activity, 100 positive and 60 negative sequences.",
+    "Compute all fixed descriptive and discrimination metrics.",
+    "Run fixed bootstrap and permutation analyses.",
+    "Write all results without endpoint selection, threshold fitting, or sample exclusion."
+  ],
+  "failure_conditions": [
+    "Any source hash mismatch",
+    "Any duplicate or missing join",
+    "Any non-finite endpoint",
+    "Any activity without five repetitions",
+    "Any deviation from 20 positive and 12 negative activities",
+    "Any sequence exclusion",
+    "Any threshold fitting",
+    "Any endpoint sign reversal"
+  ],
+  "methodological_boundary": {
+    "label_manifest_opened": false,
+    "labels_joined": false,
+    "endpoint_values_printed": false,
+    "statistical_results_computed": false,
+    "models_trained": false,
+    "thresholds_selected": false,
+    "samples_excluded": false
+  },
+  "source_assets": {
+    "analysis_protocol_path": "/root/phyguard_revision/configs/kuleuven_signal_analysis_protocol_v1.json",
+    "analysis_protocol_sha256": "aff284b0891b8e428ed0bd23e0f66dd6be02c4e587f3132c60286f528a3dcacc",
+    "endpoint_summary_path": "/root/phyguard_revision/artifacts/kuleuven_unlabeled_endpoints_v1/summary.json",
+    "endpoint_summary_sha256": "5806c0e0c0cc5443cb0ae5c3f048f056ceb3bd4afa35c9f4809c78b661072f18",
+    "endpoint_manifest_path": "/root/phyguard_revision/manifests/kuleuven_unlabeled_endpoints_v1.json",
+    "endpoint_manifest_sha256": "7b452fb3f4e0648fda6be1dd1c3ddde8875ccfc88f096b5d48601d695270398c"
+  }
+}

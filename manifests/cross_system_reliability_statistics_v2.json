@@ -1,0 +1,29 @@
+{
+  "schema": "phyguard.cross_system_reliability_statistics_manifest.v2",
+  "status": "PASS",
+  "protocol_sha256": "9910235765ed4926fc9071b3f2ef38106194c7548142f64051c23eab25479503",
+  "source_effects_sha256": "20bae03952efe1407b6d8f76ea399ab9c0d942d110c239c7586a8a62838d3dde",
+  "sionna_effects_sha256": "295b19df816362e81872bfea1bdb37abe7c6038a78f0752d4b143e9d74287d9e",
+  "sionna_subgroups_sha256": "70f93b370afc8413d5e8d33293ce27bf343857c7298d778b19390343aeb9d67e",
+  "zenodo_file_effects_sha256": "25ab11624e025c4da39a5a830f7e92a6e3074ddb6063267e0ae12529596e3aab",
+  "zenodo_secondary_sha256": "aabdd1bb49acc525386b5721a7ba4c27eaf81219f0f6db50f2a0c8571f55d094",
+  "distributions_sha256": "198f41263141c6ee0ae0ac7b1bc40b94e94a845f93d0abf082078a56d629cb28",
+  "summary_sha256": "aa6c34e71646377db839b371a4178424872070d1d728a6f969c962372f317051",
+  "cross_system_classification": "FULL_DIRECTIONAL_SUPPORT",
+  "methodological_boundary": {
+    "source_kpi_values_analyzed": true,
+    "sionna_kpi_values_analyzed": true,
+    "zenodo_data_rows_read": true,
+    "endpoint_directions_changed": false,
+    "zenodo_mcs_control_method_amended_before_outcome_analysis": true,
+    "zenodo_mcs_rounded": false,
+    "zenodo_mcs_binned": false,
+    "analysis_subset_changed": false,
+    "recording_files_removed_posthoc": false,
+    "temporal_lag_selected": false,
+    "smoothing_applied": false,
+    "thresholds_selected": false,
+    "models_trained": false,
+    "secondary_promoted_to_primary": false
+  }
+}

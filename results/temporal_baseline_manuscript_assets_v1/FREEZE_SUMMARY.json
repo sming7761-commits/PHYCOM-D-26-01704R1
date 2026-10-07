@@ -1,0 +1,54 @@
+{
+  "schema": "phyguard.temporal_baselines_final_freeze.v1",
+  "created_at_utc": "2026-08-01T01:11:58.198747+00:00",
+  "status": "PASS",
+  "model_count": 14,
+  "repeat_count": 5,
+  "task_count": 70,
+  "test_rows_per_repeat": 216,
+  "aligned_prediction_rows": 1080,
+  "unique_bootstrap_clusters": 726,
+  "bootstrap_replicates": 10000,
+  "phyguard_metrics": {
+    "selected_accuracy": {
+      "mean": 0.9431826836122584,
+      "std": 0.0135798674322802
+    },
+    "coverage": {
+      "mean": 0.8319444444444445,
+      "std": 0.0261317885030927
+    },
+    "false_specific_rate": {
+      "mean": 0.0555555555555555,
+      "std": 0.0175682092231576
+    },
+    "physical_exact_match": {
+      "mean": 0.7847222222222221,
+      "std": 0.028122856571273
+    },
+    "control_abstention": {
+      "mean": 0.9444444444444444,
+      "std": 0.0175682092231576
+    }
+  },
+  "point_selected_accuracy_gain_models": [
+    "MINIROCKET",
+    "MULTIROCKET",
+    "MULTIROCKET_HYDRA",
+    "TCN"
+  ],
+  "supported_baseline_selected_accuracy_advantage_models": [],
+  "pareto_dominators_core_three": [],
+  "pareto_dominators_full_five": [],
+  "main_table_models": [
+    "PhyGuard",
+    "MINIROCKET",
+    "MULTIROCKET_HYDRA",
+    "FCN1D",
+    "INCEPTIONTIME_LITE",
+    "TCN",
+    "BILSTM",
+    "TINY_TRANSFORMER"
+  ],
+  "formal_hardware": "NVIDIA GeForce RTX 3080 10 GB"
+}

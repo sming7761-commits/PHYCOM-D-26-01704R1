@@ -1,0 +1,19 @@
+{
+  "symbols": {
+    "T": "number of time points in the candidate sequence",
+    "K": "number of KPI channels",
+    "F_g": "gate feature dimension",
+    "M": "number of trees in the Extra Trees resolver",
+    "D": "mean tree traversal depth",
+    "N": "number of candidate intervals in an inference batch"
+  },
+  "evidence_extraction_time": "O(TK)",
+  "gate_inference_time_per_interval": "O(F_g)",
+  "resolver_inference_time_per_interval": "O(MD)",
+  "total_time_per_interval": "O(TK + F_g + MD)",
+  "simplified_total_time": "O(TK + MD)",
+  "input_working_memory": "O(TK)",
+  "evidence_vector_memory": "O(F)",
+  "model_storage": "O(F_g) for the logistic gate plus O(total resolver tree nodes) for Extra Trees.",
+  "scope_boundary": "The complexity claim applies to diagnosis conditioned on an already identified candidate interval; upstream anomaly localization is outside this benchmark."
+}

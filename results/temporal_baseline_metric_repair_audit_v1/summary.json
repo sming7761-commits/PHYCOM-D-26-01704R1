@@ -1,0 +1,119 @@
+{
+  "schema": "phyguard.temporal_baseline_metric_repair_audit.v1",
+  "created_at_utc": "2026-08-01T00:33:10.306477+00:00",
+  "status": "PASS",
+  "scientific_status": "V1_METRICS_REQUIRE_REPAIR_BEFORE_FREEZE",
+  "detected_abstain_token": "ABSTAIN",
+  "abstain_token_detection_records": [
+    {
+      "candidate": "ABSTAIN",
+      "coverage": 0.0,
+      "metrics": {
+        "selected_accuracy": 0.0,
+        "coverage": 0.0,
+        "false_specific_rate": 0.0,
+        "macro_f1": 0.0,
+        "balanced_accuracy": 0.0
+      }
+    },
+    {
+      "candidate": "], dtype=object)\nABSTAIN = ",
+      "coverage": 1.0,
+      "metrics": {
+        "selected_accuracy": 0.0,
+        "coverage": 1.0,
+        "false_specific_rate": 1.0,
+        "macro_f1": 0.0,
+        "balanced_accuracy": 0.0
+      }
+    },
+    {
+      "candidate": "\n\n\ndef selective_metrics(y_true: Iterable[str], y_pred: Iterable[str]) -> dict[str, float]:\n    y = np.asarray(y_true, dtype=object)\n    pred = np.asarray(y_pred, dtype=object)\n    physical = np.isin(y, PHYS)\n    control = ~physical\n    emitted = pred != ABSTAIN\n\n    selected_accuracy = (\n        float(np.mean(pred[physical & emitted] == y[physical & emitted]))\n        if np.any(physical & emitted)\n        else 0.0\n    )\n    coverage = float(np.mean(emitted[physical])) if np.any(physical) else 0.0\n    false_specific_rate = float(np.mean(emitted[control])) if np.any(control) else 0.0\n    macro_f1 = float(\n        f1_score(y[physical], pred[physical], labels=list(PHYS), average=",
+      "coverage": 1.0,
+      "metrics": {
+        "selected_accuracy": 0.0,
+        "coverage": 1.0,
+        "false_specific_rate": 1.0,
+        "macro_f1": 0.0,
+        "balanced_accuracy": 0.0
+      }
+    },
+    {
+      "candidate": "\n    gate_grid = np.round(np.linspace(0.05, 0.95, 19), 2) if gate_grid is None else gate_grid\n    mechanism_grid = np.round(np.linspace(0.05, 0.95, 19), 2) if mechanism_grid is None else mechanism_grid\n    rows: list[dict] = []\n    for tau_g in gate_grid:\n        for tau_c in mechanism_grid:\n            pred = np.where(\n                (gate_confidence >= tau_g) & (mechanism_confidence >= tau_c),\n                labels,\n                ABSTAIN,\n            )\n            met = selective_metrics(y_val, pred)\n            feasible = (\n                met[",
+      "coverage": 1.0,
+      "metrics": {
+        "selected_accuracy": 0.0,
+        "coverage": 1.0,
+        "false_specific_rate": 1.0,
+        "macro_f1": 0.0,
+        "balanced_accuracy": 0.0
+      }
+    },
+    {
+      "candidate": "],\n            ),\n        )\n    return best, rows\n\n\ndef single_threshold_rows(\n    y_val: np.ndarray,\n    labels: np.ndarray,\n    confidence: np.ndarray,\n    thresholds: np.ndarray,\n    fsr_max: float = 0.05,\n    selected_accuracy_min: float = 0.90,\n) -> tuple[dict, list[dict]]:\n    rows: list[dict] = []\n    for tau in thresholds:\n        pred = np.where(confidence >= tau, labels, ABSTAIN)\n        met = selective_metrics(y_val, pred)\n        feasible = (\n            met[",
+      "coverage": 1.0,
+      "metrics": {
+        "selected_accuracy": 0.0,
+        "coverage": 1.0,
+        "false_specific_rate": 1.0,
+        "macro_f1": 0.0,
+        "balanced_accuracy": 0.0
+      }
+    },
+    {
+      "candidate": "abstain",
+      "coverage": 1.0,
+      "metrics": {
+        "selected_accuracy": 0.0,
+        "coverage": 1.0,
+        "false_specific_rate": 1.0,
+        "macro_f1": 0.0,
+        "balanced_accuracy": 0.0
+      }
+    },
+    {
+      "candidate": "Abstain",
+      "coverage": 1.0,
+      "metrics": {
+        "selected_accuracy": 0.0,
+        "coverage": 1.0,
+        "false_specific_rate": 1.0,
+        "macro_f1": 0.0,
+        "balanced_accuracy": 0.0
+      }
+    },
+    {
+      "candidate": "__ABSTAIN__",
+      "coverage": 1.0,
+      "metrics": {
+        "selected_accuracy": 0.0,
+        "coverage": 1.0,
+        "false_specific_rate": 1.0,
+        "macro_f1": 0.0,
+        "balanced_accuracy": 0.0
+      }
+    }
+  ],
+  "task_count": 70,
+  "prediction_count": 15120,
+  "changed_prediction_count": 6880,
+  "changed_prediction_fraction": 0.455026455026455,
+  "old_metric_red_flags": {
+    "all_70_coverages_equal_one": true,
+    "all_70_false_specific_rates_equal_zero": false
+  },
+  "corrected_coverage_range": [
+    0.0,
+    0.9791666666666666
+  ],
+  "retraining_required": false,
+  "threshold_reselection_required": false,
+  "threshold_reason": "Validation thresholds were selected by the existing single_threshold_rows helper. The defect is confined to the runner's test-time mapping, which wrote 'normal' instead of the helper-compatible abstention token.",
+  "formal_hardware": "NVIDIA GeForce RTX 3080 10 GB",
+  "outputs": {
+    "corrected_per_repeat_metrics": "artifacts/temporal_baseline_metric_repair_audit_v1/corrected_per_repeat_metrics.csv",
+    "corrected_aggregate_metrics": "artifacts/temporal_baseline_metric_repair_audit_v1/corrected_aggregate_metrics.csv",
+    "old_vs_corrected_metrics": "artifacts/temporal_baseline_metric_repair_audit_v1/old_vs_corrected_metrics.csv",
+    "corrected_predictions": "artifacts/temporal_baseline_metric_repair_audit_v1/corrected_predictions.csv"
+  }
+}

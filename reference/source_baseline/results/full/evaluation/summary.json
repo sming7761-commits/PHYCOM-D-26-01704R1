@@ -1,0 +1,24 @@
+{
+  "selected_accuracy": {
+    "mean": 0.9431826836122583,
+    "std": 0.013579867432280275
+  },
+  "coverage": {
+    "mean": 0.8319444444444445,
+    "std": 0.026131788503092765
+  },
+  "false_specific_rate": {
+    "mean": 0.05555555555555556,
+    "std": 0.017568209223157664
+  },
+  "macro_f1": {
+    "mean": 0.8558496033643058,
+    "std": 0.020063419315642435
+  },
+  "balanced_accuracy": {
+    "mean": 0.7847222222222222,
+    "std": 0.02812285657127302
+  },
+  "all_validation_operating_points_feasible": true,
+  "n_sequences": 1080
+}

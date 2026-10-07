@@ -1,0 +1,224 @@
+{
+  "schema": "phyguard.physics_sensitivity_protocol.v1",
+  "created_at_utc": "2026-08-01T01:31:38.145186+00:00",
+  "status": "LOCKED_BEFORE_PHYSICS_SENSITIVITY_EXECUTION",
+  "checkpoint": "PhyGuard_R0_Reconstruction_Checkpoint2",
+  "scientific_question": "How sensitive is the revision-time locked PhyGuard reconstruction to the actual physics-score shape, implicit evidence weight, explicit mismatch penalty, and selective operating-policy constraints present in source?",
+  "actual_source_interfaces": {
+    "physics_score_shape": {
+      "parameter": "phi_scale",
+      "source_expression": "exp(-abs(q)/s)",
+      "baseline": 1.5
+    },
+    "implicit_evidence_weight": {
+      "parameter": "adapt_gap_weight",
+      "source_expression": "adapt_gap_z = adapt_gap_weight * adapt_gap / 0.75",
+      "baseline": 1.0,
+      "interpretation": "A transparent multiplicative reparameterization of the existing adapt_gap/0.75 scaling."
+    },
+    "explicit_penalty": {
+      "parameter": "mismatch_mcs_drop_penalty",
+      "source_expression": "-gamma * pos(mcs_drop)",
+      "baseline": 0.35
+    },
+    "selection_policy": {
+      "fsr_max_baseline": 0.05,
+      "selected_accuracy_min_baseline": 0.9,
+      "fallback_penalty": "normalized violation of both constraints"
+    }
+  },
+  "excluded_noninterfaces": {
+    "simulator_beta_0_18": "Excluded because it is a data-simulator parameter rather than a PhyGuard score, weight, penalty, or inference parameter.",
+    "global_physical_block_scale": "Not selected as a primary factor because the gate includes StandardScaler and the ExtraTrees resolver is invariant to monotone feature rescaling; a global block multiplier would not constitute an informative sensitivity factor."
+  },
+  "design": {
+    "formula_design": "one_factor_at_a_time",
+    "formula_variants": [
+      {
+        "variant_id": "DEFAULT",
+        "factor": "default",
+        "phi_scale": 1.5,
+        "adapt_gap_weight": 1.0,
+        "mismatch_mcs_drop_penalty": 0.35
+      },
+      {
+        "variant_id": "PHI_SCALE_1p0",
+        "factor": "phi_scale",
+        "phi_scale": 1.0,
+        "adapt_gap_weight": 1.0,
+        "mismatch_mcs_drop_penalty": 0.35
+      },
+      {
+        "variant_id": "PHI_SCALE_1p25",
+        "factor": "phi_scale",
+        "phi_scale": 1.25,
+        "adapt_gap_weight": 1.0,
+        "mismatch_mcs_drop_penalty": 0.35
+      },
+      {
+        "variant_id": "PHI_SCALE_2p0",
+        "factor": "phi_scale",
+        "phi_scale": 2.0,
+        "adapt_gap_weight": 1.0,
+        "mismatch_mcs_drop_penalty": 0.35
+      },
+      {
+        "variant_id": "PHI_SCALE_2p5",
+        "factor": "phi_scale",
+        "phi_scale": 2.5,
+        "adapt_gap_weight": 1.0,
+        "mismatch_mcs_drop_penalty": 0.35
+      },
+      {
+        "variant_id": "ADAPT_GAP_WEIGHT_0p5",
+        "factor": "adapt_gap_weight",
+        "phi_scale": 1.5,
+        "adapt_gap_weight": 0.5,
+        "mismatch_mcs_drop_penalty": 0.35
+      },
+      {
+        "variant_id": "ADAPT_GAP_WEIGHT_0p75",
+        "factor": "adapt_gap_weight",
+        "phi_scale": 1.5,
+        "adapt_gap_weight": 0.75,
+        "mismatch_mcs_drop_penalty": 0.35
+      },
+      {
+        "variant_id": "ADAPT_GAP_WEIGHT_1p25",
+        "factor": "adapt_gap_weight",
+        "phi_scale": 1.5,
+        "adapt_gap_weight": 1.25,
+        "mismatch_mcs_drop_penalty": 0.35
+      },
+      {
+        "variant_id": "ADAPT_GAP_WEIGHT_1p5",
+        "factor": "adapt_gap_weight",
+        "phi_scale": 1.5,
+        "adapt_gap_weight": 1.5,
+        "mismatch_mcs_drop_penalty": 0.35
+      },
+      {
+        "variant_id": "MCS_DROP_PENALTY_0p0",
+        "factor": "mismatch_mcs_drop_penalty",
+        "phi_scale": 1.5,
+        "adapt_gap_weight": 1.0,
+        "mismatch_mcs_drop_penalty": 0.0
+      },
+      {
+        "variant_id": "MCS_DROP_PENALTY_0p175",
+        "factor": "mismatch_mcs_drop_penalty",
+        "phi_scale": 1.5,
+        "adapt_gap_weight": 1.0,
+        "mismatch_mcs_drop_penalty": 0.175
+      },
+      {
+        "variant_id": "MCS_DROP_PENALTY_0p525",
+        "factor": "mismatch_mcs_drop_penalty",
+        "phi_scale": 1.5,
+        "adapt_gap_weight": 1.0,
+        "mismatch_mcs_drop_penalty": 0.525
+      },
+      {
+        "variant_id": "MCS_DROP_PENALTY_0p7",
+        "factor": "mismatch_mcs_drop_penalty",
+        "phi_scale": 1.5,
+        "adapt_gap_weight": 1.0,
+        "mismatch_mcs_drop_penalty": 0.7
+      }
+    ],
+    "formula_variant_count": 13,
+    "repeat_seeds": [
+      20260705,
+      20260706,
+      20260707,
+      20260708,
+      20260709
+    ],
+    "training_task_count": 65,
+    "threshold_policy_grid": [
+      {
+        "policy_id": "FSR_0p025__SA_0p85",
+        "fsr_max": 0.025,
+        "selected_accuracy_min": 0.85,
+        "is_default": false
+      },
+      {
+        "policy_id": "FSR_0p025__SA_0p9",
+        "fsr_max": 0.025,
+        "selected_accuracy_min": 0.9,
+        "is_default": false
+      },
+      {
+        "policy_id": "FSR_0p025__SA_0p95",
+        "fsr_max": 0.025,
+        "selected_accuracy_min": 0.95,
+        "is_default": false
+      },
+      {
+        "policy_id": "FSR_0p05__SA_0p85",
+        "fsr_max": 0.05,
+        "selected_accuracy_min": 0.85,
+        "is_default": false
+      },
+      {
+        "policy_id": "FSR_0p05__SA_0p9",
+        "fsr_max": 0.05,
+        "selected_accuracy_min": 0.9,
+        "is_default": true
+      },
+      {
+        "policy_id": "FSR_0p05__SA_0p95",
+        "fsr_max": 0.05,
+        "selected_accuracy_min": 0.95,
+        "is_default": false
+      },
+      {
+        "policy_id": "FSR_0p1__SA_0p85",
+        "fsr_max": 0.1,
+        "selected_accuracy_min": 0.85,
+        "is_default": false
+      },
+      {
+        "policy_id": "FSR_0p1__SA_0p9",
+        "fsr_max": 0.1,
+        "selected_accuracy_min": 0.9,
+        "is_default": false
+      },
+      {
+        "policy_id": "FSR_0p1__SA_0p95",
+        "fsr_max": 0.1,
+        "selected_accuracy_min": 0.95,
+        "is_default": false
+      }
+    ],
+    "threshold_policy_count": 9,
+    "threshold_policy_scope": "Applied to the DEFAULT formula variant without refitting the models; validation predictions select tau and locked test predictions report the operating point."
+  },
+  "primary_metrics": [
+    "selected_accuracy",
+    "coverage",
+    "false_specific_rate",
+    "physical_exact_match",
+    "control_abstention"
+  ],
+  "secondary_metrics": [
+    "macro_f1",
+    "balanced_accuracy"
+  ],
+  "reporting": {
+    "all_formula_variants_reported": true,
+    "all_threshold_policies_reported": true,
+    "outcome_based_omission": false,
+    "primary_summary": "mean and population standard deviation over five locked repeats",
+    "paired_uncertainty": "paired original-sample cluster bootstrap against DEFAULT for each non-default formula variant",
+    "claim_boundary": "The experiment evaluates robustness of the revision-time locked reconstruction. It does not establish that the unavailable original submission code used tunable weights."
+  },
+  "methodological_boundary": {
+    "models_fitted": false,
+    "predictions_generated": false,
+    "performance_metrics_computed": false,
+    "parameters_changed_in_source": false,
+    "test_results_viewed": false
+  },
+  "formal_hardware": "NVIDIA GeForce RTX 3080 10 GB"
+}

@@ -1,0 +1,159 @@
+{
+  "schema": "phyguard.per_indicator_ablation_protocol.v1",
+  "created_at_utc": "2026-07-31T13:51:43.719906+00:00",
+  "status": "LOCKED_BEFORE_PER_INDICATOR_ABLATION_EXECUTION",
+  "purpose": "Determine whether PhyGuard's selective-diagnosis performance is materially dependent on the revision-time locked 48-bit uncoded packet-error proxy, while preserving the BER evidence channel.",
+  "scientific_question": "Does the packet/block-error indicator contribute through the raw statistical branch, the physics-score branch, both branches, or neither?",
+  "factorial_design": {
+    "design": "2x2",
+    "factor_raw_packet_block_error_feature": [
+      "PRESENT",
+      "ABSENT"
+    ],
+    "factor_physics_packet_block_error_term": [
+      "PRESENT",
+      "ABSENT"
+    ],
+    "variants": [
+      {
+        "variant_id": "FULL",
+        "raw_packet_block_error_feature": true,
+        "physics_packet_block_error_term": true,
+        "ber_feature_and_terms": "UNCHANGED",
+        "description": "Locked full reconstructed pipeline. The source-domain raw indicator is per_proxy; the coded Sionna counterpart is bler_post_ldpc."
+      },
+      {
+        "variant_id": "NO_PER_RAW",
+        "raw_packet_block_error_feature": false,
+        "physics_packet_block_error_term": true,
+        "ber_feature_and_terms": "UNCHANGED",
+        "description": "Remove per_proxy/bler_post_ldpc only from the raw statistical/model-input branch. Preserve the corresponding physics-score term."
+      },
+      {
+        "variant_id": "NO_PER_SCORE",
+        "raw_packet_block_error_feature": true,
+        "physics_packet_block_error_term": false,
+        "ber_feature_and_terms": "UNCHANGED",
+        "description": "Retain per_proxy/bler_post_ldpc in the raw statistical/model-input branch, but set its physics-score contribution to zero."
+      },
+      {
+        "variant_id": "NO_ERROR_INDICATOR",
+        "raw_packet_block_error_feature": false,
+        "physics_packet_block_error_term": false,
+        "ber_feature_and_terms": "UNCHANGED",
+        "description": "Remove the packet/block-error indicator from both raw and physics-score paths. BER remains unchanged. This is the combined 2x2 factorial corner and is not a removal of the whole BER evidence family."
+      }
+    ],
+    "fixed_channel": "BER is retained unchanged in every variant. Source name: ber. Sionna name: ber_pre_ldpc.",
+    "semantic_mapping": {
+      "source_packet_error_indicator": "per_proxy",
+      "sionna_packet_error_indicator": "bler_post_ldpc",
+      "source_bit_error_indicator": "ber",
+      "sionna_bit_error_indicator": "ber_pre_ldpc"
+    }
+  },
+  "frozen_assets": {
+    "locked_reconstruction_archive": {
+      "path": "results/phyguard_sionna_formal825_locked_reconstruction_final.zip",
+      "sha256": "5d08fc3b8265789819b0f49c1f93a9c79c8fe44ce7ec4aec8f1fa603a08c241b"
+    },
+    "causal_archive": {
+      "path": "results/phyguard_sionna_formal_test840_causal_final.zip",
+      "sha256": "b6c5f400b7d55949fb1e1f39c0c092da8f780eed100866f30176e26e462ff2f5"
+    },
+    "cross_system_reliability_archive": {
+      "path": "results/phyguard_cross_system_reliability_statistics_v2_final.zip",
+      "sha256": "c6d9ee842f5a490160b92ab34f786be2e2c4267402e986c616a17d577fcfc359"
+    },
+    "sionna_analysis_membership": {
+      "path": "artifacts/cross_system_reliability_metadata_contract_v1/sionna_analysis825_ids.txt",
+      "sha256": "a8aa74f95df897a57c82f60ea0d2f23353eaa023ec0446b079dd8a88d7de462a",
+      "sample_count": 825
+    }
+  },
+  "execution_contract": {
+    "pipeline": "Use the same revision-time locked reconstruction pipeline and the same frozen 825-sample Sionna evaluation path. Alter only the two preregistered packet/block-error masks.",
+    "repeat_bundles": 5,
+    "model_training": "Refit the gate and resolver separately for each factorial variant using the exact same training/validation memberships and random seeds as FULL.",
+    "threshold_selection": "Any gate, confidence, or abstention threshold must be selected using validation data only. No test-set threshold adjustment is allowed.",
+    "feature_dimensionality": "When a raw feature is absent, remove it from both training and inference rather than replacing it with its test-set mean. Feature order for all retained channels must remain unchanged.",
+    "score_masking": "When the packet/block-error physics term is absent, set only that term's contribution to zero. Do not renormalize remaining weights unless the frozen implementation already performs a deterministic normalization that is identical across all variants.",
+    "no_model_selection": "All four variants must be executed and reported. No variant may be dropped based on performance."
+  },
+  "primary_endpoint": {
+    "metric": "selected_accuracy",
+    "comparison": "For each ablation, compute paired absolute difference: ablation minus FULL.",
+    "aggregation": "Report mean and standard deviation across the five locked repeat bundles, plus a paired sample-cluster bootstrap interval.",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed_source": 62011,
+    "bootstrap_seed_sionna": 62021,
+    "practical_retention_margin": -0.05,
+    "retention_rule": "The ablation retains the primary endpoint when the lower bound of the paired 95% bootstrap interval is greater than -0.05.",
+    "interpretation": "The -0.05 margin is a preregistered practical retention threshold, not a regulatory or clinical non-inferiority claim."
+  },
+  "secondary_endpoints": [
+    "physical_selection_rate",
+    "false_specific_rate",
+    "macro_f1",
+    "balanced_accuracy",
+    "physical_exact_match",
+    "control_abstention",
+    "coverage"
+  ],
+  "mandatory_outputs": [
+    "variant-level metrics for all five repeat bundles",
+    "paired per-sample prediction table",
+    "paired deltas versus FULL",
+    "95% paired-bootstrap intervals",
+    "2x2 factorial main effects",
+    "2x2 interaction effect",
+    "class-wise selected accuracy",
+    "mechanism-wise physical exact match",
+    "control abstention",
+    "training time",
+    "inference time",
+    "retained feature names",
+    "active physics-score terms"
+  ],
+  "factorial_effects": {
+    "raw_path_main_effect": "Average contrast between raw indicator PRESENT and ABSENT across score-term levels.",
+    "score_path_main_effect": "Average contrast between physics score term PRESENT and ABSENT across raw-feature levels.",
+    "interaction": "Difference-in-differences between raw-feature and score-term factors.",
+    "reporting": "Report effect sizes and paired-bootstrap intervals; do not use the interaction to select or suppress variants."
+  },
+  "classification_rules": {
+    "PACKET_BLOCK_ERROR_INDICATOR_NOT_ESSENTIAL": "NO_ERROR_INDICATOR retains selected accuracy within the -0.05 margin on both the locked reconstruction evaluation and frozen Sionna evaluation.",
+    "PATH_SPECIFIC_DEPENDENCE": "NO_ERROR_INDICATOR fails retention, but exactly one of NO_PER_RAW or NO_PER_SCORE retains the primary endpoint on both systems.",
+    "DISTRIBUTED_DEPENDENCE": "NO_ERROR_INDICATOR fails retention, while both single-path ablations retain the primary endpoint on both systems.",
+    "STRONG_INDICATOR_DEPENDENCE": "NO_ERROR_INDICATOR and both single-path ablations fail the retention rule on either system.",
+    "MIXED_OR_INCONCLUSIVE": "Any result pattern not covered above, including materially different source and Sionna conclusions."
+  },
+  "claim_boundaries": [
+    "The experiment evaluates dependence on the packet/block-error indicator, not calibration equivalence between per_proxy and coded BLER.",
+    "BER remains present in all four variants; NO_ERROR_INDICATOR must not be described as removing every error-related KPI.",
+    "A retained ablation supports architectural robustness, not proof that the removed signal is physically meaningless.",
+    "A performance decline supports dependence, not proof of data leakage or self-fulfilling labels."
+  ],
+  "prohibited_posthoc_actions": [
+    "changing the -0.05 retention margin",
+    "changing bootstrap seeds or replicate count",
+    "retuning thresholds on test data",
+    "renormalizing score weights only for favorable variants",
+    "dropping a variant",
+    "redefining NO_ERROR_INDICATOR after observing results",
+    "removing BER from only selected variants",
+    "changing the frozen 825-sample membership",
+    "changing label definitions",
+    "changing repeat memberships or random seeds",
+    "reporting only the better of source and Sionna results"
+  ],
+  "methodological_boundary": {
+    "kpi_values_opened": false,
+    "models_trained": false,
+    "predictions_generated": false,
+    "performance_metrics_computed": false,
+    "thresholds_selected": false,
+    "test_results_viewed": false,
+    "code_and_schema_tokens_audited": true
+  }
+}

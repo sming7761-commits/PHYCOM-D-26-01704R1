@@ -1,0 +1,121 @@
+{
+  "schema": "phyguard.sionna.formal825.upstream_detector_protocol.v1",
+  "status": "LOCKED",
+  "purpose": "Evaluate sensitivity of the locked PhyGuard diagnostic pipeline to non-oracle upstream candidate intervals on the 825 causal-valid Formal Test samples.",
+  "lock_timing": "Protocol and source-fitted IsolationForest were frozen before any Formal825 detector proposal or detector-conditioned diagnostic result was generated.",
+  "formal_scope": {
+    "preregistered_sample_count": 840,
+    "artifact_qc_eligible_count": 839,
+    "causal_valid_sample_count": 825,
+    "formal_sample_selection_rule": "causal_v2_status == PASS"
+  },
+  "detectors": {
+    "robust_energy": {
+      "fitting": "None",
+      "reference_prefix_frames": 24,
+      "standardization": "Per-sequence median and MAD over the first 24 frames; scale=1.4826*MAD+1e-6; z clipped to [-10,10].",
+      "frame_score": "sqrt(mean(z^2 across 10 KPIs))"
+    },
+    "pca_reconstruction": {
+      "fitting": "Per-sequence unsupervised PCA fitted only on the first 24 reference frames.",
+      "n_components": 5,
+      "svd_solver": "full",
+      "frame_score": "Mean squared reconstruction error across 10 KPIs.",
+      "formal_label_access": false,
+      "formal_event_interval_access": false
+    },
+    "isolation_forest": {
+      "fitting": "Exactly once on R0 source-domain standardized reference-prefix frames.",
+      "formal_test_fitting": false,
+      "source_sequence_count": 1080,
+      "reference_frames_per_sequence": 24,
+      "source_prefix_frame_count": 25920,
+      "source_prefix_contract_sha256": "2f3f6c0a339ba5164157b9a7c0d5968951d21812a4bcaa40d0cd7dffb1ce22f8",
+      "n_estimators": 200,
+      "max_samples": 4096,
+      "contamination": "auto",
+      "random_state": 20260705,
+      "n_jobs": -1,
+      "model_path": "/root/phyguard_revision/artifacts/frozen_upstream_detectors/formal825_source_fitted_isolation_forest_v1.joblib",
+      "model_sha256": "9ad52cf66ffff12f423959db37ff9ed7c5d7292d620023c531217c42c5040dd1",
+      "frame_score": "-score_samples(z)"
+    }
+  },
+  "candidate_interval_rule": {
+    "sequence_length": 80,
+    "reference_prefix_frames": 24,
+    "candidate_window_frames": 24,
+    "earliest_candidate_start": 24,
+    "latest_candidate_start": 56,
+    "selection": "Select the first 24-frame window attaining the maximum mean detector score.",
+    "tie_breaking": "Earliest start through numpy.argmax."
+  },
+  "locked_downstream_pipeline": {
+    "feature_builder": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/scripts/features.py",
+    "feature_builder_sha256": "b665765bbdb317f0568d77a5004e41075e4a2e037fc5f6caa8102f6c932fc4f7",
+    "feature_dimensions": {
+      "raw": 60,
+      "physical": 19,
+      "combined": 79
+    },
+    "model_repeat_count": 5,
+    "operating_points_modified": false,
+    "models_modified": false
+  },
+  "evaluation_plan": {
+    "proposal_metrics": [
+      "interval IoU",
+      "mean IoU for physical anomalies",
+      "event recall at IoU >= 0.3",
+      "event recall at IoU >= 0.5",
+      "absolute start error",
+      "absolute end error"
+    ],
+    "stratification": [
+      "detector",
+      "label",
+      "severity",
+      "channel_model",
+      "detector x severity",
+      "detector x label"
+    ],
+    "diagnostic_comparison": [
+      "locked-event-interval diagnosis",
+      "detector-proposed-interval diagnosis",
+      "difference in physical selection rate",
+      "difference in selected accuracy",
+      "difference in exact diagnosis rate",
+      "difference in control abstention rate"
+    ],
+    "association_analysis": [
+      "IoU versus exact diagnosis",
+      "IoU versus selection",
+      "IoU versus abstention",
+      "mild versus moderate versus severe"
+    ],
+    "confidence_intervals": "Sample-cluster bootstrap with all five locked model repeats kept together.",
+    "bootstrap_repetitions": 10000,
+    "bootstrap_seed": 20260731
+  },
+  "decision_rules": {
+    "primary_detectors": [
+      "robust_energy",
+      "pca_reconstruction",
+      "isolation_forest"
+    ],
+    "detector_selection_after_results": false,
+    "detector_parameter_tuning": false,
+    "candidate_window_tuning": false,
+    "post_result_threshold_tuning": false,
+    "failed_sample_replacement": false,
+    "all_detector_results_reported": true
+  },
+  "claim_boundary": {
+    "upstream_detector_sensitivity_analysis": true,
+    "new_anomaly_detector_contribution": false,
+    "end_to_end_detector_training_claim": false,
+    "formal_labels_used_for_proposal_generation": false,
+    "formal_event_intervals_used_for_proposal_generation": false,
+    "formal_event_intervals_used_for_evaluation_only": true
+  }
+}

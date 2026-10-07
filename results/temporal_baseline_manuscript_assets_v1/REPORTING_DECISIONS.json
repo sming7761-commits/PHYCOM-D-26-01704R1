@@ -1,0 +1,45 @@
+{
+  "schema": "phyguard.temporal_baseline_reporting_decisions.v1",
+  "status": "FROZEN",
+  "main_table_models": [
+    "PhyGuard",
+    "MINIROCKET",
+    "MULTIROCKET_HYDRA",
+    "FCN1D",
+    "INCEPTIONTIME_LITE",
+    "TCN",
+    "BILSTM",
+    "TINY_TRANSFORMER"
+  ],
+  "main_table_basis": "Representative subset fixed in the temporal-baseline protocol before model execution.",
+  "supplementary_models": [
+    "PhyGuard",
+    "ROCKET",
+    "MINIROCKET",
+    "MULTIROCKET",
+    "HYDRA",
+    "MULTIROCKET_HYDRA",
+    "ARSENAL",
+    "FCN1D",
+    "RESNET1D",
+    "INCEPTIONTIME_LITE",
+    "LITE1D",
+    "TCN",
+    "BIGRU",
+    "BILSTM",
+    "TINY_TRANSFORMER"
+  ],
+  "outcome_based_model_omission": false,
+  "primary_comparison_metrics": [
+    "selected_accuracy",
+    "coverage",
+    "false_specific_rate",
+    "physical_exact_match",
+    "control_abstention"
+  ],
+  "primary_uncertainty_method": "10,000-replicate paired cluster bootstrap over 726 unique original sample indices.",
+  "multiplicity_adjustment": "Holm adjustment across the 14 model comparisons separately within each metric.",
+  "exact_signflip_role": "Small-sample robustness check; with five repeats the minimum nonzero two-sided p-value is 0.0625.",
+  "formal_hardware": "NVIDIA GeForce RTX 3080 10 GB",
+  "claim_boundary": "Do not claim universal accuracy superiority. Claim that no baseline Pareto-dominates PhyGuard and that point accuracy gains of the four strongest competitors trade off against higher false-specific risk and lower control abstention."
+}

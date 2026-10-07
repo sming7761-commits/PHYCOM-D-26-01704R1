@@ -1,0 +1,175 @@
+{
+  "schema": "phyguard.per_indicator_ablation_results.v1",
+  "created_at_utc": "2026-07-31T14:08:38.375165+00:00",
+  "status": "PASS",
+  "protocol_status": "LOCKED_BEFORE_PER_INDICATOR_ABLATION_EXECUTION",
+  "variants": [
+    "FULL",
+    "NO_PER_RAW",
+    "NO_PER_SCORE",
+    "NO_ERROR_INDICATOR"
+  ],
+  "feature_mask": {
+    "build_one_signature": "(x, start, end, eps=1e-06)",
+    "call_mode": "x_start_end",
+    "raw_indices": [
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "physical_indices": [
+      5
+    ],
+    "maximum_raw_differences": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      10.248861783336416,
+      6.650940409001745,
+      10.24340585126087,
+      10.852091442168025,
+      11.02711267561355,
+      0.11244597868047009,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "maximum_physical_differences": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      10.248861783336416,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "variant_shapes": {
+    "FULL": {
+      "raw_dimension": 60,
+      "physical_dimension": 19,
+      "combined_dimension": 79
+    },
+    "NO_PER_RAW": {
+      "raw_dimension": 54,
+      "physical_dimension": 19,
+      "combined_dimension": 73
+    },
+    "NO_PER_SCORE": {
+      "raw_dimension": 60,
+      "physical_dimension": 19,
+      "combined_dimension": 79
+    },
+    "NO_ERROR_INDICATOR": {
+      "raw_dimension": 54,
+      "physical_dimension": 19,
+      "combined_dimension": 73
+    }
+  },
+  "source_full_parity": {
+    "maximum_metric_difference": 0.0,
+    "prediction_mismatch_count": 0,
+    "prediction_count": 1080
+  },
+  "sionna_full_parity": {
+    "prediction_count": 4125,
+    "prediction_mismatch_count": 0
+  },
+  "retention_margin": -0.05,
+  "bootstrap_replicates": 10000,
+  "retention": {
+    "NO_PER_RAW": {
+      "source": true,
+      "sionna": true
+    },
+    "NO_PER_SCORE": {
+      "source": true,
+      "sionna": true
+    },
+    "NO_ERROR_INDICATOR": {
+      "source": true,
+      "sionna": true
+    }
+  },
+  "classification": "PACKET_BLOCK_ERROR_INDICATOR_NOT_ESSENTIAL",
+  "claim_boundary": {
+    "ber_retained_in_all_variants": true,
+    "evaluated_indicator": "source per_proxy / Sionna bler_post_ldpc",
+    "not_a_calibration_equivalence_test": true,
+    "no_test_threshold_tuning": true,
+    "source_models_refit_for_each_variant": true,
+    "sionna_models_trained_on_sionna": false
+  },
+  "files": {
+    "aggregate_variant_metrics": "aggregate_variant_metrics.csv",
+    "paired_primary_deltas": "paired_primary_deltas.csv",
+    "paired_repeat_deltas": "paired_repeat_deltas.csv",
+    "factorial_effects": "factorial_effects.csv",
+    "source_predictions": "source_predictions_all_variants.csv",
+    "sionna_predictions": "sionna_predictions_all_variants.csv",
+    "bootstrap_distributions": "paired_bootstrap_distributions.npz"
+  }
+}

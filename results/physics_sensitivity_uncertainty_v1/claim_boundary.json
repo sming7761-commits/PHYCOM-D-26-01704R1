@@ -1,0 +1,14 @@
+{
+  "schema": "phyguard.physics_sensitivity_claim_boundary.v1",
+  "status": "PASS",
+  "fixed_model_analysis": true,
+  "revision_time_locked_reconstruction": true,
+  "original_submission_binary_replay_claimed": false,
+  "trainable_physics_weights_claimed": false,
+  "test_used_for_threshold_selection": false,
+  "validation_constraint_claimed_as_test_guarantee": false,
+  "all_formula_configs_reported": true,
+  "all_threshold_policies_reported": true,
+  "confirmatory_significance_claim_allowed": false,
+  "paired_uncertainty_role": "robustness and uncertainty characterization"
+}

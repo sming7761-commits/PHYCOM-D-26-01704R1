@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv/
+venv/
+conda-meta/
+
+# Local/raw data and heavyweight artifacts
+raw_data/
+downloads/
+*.bin
+*.joblib
+*.pkl
+*.pickle
+*.pth
+*.pt
+*.onnx
+
+# Logs / temporary files
+*.log
+*.tmp
+*.temp
+*.aux
+*.bbl
+*.blg
+*.out
+*.synctex.gz
+
+# Internal project/revision material
+work/
+incoming_assets/
+*_failed_*/
+*_quarantine*/

@@ -1,0 +1,28 @@
+{
+  "schema": "phyguard.temporal_baseline_results.v1",
+  "status": "PASS",
+  "formal_hardware": "NVIDIA GeForce RTX 3080 10 GB",
+  "model_count": 14,
+  "repeat_count": 5,
+  "task_count": 70,
+  "model_ids": [
+    "ROCKET",
+    "MINIROCKET",
+    "MULTIROCKET",
+    "HYDRA",
+    "MULTIROCKET_HYDRA",
+    "ARSENAL",
+    "FCN1D",
+    "RESNET1D",
+    "INCEPTIONTIME_LITE",
+    "LITE1D",
+    "TCN",
+    "BIGRU",
+    "BILSTM",
+    "TINY_TRANSFORMER"
+  ],
+  "aggregate_metrics_path": "artifacts/temporal_baseline_results_v1/aggregate_metrics.csv",
+  "per_repeat_metrics_path": "artifacts/temporal_baseline_results_v1/per_repeat_metrics.csv",
+  "progress_path": "artifacts/temporal_baseline_results_v1/progress.json",
+  "protocol_path": "configs/temporal_baseline_protocol_v1_1.json"
+}

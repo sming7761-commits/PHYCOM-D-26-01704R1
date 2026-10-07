@@ -1,0 +1,205 @@
+{
+  "contract_name": "PhyGuard KPI Contract",
+  "contract_version": "1.1.0",
+  "purpose": "A simulator-independent software interface between wireless link generators and the frozen PhyGuard diagnosis pipeline.",
+  "sequence_shape": [
+    80,
+    10
+  ],
+  "dtype": "float32",
+  "frame_indexing": {
+    "convention": "zero_based",
+    "interval_semantics": "left_closed_right_open",
+    "valid_frame_range": [
+      0,
+      80
+    ]
+  },
+  "reference_window": {
+    "start": 0,
+    "end": 24
+  },
+  "model_input": {
+    "allowed_fields": [
+      "kpi_sequence"
+    ],
+    "forbidden_fields": [
+      "label",
+      "severity",
+      "event_start",
+      "event_end",
+      "intervention_parameters",
+      "generator_internal_state",
+      "random_seed"
+    ],
+    "label_leakage_policy": "strictly_forbidden"
+  },
+  "kpis": [
+    {
+      "index": 0,
+      "name": "rsrp_db",
+      "paper_name": "RSRP",
+      "definition": "Normalized desired reference-signal receive power expressed in dB relative to the generator reference.",
+      "unit": "dB",
+      "valid_range": [
+        -120.0,
+        40.0
+      ],
+      "absolute_calibration": false
+    },
+    {
+      "index": 1,
+      "name": "rssi_db",
+      "paper_name": "RSSI",
+      "definition": "Normalized total received power including desired signal, interference, and thermal noise.",
+      "unit": "dB",
+      "valid_range": [
+        -120.0,
+        60.0
+      ],
+      "absolute_calibration": false
+    },
+    {
+      "index": 2,
+      "name": "sinr_db",
+      "paper_name": "SINR",
+      "definition": "Desired receive power divided by interference-plus-noise power.",
+      "unit": "dB",
+      "valid_range": [
+        -40.0,
+        60.0
+      ]
+    },
+    {
+      "index": 3,
+      "name": "evm_rms",
+      "paper_name": "EVM",
+      "definition": "Root-mean-square error-vector magnitude after equalization, normalized by transmitted-symbol power.",
+      "unit": "ratio",
+      "valid_range": [
+        0.0,
+        10.0
+      ]
+    },
+    {
+      "index": 4,
+      "name": "ber_pre_ldpc",
+      "paper_name": "BER",
+      "definition": "Coded-bit error rate before LDPC decoding.",
+      "unit": "ratio",
+      "valid_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "index": 5,
+      "name": "bler_post_ldpc",
+      "paper_name": "PER/BLER",
+      "definition": "Transport/code-block error ratio after 5G LDPC decoding. This replaces the original 48-bit packet surrogate in the independent validation.",
+      "unit": "ratio",
+      "valid_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "index": 6,
+      "name": "cqi_index",
+      "paper_name": "CQI",
+      "definition": "Quantized channel-quality index derived only from estimated link quality.",
+      "unit": "index",
+      "valid_range": [
+        0.0,
+        15.0
+      ],
+      "integer_valued": true
+    },
+    {
+      "index": 7,
+      "name": "mcs_index",
+      "paper_name": "MCS",
+      "definition": "State of the delayed link-adaptation controller.",
+      "unit": "index",
+      "valid_range": [
+        0.0,
+        3.0
+      ],
+      "integer_valued": true
+    },
+    {
+      "index": 8,
+      "name": "goodput_ratio",
+      "paper_name": "Goodput",
+      "definition": "Successfully delivered information bits divided by the nominal information-bit opportunity.",
+      "unit": "ratio",
+      "valid_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "index": 9,
+      "name": "channel_correlation",
+      "paper_name": "Channel correlation",
+      "definition": "Normalized complex correlation between the current estimated channel state and the receiver-visible channel estimate delayed by a fixed software processing age.",
+      "unit": "ratio",
+      "valid_range": [
+        0.0,
+        1.0
+      ],
+      "receiver_state_semantics": {
+        "csi_age_frames": 2,
+        "age_applied_to_all_frames": true,
+        "warmup_policy": "Current-frame CSI is used only for the first csi_age_frames because no earlier estimate exists.",
+        "purpose": "Measure CSI freshness under a fixed receiver processing delay."
+      }
+    }
+  ],
+  "labels": [
+    "interference",
+    "blockage",
+    "mobility",
+    "adaptation_mismatch",
+    "normal",
+    "nonphysical_goodput"
+  ],
+  "physical_labels": [
+    "interference",
+    "blockage",
+    "mobility",
+    "adaptation_mismatch"
+  ],
+  "severity_levels": [
+    "mild",
+    "moderate",
+    "severe"
+  ],
+  "required_metadata": [
+    "sample_id",
+    "generator_name",
+    "generator_version",
+    "seed",
+    "label",
+    "severity",
+    "channel_model",
+    "event_start",
+    "event_end",
+    "config_sha256",
+    "sequence_sha256"
+  ],
+  "provenance_policy": {
+    "generator_and_diagnoser_separated": true,
+    "labels_from_interventions_not_kpis": true,
+    "phyguard_cannot_read_intervention_parameters": true,
+    "every_sample_hash_required": true,
+    "deterministic_replay_required": true
+  },
+  "revision_reason": "Versioned CSI-freshness semantics for mobility-induced receiver-state aging. KPI names and tensor shape remain unchanged.",
+  "receiver_state_contract": {
+    "csi_age_frames": 2,
+    "csi_age_fixed_across_normal_and_event": true,
+    "mobility_event_changes_only_speed": true,
+    "label_leakage_forbidden": true
+  }
+}

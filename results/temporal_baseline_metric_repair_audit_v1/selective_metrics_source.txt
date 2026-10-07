@@ -1,0 +1,27 @@
+def selective_metrics(y_true: Iterable[str], y_pred: Iterable[str]) -> dict[str, float]:
+    y = np.asarray(y_true, dtype=object)
+    pred = np.asarray(y_pred, dtype=object)
+    physical = np.isin(y, PHYS)
+    control = ~physical
+    emitted = pred != ABSTAIN
+
+    selected_accuracy = (
+        float(np.mean(pred[physical & emitted] == y[physical & emitted]))
+        if np.any(physical & emitted)
+        else 0.0
+    )
+    coverage = float(np.mean(emitted[physical])) if np.any(physical) else 0.0
+    false_specific_rate = float(np.mean(emitted[control])) if np.any(control) else 0.0
+    macro_f1 = float(
+        f1_score(y[physical], pred[physical], labels=list(PHYS), average="macro", zero_division=0)
+    )
+    balanced_accuracy = float(
+        recall_score(y[physical], pred[physical], labels=list(PHYS), average="macro", zero_division=0)
+    )
+    return {
+        "selected_accuracy": selected_accuracy,
+        "coverage": coverage,
+        "false_specific_rate": false_specific_rate,
+        "macro_f1": macro_f1,
+        "balanced_accuracy": balanced_accuracy,
+    }

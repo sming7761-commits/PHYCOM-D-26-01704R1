@@ -1,0 +1,73 @@
+{
+  "status": "LOCKED",
+  "python": "3.11.15",
+  "platform": "Linux-6.8.0-31-generic-x86_64-with-glibc2.39",
+  "torch": "2.9.1+cu126",
+  "torch_cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 3080",
+  "sionna": "2.0.1",
+  "triton": "3.5.1",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "scikit_learn": "1.9.0",
+  "pip_check": "No broken requirements found.",
+  "file_count": 11,
+  "files": [
+    {
+      "relative_path": "smoke/01_sionna_qam_awgn_smoke.py",
+      "size_bytes": 2571,
+      "sha256": "69867d330e9eb911da0479b1d54c600f33bdf189bad2fb9470c121199c5cbffb"
+    },
+    {
+      "relative_path": "smoke/02_sionna_5g_ldpc_awgn_smoke.py",
+      "size_bytes": 6666,
+      "sha256": "6a12f2a048e8591508464d672b2bc90ce4a09dd2f33fd8a6f0abbe0dd32a1a73"
+    },
+    {
+      "relative_path": "smoke/03_sionna_5g_harq_ir_smoke.py",
+      "size_bytes": 7588,
+      "sha256": "cbbd72fae7da1b7455ef776260691bf9c00ca8f5dffb2da9eacc8a3d16d1f310"
+    },
+    {
+      "relative_path": "smoke/04_sionna_2x2_mimo_ofdm_ldpc_smoke.py",
+      "size_bytes": 11584,
+      "sha256": "d364e1d46e85dcaa226d7c36203da8688e42f0d437f7db61cb3f8205401c28f0"
+    },
+    {
+      "relative_path": "smoke/05_sionna_cdl_ls_mimo_ofdm_smoke.py",
+      "size_bytes": 14623,
+      "sha256": "0985553d7210b7fbb9d96e9ea3d9d730718fc0d7e612397007840628c8cc763e"
+    },
+    {
+      "relative_path": "scripts/00_lock_environment.py",
+      "size_bytes": 2268,
+      "sha256": "4aaa24d5d54d64ca0ee76e72cf04336a0176603d6b6cdd0535f0fc50f0c607c3"
+    },
+    {
+      "relative_path": "results/smoke_2x2_mimo_ofdm_ldpc/report.json",
+      "size_bytes": 2141,
+      "sha256": "c15c68dff61f7083319aa1e06f2f2425880cda3a4af767f1305ee122e70594bc"
+    },
+    {
+      "relative_path": "results/smoke_5g_harq_ir/report.json",
+      "size_bytes": 1521,
+      "sha256": "8edabac22a96bb9e2b084a3d3889c1587c6ab224cbee4171f243a75f44a3b0e6"
+    },
+    {
+      "relative_path": "results/smoke_5g_ldpc_awgn/report.json",
+      "size_bytes": 1264,
+      "sha256": "bfb99954e5314bd59087f8f4e16955740fe9ca23b23685248e5e14a30779c1b6"
+    },
+    {
+      "relative_path": "results/smoke_cdl_ls_mimo_ofdm/report.json",
+      "size_bytes": 2664,
+      "sha256": "177a9f58dda3383db83ab1d80e1b80be6dfcf4cbc988418ccfb783d018a9880f"
+    },
+    {
+      "relative_path": "results/smoke_qam_awgn/report.json",
+      "size_bytes": 646,
+      "sha256": "2ac6a13958a89309556de262e45af3ff80a11798b8226eaef4c43e899eb4e36b"
+    }
+  ]
+}

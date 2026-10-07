@@ -1,0 +1,240 @@
+{
+  "schema": "phyguard.cross_system_reliability_statistics.v2",
+  "created_at_utc": "2026-07-31T13:38:09.184458+00:00",
+  "status": "PASS",
+  "protocol_sha256": "9910235765ed4926fc9071b3f2ef38106194c7548142f64051c23eab25479503",
+  "source": {
+    "total_sequence_count": 1080,
+    "eligible_sequence_count": 1037,
+    "ineligible_sequence_count": 43,
+    "median_mcs_stratified_spearman": -0.5179159605819591,
+    "bootstrap_ci95": [
+      -0.5391071649510238,
+      -0.500989955025925
+    ],
+    "sign_flip_p_one_sided": 9.99990000099999e-06,
+    "negative_effect_count": 1028,
+    "negative_effect_fraction": 0.991321118611379,
+    "support_rule_satisfied": true,
+    "secondary_ber_per": {
+      "eligible_sequence_count": 1040,
+      "median_spearman": 0.8569801114668044
+    },
+    "secondary_independent_ber_formula": {
+      "median_sequence_mean_absolute_deviation": 0.0463196625176483,
+      "interpretation": "Descriptive only; bit errors need not be independent."
+    }
+  },
+  "sionna": {
+    "locked_analysis_count": 825,
+    "eligible_sequence_count": 541,
+    "ineligible_sequence_count": 284,
+    "median_mcs_stratified_spearman": -0.21431988791072795,
+    "bootstrap_ci95": [
+      -0.2500398692291826,
+      -0.17404473035374698
+    ],
+    "sign_flip_p_one_sided": 9.99990000099999e-06,
+    "negative_effect_count": 358,
+    "negative_effect_fraction": 0.6617375231053605,
+    "support_rule_satisfied": true,
+    "subgroups": [
+      {
+        "group": "all_825_samples",
+        "total_count": 825,
+        "eligible_count": 541,
+        "ineligible_count": 284,
+        "median_effect": -0.21431988791072795,
+        "mean_effect": -0.1643527380119659,
+        "negative_effect_count": 358,
+        "negative_effect_fraction": 0.6617375231053605
+      },
+      {
+        "group": "physical_samples",
+        "total_count": 706,
+        "eligible_count": 541,
+        "ineligible_count": 165,
+        "median_effect": -0.21431988791072795,
+        "mean_effect": -0.1643527380119659,
+        "negative_effect_count": 358,
+        "negative_effect_fraction": 0.6617375231053605
+      },
+      {
+        "group": "control_samples",
+        "total_count": 119,
+        "eligible_count": 0,
+        "ineligible_count": 119,
+        "median_effect": null,
+        "mean_effect": null,
+        "negative_effect_count": 0,
+        "negative_effect_fraction": null
+      },
+      {
+        "group": "interference",
+        "total_count": 175,
+        "eligible_count": 122,
+        "ineligible_count": 53,
+        "median_effect": -0.4448797747740414,
+        "mean_effect": -0.4740192443356421,
+        "negative_effect_count": 122,
+        "negative_effect_fraction": 1.0
+      },
+      {
+        "group": "blockage",
+        "total_count": 178,
+        "eligible_count": 104,
+        "ineligible_count": 74,
+        "median_effect": -0.3690311687629193,
+        "mean_effect": -0.37861558919328964,
+        "negative_effect_count": 104,
+        "negative_effect_fraction": 1.0
+      },
+      {
+        "group": "mobility",
+        "total_count": 180,
+        "eligible_count": 179,
+        "ineligible_count": 1,
+        "median_effect": 0.030570931333700254,
+        "mean_effect": 0.0016495216658976972,
+        "negative_effect_count": 81,
+        "negative_effect_fraction": 0.45251396648044695
+      },
+      {
+        "group": "adaptation_mismatch",
+        "total_count": 173,
+        "eligible_count": 136,
+        "ineligible_count": 37,
+        "median_effect": 0.09119351831205733,
+        "mean_effect": 0.05879612825280317,
+        "negative_effect_count": 51,
+        "negative_effect_fraction": 0.375
+      },
+      {
+        "group": "normal",
+        "total_count": 59,
+        "eligible_count": 0,
+        "ineligible_count": 59,
+        "median_effect": null,
+        "mean_effect": null,
+        "negative_effect_count": 0,
+        "negative_effect_fraction": null
+      },
+      {
+        "group": "nonphysical_goodput",
+        "total_count": 60,
+        "eligible_count": 0,
+        "ineligible_count": 60,
+        "median_effect": null,
+        "mean_effect": null,
+        "negative_effect_count": 0,
+        "negative_effect_fraction": null
+      }
+    ],
+    "secondary_pre_ldpc_ber_to_post_ldpc_bler": {
+      "eligible_sequence_count": 571,
+      "median_spearman": 0.7544842344267882
+    }
+  },
+  "zenodo": {
+    "file_count": 10,
+    "primary_effect_definition": "Within-file partial Spearman correlation between dl_sinr and dl_bler controlling continuous phy_mcs.",
+    "mcs_encoding": "CONTINUOUS_OR_AGGREGATED_MCS",
+    "mcs_rounded": false,
+    "mcs_binned": false,
+    "eligible_file_count": 10,
+    "excluded_file_count": 0,
+    "protocol_complete_all_10_files": true,
+    "aggregate_partial_spearman": -0.23865991339305723,
+    "aggregate_fisher_z": -0.24335260340356818,
+    "bootstrap_ci95": [
+      -0.32280662039442787,
+      -0.12219694027099047
+    ],
+    "exact_sign_flip_p_one_sided": 0.00390625,
+    "negative_file_count": 9,
+    "negative_file_fraction": 0.9,
+    "support_rule_satisfied": true,
+    "bler_unit_decisions": {
+      "20250328_09-35-20.csv": "percentage_divided_by_100",
+      "20250328_09-38-18.csv": "percentage_divided_by_100",
+      "20250328_09-59-25.csv": "percentage_divided_by_100",
+      "20250328_10-01-58.csv": "percentage_divided_by_100",
+      "20250328_10-10-53.csv": "percentage_divided_by_100",
+      "20250331_11-35-21.csv": "percentage_divided_by_100",
+      "20250331_11-44-52.csv": "percentage_divided_by_100",
+      "20250331_11-50-40.csv": "percentage_divided_by_100",
+      "20250401_09-19-01.csv": "percentage_divided_by_100",
+      "20250401_09-22-28.csv": "percentage_divided_by_100"
+    },
+    "secondary_results": [
+      {
+        "endpoint": "unadjusted_sinr_bler",
+        "expected_direction": "negative",
+        "eligible_file_count": 10,
+        "aggregate_effect": -0.24300100616022605,
+        "p_raw": 0.001953125,
+        "p_holm": 0.005859375,
+        "significant_after_holm": true
+      },
+      {
+        "endpoint": "cqi_bler",
+        "expected_direction": "negative",
+        "eligible_file_count": 10,
+        "aggregate_effect": -0.12584345978611172,
+        "p_raw": 0.001953125,
+        "p_holm": 0.005859375,
+        "significant_after_holm": true
+      },
+      {
+        "endpoint": "spectral_efficiency_bler",
+        "expected_direction": "negative",
+        "eligible_file_count": 10,
+        "aggregate_effect": 0.010961253457908026,
+        "p_raw": 0.5849609375,
+        "p_holm": 0.5849609375,
+        "significant_after_holm": false
+      },
+      {
+        "endpoint": "sinr_mcs",
+        "expected_direction": "positive",
+        "eligible_file_count": 10,
+        "aggregate_effect": 0.3406425129664264,
+        "p_raw": 0.0009765625,
+        "p_holm": 0.00390625,
+        "significant_after_holm": true
+      }
+    ]
+  },
+  "cross_system": {
+    "source_supported": true,
+    "sionna_supported": true,
+    "zenodo_supported": true,
+    "classification": "FULL_DIRECTIONAL_SUPPORT",
+    "magnitude_comparison_permitted": false,
+    "calibration_equivalence_permitted": false
+  },
+  "methodological_boundary": {
+    "source_kpi_values_analyzed": true,
+    "sionna_kpi_values_analyzed": true,
+    "zenodo_data_rows_read": true,
+    "endpoint_directions_changed": false,
+    "zenodo_mcs_control_method_amended_before_outcome_analysis": true,
+    "zenodo_mcs_rounded": false,
+    "zenodo_mcs_binned": false,
+    "analysis_subset_changed": false,
+    "recording_files_removed_posthoc": false,
+    "temporal_lag_selected": false,
+    "smoothing_applied": false,
+    "thresholds_selected": false,
+    "models_trained": false,
+    "secondary_promoted_to_primary": false
+  },
+  "files": {
+    "source_effects": "/root/phyguard_revision/artifacts/cross_system_reliability_statistics_v2/source_sequence_effects.csv",
+    "sionna_effects": "/root/phyguard_revision/artifacts/cross_system_reliability_statistics_v2/sionna_sequence_effects.csv",
+    "sionna_subgroups": "/root/phyguard_revision/artifacts/cross_system_reliability_statistics_v2/sionna_subgroup_results.csv",
+    "zenodo_file_effects": "/root/phyguard_revision/artifacts/cross_system_reliability_statistics_v2/zenodo_file_effects.csv",
+    "zenodo_secondary": "/root/phyguard_revision/artifacts/cross_system_reliability_statistics_v2/zenodo_secondary_results.csv",
+    "distributions": "/root/phyguard_revision/artifacts/cross_system_reliability_statistics_v2/statistical_distributions.npz"
+  }
+}

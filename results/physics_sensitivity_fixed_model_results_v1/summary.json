@@ -1,0 +1,43 @@
+{
+  "schema": "phyguard.physics_sensitivity_fixed_model_results.v1",
+  "created_at_utc": "2026-08-01T02:25:17.047122+00:00",
+  "status": "PASS",
+  "checkpoint": "PhyGuard_R0_Reconstruction_Checkpoint2",
+  "formula_variant_count": 13,
+  "fixed_model_inference_task_count": 65,
+  "training_task_count": 0,
+  "threshold_policy_count": 9,
+  "threshold_policy_evaluation_count": 45,
+  "default_reproduction": {
+    "status": "PASS",
+    "metric_max_absolute_differences": {
+      "selected_accuracy": 1.1102230246251565e-16,
+      "coverage": 0.0,
+      "false_specific_rate": 7.632783294297951e-17,
+      "macro_f1": 0.0,
+      "balanced_accuracy": 0.0
+    },
+    "tau_g_match": true,
+    "tau_c_match": true,
+    "prediction_match": true,
+    "prediction_row_count": 1080,
+    "manual_probability_path_used": true,
+    "source_models_modified": false
+  },
+  "source_models_modified": false,
+  "source_features_modified": false,
+  "source_results_modified": false,
+  "test_used_for_threshold_selection": false,
+  "outcome_based_omission": false,
+  "interpretation": "Fixed-model sensitivity of the revision-time locked reconstruction to source-defined physics formulas and validation policies.",
+  "formal_hardware": "NVIDIA GeForce RTX 3080 10 GB",
+  "files": {
+    "per_repeat_metrics": "/root/phyguard_revision/artifacts/physics_sensitivity_fixed_model_results_v1/per_repeat_metrics.csv",
+    "aggregate_metrics": "/root/phyguard_revision/artifacts/physics_sensitivity_fixed_model_results_v1/aggregate_metrics.csv",
+    "all_test_predictions": "/root/phyguard_revision/artifacts/physics_sensitivity_fixed_model_results_v1/all_test_predictions.csv",
+    "threshold_policy_per_repeat": "/root/phyguard_revision/artifacts/physics_sensitivity_fixed_model_results_v1/threshold_policy_per_repeat_metrics.csv",
+    "threshold_policy_aggregate": "/root/phyguard_revision/artifacts/physics_sensitivity_fixed_model_results_v1/threshold_policy_aggregate_metrics.csv",
+    "compatibility_audit": "/root/phyguard_revision/artifacts/physics_sensitivity_fixed_model_results_v1/compatibility_audit.json",
+    "protocol_amendment": "/root/phyguard_revision/artifacts/physics_sensitivity_fixed_model_protocol_amendment_v1/summary.json"
+  }
+}

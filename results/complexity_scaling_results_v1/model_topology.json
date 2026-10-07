@@ -1,0 +1,21 @@
+{
+  "gate_outer_class": "Pipeline",
+  "gate_class": "LogisticRegression",
+  "gate_pipeline_steps": [
+    "standardscaler",
+    "logisticregression"
+  ],
+  "gate_input_dimension": 19,
+  "gate_coefficient_count": 20,
+  "resolver_outer_class": "ExtraTreesClassifier",
+  "resolver_class": "ExtraTreesClassifier",
+  "resolver_pipeline_steps": [],
+  "resolver_input_dimension": 79,
+  "tree_count": 200,
+  "total_tree_nodes": 34730,
+  "mean_tree_nodes": 173.65,
+  "mean_tree_depth": 13.855,
+  "median_tree_depth": 14.0,
+  "maximum_tree_depth": 18,
+  "serialized_model_bytes": 3417386
+}

@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "phyguard_method": "PhyGuard",
+  "expected_rows_per_model": 1080,
+  "records": [
+    {
+      "model_id": "ARSENAL",
+      "joined_rows": 1080,
+      "all_rows_both": true,
+      "truth_match": true
+    },
+    {
+      "model_id": "BIGRU",
+      "joined_rows": 1080,
+      "all_rows_both": true,
+      "truth_match": true
+    },
+    {
+      "model_id": "BILSTM",
+      "joined_rows": 1080,
+      "all_rows_both": true,
+      "truth_match": true
+    },
+    {
+      "model_id": "FCN1D",
+      "joined_rows": 1080,
+      "all_rows_both": true,
+      "truth_match": true
+    },
+    {
+      "model_id": "HYDRA",
+      "joined_rows": 1080,
+      "all_rows_both": true,
+      "truth_match": true
+    },
+    {
+      "model_id": "INCEPTIONTIME_LITE",
+      "joined_rows": 1080,
+      "all_rows_both": true,
+      "truth_match": true
+    },
+    {
+      "model_id": "LITE1D",
+      "joined_rows": 1080,
+      "all_rows_both": true,
+      "truth_match": true
+    },
+    {
+      "model_id": "MINIROCKET",
+      "joined_rows": 1080,
+      "all_rows_both": true,
+      "truth_match": true
+    },
+    {
+      "model_id": "MULTIROCKET",
+      "joined_rows": 1080,
+      "all_rows_both": true,
+      "truth_match": true
+    },
+    {
+      "model_id": "MULTIROCKET_HYDRA",
+      "joined_rows": 1080,
+      "all_rows_both": true,
+      "truth_match": true
+    },
+    {
+      "model_id": "RESNET1D",
+      "joined_rows": 1080,
+      "all_rows_both": true,
+      "truth_match": true
+    },
+    {
+      "model_id": "ROCKET",
+      "joined_rows": 1080,
+      "all_rows_both": true,
+      "truth_match": true
+    },
+    {
+      "model_id": "TCN",
+      "joined_rows": 1080,
+      "all_rows_both": true,
+      "truth_match": true
+    },
+    {
+      "model_id": "TINY_TRANSFORMER",
+      "joined_rows": 1080,
+      "all_rows_both": true,
+      "truth_match": true
+    }
+  ]
+}

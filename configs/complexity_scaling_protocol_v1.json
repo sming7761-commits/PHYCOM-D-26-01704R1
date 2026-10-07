@@ -1,0 +1,151 @@
+{
+  "schema": "phyguard.complexity_scaling_protocol.v1",
+  "created_at_utc": "2026-07-31T14:23:10.947903+00:00",
+  "status": "LOCKED_BEFORE_COMPLEXITY_SCALING_EXECUTION",
+  "purpose": "Provide a formal asymptotic complexity statement and a reproducible single-thread CPU scaling study for evidence extraction and frozen-model inference.",
+  "theoretical_contract": {
+    "symbols": {
+      "T": "number of time points in the candidate sequence",
+      "K": "number of KPI channels",
+      "F_g": "gate feature dimension",
+      "M": "number of trees in the Extra Trees resolver",
+      "D": "mean tree traversal depth",
+      "N": "number of candidate intervals in an inference batch"
+    },
+    "evidence_extraction_time": "O(TK)",
+    "gate_inference_time_per_interval": "O(F_g)",
+    "resolver_inference_time_per_interval": "O(MD)",
+    "total_time_per_interval": "O(TK + F_g + MD)",
+    "simplified_total_time": "O(TK + MD)",
+    "input_working_memory": "O(TK)",
+    "evidence_vector_memory": "O(F)",
+    "model_storage": "O(F_g) for the logistic gate plus O(total resolver tree nodes) for Extra Trees.",
+    "scope_boundary": "The complexity claim applies to diagnosis conditioned on an already identified candidate interval; upstream anomaly localization is outside this benchmark."
+  },
+  "runtime_environment": {
+    "device": "CPU only",
+    "threading": "single thread",
+    "thread_environment_variables": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    },
+    "threadpoolctl_limit": 1,
+    "timer": "time.perf_counter_ns",
+    "warmup_calls_per_point": 5,
+    "measurement_blocks": 5,
+    "calls_per_block": 40,
+    "reported_time_statistics": [
+      "median",
+      "p95",
+      "mean",
+      "standard deviation"
+    ],
+    "memory_measurement": "tracemalloc peak Python allocation; report input-array bytes separately because native allocator memory is not fully captured."
+  },
+  "t_scaling": {
+    "kernel": "Exact revision-time evidence builder features.py::build_one.",
+    "fixed_k": 10,
+    "t_values": [
+      40,
+      80,
+      160,
+      320,
+      640,
+      1280
+    ],
+    "candidate_interval": "start=floor(0.30T), end=ceil(0.70T), with deterministic synthetic KPI trajectories.",
+    "required_output_dimensions": {
+      "raw": 60,
+      "physical": 19
+    },
+    "slope": "OLS slope of log(median runtime) on log(T)."
+  },
+  "k_scaling": {
+    "kernel": "Transparent six-statistics-per-channel raw evidence microkernel, used only to isolate K scaling because the exact physical feature builder is defined for ten named KPIs.",
+    "fixed_t": 80,
+    "k_values": [
+      5,
+      10,
+      20,
+      40,
+      80
+    ],
+    "statistics_per_channel": [
+      "mean",
+      "standard deviation",
+      "median",
+      "median absolute deviation",
+      "5th percentile",
+      "95th percentile"
+    ],
+    "slope": "OLS slope of log(median runtime) on log(K).",
+    "claim_boundary": "K-scaling is corroborative for the raw statistics branch and is not presented as an exact benchmark of ten-KPI physical rules."
+  },
+  "inference_scaling": {
+    "model": "Repeat-0 frozen FULL logistic gate plus Extra Trees resolver.",
+    "batch_sizes": [
+      1,
+      8,
+      32,
+      128,
+      512,
+      2048
+    ],
+    "warmup_calls_per_point": 5,
+    "measurement_blocks": 5,
+    "calls_per_block": 20,
+    "reported_metrics": [
+      "batch latency median and p95",
+      "per-interval latency",
+      "intervals per second"
+    ],
+    "topology_reporting": [
+      "gate input dimension",
+      "resolver input dimension",
+      "number of trees",
+      "total tree nodes",
+      "mean tree depth",
+      "maximum tree depth",
+      "serialized model bytes"
+    ]
+  },
+  "empirical_interpretation": {
+    "primary": "The asymptotic statement is established by operation structure, not by timing regression.",
+    "corroborative": "Empirical slopes, throughput, and memory are reported as implementation-specific evidence.",
+    "no_hardware_generalization": "Absolute latency is specific to the measured CPU/software environment and must not be generalized to all deployments.",
+    "no_gpu_claim": true,
+    "no_end_to_end_localization_claim": true
+  },
+  "mandatory_outputs": [
+    "theoretical_complexity.json",
+    "theoretical_complexity.md",
+    "runtime_environment.json",
+    "model_topology.json",
+    "t_scaling.csv",
+    "k_scaling.csv",
+    "inference_batch_scaling.csv",
+    "summary.json",
+    "manifest with SHA256 hashes"
+  ],
+  "prohibited_posthoc_actions": [
+    "changing T values after viewing timings",
+    "changing K values after viewing timings",
+    "dropping slow points",
+    "removing warmup only for selected points",
+    "using GPU timing",
+    "using more than one CPU thread",
+    "reporting only the best timing block",
+    "claiming K-scaling microkernel is the exact physical-rule implementation",
+    "claiming absolute latency is hardware independent",
+    "including upstream detector localization in the measured diagnosis latency"
+  ],
+  "methodological_boundary": {
+    "timings_measured": false,
+    "kpi_values_opened": false,
+    "models_executed": false,
+    "performance_metrics_computed": false,
+    "protocol_locked_before_execution": true
+  }
+}

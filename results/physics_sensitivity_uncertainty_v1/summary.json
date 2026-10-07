@@ -1,0 +1,72 @@
+{
+  "schema": "phyguard.physics_sensitivity_uncertainty.v1",
+  "created_at_utc": "2026-08-01T02:42:38.656136+00:00",
+  "status": "PASS",
+  "formula_variant_count": 13,
+  "nondefault_variant_count": 12,
+  "repeat_count": 5,
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 20260731,
+  "cluster_count": 726,
+  "paired_comparison_count": 84,
+  "metric_count": 7,
+  "exact_signflip_minimum_nonzero_two_sided_p": 0.0625,
+  "holm_scope": "separately across 12 formula variants within each metric",
+  "default_prediction_match": true,
+  "overall_nondefault_delta_envelope": {
+    "selected_accuracy": {
+      "delta_min": -0.006140501350169192,
+      "delta_max": 0.01637691272203079,
+      "max_abs_delta": 0.01637691272203079
+    },
+    "coverage": {
+      "delta_min": -0.01666666666666683,
+      "delta_max": 0.01805555555555549,
+      "max_abs_delta": 0.01805555555555549
+    },
+    "false_specific_rate": {
+      "delta_min": -0.0111111111111111,
+      "delta_max": 0.0194444444444445,
+      "max_abs_delta": 0.0194444444444445
+    },
+    "macro_f1": {
+      "delta_min": -0.000695211806217344,
+      "delta_max": 0.007996116319652358,
+      "max_abs_delta": 0.007996116319652358
+    },
+    "balanced_accuracy": {
+      "delta_min": -0.006944444444444309,
+      "delta_max": 0.011111111111111183,
+      "max_abs_delta": 0.011111111111111183
+    },
+    "physical_exact_match": {
+      "delta_min": -0.006944444444444198,
+      "delta_max": 0.011111111111111183,
+      "max_abs_delta": 0.011111111111111183
+    },
+    "control_abstention": {
+      "delta_min": -0.019444444444444375,
+      "delta_max": 0.011111111111111183,
+      "max_abs_delta": 0.019444444444444375
+    }
+  },
+  "bootstrap_ci_excludes_zero_positive_count": 9,
+  "bootstrap_ci_excludes_zero_negative_count": 3,
+  "confirmatory_significance_claim_allowed": false,
+  "test_used_for_threshold_selection": false,
+  "source_models_modified": false,
+  "all_formula_configs_reported": true,
+  "all_threshold_policies_reported": true,
+  "formal_hardware": "NVIDIA GeForce RTX 3080 10 GB",
+  "files": {
+    "paired_formula_uncertainty": "/root/phyguard_revision/artifacts/physics_sensitivity_uncertainty_v1/paired_formula_uncertainty.csv",
+    "factor_operating_ranges": "/root/phyguard_revision/artifacts/physics_sensitivity_uncertainty_v1/factor_operating_ranges.csv",
+    "main_table_formula_factor_ranges": "/root/phyguard_revision/artifacts/physics_sensitivity_uncertainty_v1/main_table_formula_factor_ranges.csv",
+    "main_table_threshold_policy_sa_0p90": "/root/phyguard_revision/artifacts/physics_sensitivity_uncertainty_v1/main_table_threshold_policy_sa_0p90.csv",
+    "supplementary_all_13_formula_configs": "/root/phyguard_revision/artifacts/physics_sensitivity_uncertainty_v1/supplementary_all_13_formula_configs.csv",
+    "supplementary_all_9_threshold_policies": "/root/phyguard_revision/artifacts/physics_sensitivity_uncertainty_v1/supplementary_all_9_threshold_policies.csv",
+    "manuscript_results_draft": "/root/phyguard_revision/artifacts/physics_sensitivity_uncertainty_v1/manuscript_results_draft.txt",
+    "reviewer_response_draft": "/root/phyguard_revision/artifacts/physics_sensitivity_uncertainty_v1/reviewer_response_draft.txt",
+    "claim_boundary": "/root/phyguard_revision/artifacts/physics_sensitivity_uncertainty_v1/claim_boundary.json"
+  }
+}

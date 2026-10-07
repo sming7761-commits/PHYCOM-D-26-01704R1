@@ -1,0 +1,15 @@
+{
+  "schema": "phyguard.temporal_baselines_final_manifest.v1",
+  "created_at_utc": "2026-08-01T01:11:58.689612+00:00",
+  "status": "PASS",
+  "archive_path": "/root/phyguard_revision/results/phyguard_temporal_baselines_final.zip",
+  "archive_size_bytes": 1103976,
+  "archive_sha256": "e082f5e6a50036d5483fbb805005987a1eb1be94cce84ca931c98faefb957650",
+  "sha256_file": "/root/phyguard_revision/results/phyguard_temporal_baselines_final.zip.sha256",
+  "manuscript_assets": "/root/phyguard_revision/artifacts/temporal_baseline_manuscript_assets_v1",
+  "model_count": 14,
+  "task_count": 70,
+  "bootstrap_replicates": 10000,
+  "cluster_count": 726,
+  "formal_hardware": "NVIDIA GeForce RTX 3080 10 GB"
+}

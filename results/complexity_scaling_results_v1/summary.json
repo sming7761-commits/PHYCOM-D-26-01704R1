@@ -1,0 +1,62 @@
+{
+  "schema": "phyguard.complexity_scaling_results.v1",
+  "status": "PASS",
+  "theoretical_total_time": "O(TK + F_g + MD)",
+  "simplified_total_time": "O(TK + MD)",
+  "model_topology": {
+    "gate_outer_class": "Pipeline",
+    "gate_class": "LogisticRegression",
+    "gate_pipeline_steps": [
+      "standardscaler",
+      "logisticregression"
+    ],
+    "gate_input_dimension": 19,
+    "gate_coefficient_count": 20,
+    "resolver_outer_class": "ExtraTreesClassifier",
+    "resolver_class": "ExtraTreesClassifier",
+    "resolver_pipeline_steps": [],
+    "resolver_input_dimension": 79,
+    "tree_count": 200,
+    "total_tree_nodes": 34730,
+    "mean_tree_nodes": 173.65,
+    "mean_tree_depth": 13.855,
+    "median_tree_depth": 14.0,
+    "maximum_tree_depth": 18,
+    "serialized_model_bytes": 3417386
+  },
+  "t_scaling_log_log_fit": {
+    "slope": 0.0763717805577184,
+    "intercept": 14.639060130590318,
+    "r_squared": 0.8318892585422626
+  },
+  "k_scaling_log_log_fit": {
+    "slope": 0.33358629663670925,
+    "intercept": 12.242677434165865,
+    "r_squared": 0.9561826884972218
+  },
+  "inference_batch_log_log_fit": {
+    "slope": 0.13929764746610698,
+    "intercept": 16.61904122447405,
+    "r_squared": 0.6712547885686255
+  },
+  "t_scaling_fastest_median_us": 3132.7795,
+  "t_scaling_slowest_median_us": 4155.327,
+  "inference_batch_1_median_us": 21360.898,
+  "inference_batch_2048_throughput": 28843.16657042067,
+  "interpretation": {
+    "theory_is_primary": true,
+    "timing_is_corroborative": true,
+    "absolute_latency_hardware_specific": true,
+    "k_scaling_microkernel_not_exact_physical_rules": true,
+    "upstream_localization_excluded": true
+  },
+  "files": {
+    "theoretical_complexity": "theoretical_complexity.json",
+    "theoretical_complexity_text": "theoretical_complexity.md",
+    "runtime_environment": "runtime_environment.json",
+    "model_topology": "model_topology.json",
+    "t_scaling": "t_scaling.csv",
+    "k_scaling": "k_scaling.csv",
+    "inference_batch_scaling": "inference_batch_scaling.csv"
+  }
+}

@@ -1,0 +1,5 @@
+endpoint,expected_direction,eligible_file_count,aggregate_effect,p_raw,p_holm,significant_after_holm
+unadjusted_sinr_bler,negative,10,-0.24300100616022605,0.001953125,0.005859375,True
+cqi_bler,negative,10,-0.12584345978611172,0.001953125,0.005859375,True
+spectral_efficiency_bler,negative,10,0.010961253457908026,0.5849609375,0.5849609375,False
+sinr_mcs,positive,10,0.3406425129664264,0.0009765625,0.00390625,True

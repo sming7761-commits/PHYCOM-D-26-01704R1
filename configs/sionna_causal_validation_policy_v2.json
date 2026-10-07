@@ -1,0 +1,89 @@
+{
+  "schema": "phyguard.sionna.causal_validation_policy.v2",
+  "version": "causal_validation_v2.0.0",
+  "status": "LOCKED",
+  "development_scope": "Developed and locked using only the Prevalidation-210 quality-control set.",
+  "future_test_policy": "The policy must be applied unchanged to the disjoint formal-test seeds.",
+  "general_requirements": {
+    "sequence_shape": [
+      80,
+      10
+    ],
+    "all_values_finite": true,
+    "exact_bitwise_replay": true,
+    "numerical_replay_tolerance": 1e-06
+  },
+  "interference": {
+    "required_intervention_type": "independent_cochannel_wideband_interference",
+    "independent_rng_required": true,
+    "target_sir_by_severity_db": {
+      "mild": 6.0,
+      "moderate": 3.0,
+      "severe": 0.0
+    },
+    "maximum_absolute_achieved_minus_target_sir_db": 2.0,
+    "mandatory_response_checks": {
+      "sinr_change_db_maximum": -2.0,
+      "evm_ratio_minimum": 1.1,
+      "pre_ldpc_ber_increase_minimum": 0.0001
+    },
+    "audit_only_observations": [
+      "absolute RSRP change",
+      "absolute RSSI change",
+      "delta(RSSI-RSRP)",
+      "post-LDPC BLER change",
+      "goodput change"
+    ]
+  },
+  "adaptation_mismatch": {
+    "required_intervention_type": "receiver_adaptation_state_phase_mismatch",
+    "peak_phase_error_by_severity_deg": {
+      "mild": 30.0,
+      "moderate": 45.0,
+      "severe": 60.0
+    },
+    "mean_to_peak_phase_ratio_range": [
+      0.85,
+      0.9
+    ],
+    "propagation_channel_unchanged_required": true,
+    "transmit_configuration_unchanged_required": true,
+    "receiver_degradation_rule": "At least one of EVM ratio >= 1.20, pre-LDPC BER increase > 1e-4, or post-LDPC BLER increase.",
+    "goodput_nonimproving_required": true,
+    "audit_only_observations": [
+      "RSRP drift envelope",
+      "RSSI drift envelope",
+      "SINR drift envelope",
+      "CQI change",
+      "channel-correlation change"
+    ]
+  },
+  "blockage": {
+    "required_intervention_type": "time_localized_excess_path_loss",
+    "peak_attenuation_by_severity_db": {
+      "mild": -6.0,
+      "moderate": -9.0,
+      "severe": -12.0
+    },
+    "mean_to_peak_attenuation_magnitude_ratio_range": [
+      0.8,
+      1.0
+    ],
+    "noise_power_unchanged_required": true,
+    "power_domain_rule": "At least one of RSRP decrease >= 2 dB or RSSI decrease >= 0.5 dB.",
+    "impairment_domain_rule": "At least two of SINR decrease >= 2 dB, EVM ratio >= 1.10, pre-LDPC BER increase > 1e-4, post-LDPC BLER increase, or goodput decrease.",
+    "audit_only_observations": [
+      "channel-correlation change"
+    ]
+  },
+  "mobility": {
+    "rule": "Retain the locked v1 mechanism-specific directional validator unchanged."
+  },
+  "normal": {
+    "rule": "Retain the locked normal-link validator unchanged."
+  },
+  "nonphysical_goodput": {
+    "rule": "Require exact deterministic construction, all other nine KPIs bitwise unchanged, and goodput-consistency error >= 0.20."
+  },
+  "policy_sha256": "510b0ba97393a63a199d65414c2b44660e7140c1696582202b1603c7197f879d"
+}

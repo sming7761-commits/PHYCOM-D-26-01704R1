@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "provenance": "source-domain fixed validation thresholds",
+  "external_threshold_calibration_used": false,
+  "training_on_sionna24": false,
+  "feature_selection_on_sionna24": false,
+  "threshold_tuning_on_sionna24": false,
+  "repeat_count": 5,
+  "thresholds": [
+    {
+      "repeat": 0,
+      "tau_g": 0.7,
+      "tau_c": 0.35,
+      "source": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_C1_Independent_Link_Candidate_v3/phyguard_c1_smoke/results/candidate_evaluation/per_repeat_metrics.csv",
+      "method": "None",
+      "protocol": "source_fixed_all"
+    },
+    {
+      "repeat": 1,
+      "tau_g": 0.35,
+      "tau_c": 0.45,
+      "source": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_C1_Independent_Link_Candidate_v3/phyguard_c1_smoke/results/candidate_evaluation/per_repeat_metrics.csv",
+      "method": "None",
+      "protocol": "source_fixed_all"
+    },
+    {
+      "repeat": 2,
+      "tau_g": 0.4,
+      "tau_c": 0.45,
+      "source": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_C1_Independent_Link_Candidate_v3/phyguard_c1_smoke/results/candidate_evaluation/per_repeat_metrics.csv",
+      "method": "None",
+      "protocol": "source_fixed_all"
+    },
+    {
+      "repeat": 3,
+      "tau_g": 0.5,
+      "tau_c": 0.4,
+      "source": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_C1_Independent_Link_Candidate_v3/phyguard_c1_smoke/results/candidate_evaluation/per_repeat_metrics.csv",
+      "method": "None",
+      "protocol": "source_fixed_all"
+    },
+    {
+      "repeat": 4,
+      "tau_g": 0.5,
+      "tau_c": 0.45,
+      "source": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_C1_Independent_Link_Candidate_v3/phyguard_c1_smoke/results/candidate_evaluation/per_repeat_metrics.csv",
+      "method": "None",
+      "protocol": "source_fixed_all"
+    }
+  ],
+  "source_feature_file": "/root/phyguard_revision/artifacts/uploaded_phyguard_packages/PhyGuard_R0_Reconstruction_Checkpoint2/phyguard_rebuild/scripts/features.py",
+  "source_feature_sha256": "b665765bbdb317f0568d77a5004e41075e4a2e037fc5f6caa8102f6c932fc4f7",
+  "source_manifest": "/root/phyguard_revision/manifests/feature_code_source_threshold_lock.json",
+  "errors": [],
+  "lock_sha256": "a2a3e7822b20649bf33294affa550df6f9be741549b0a62d6fdb0615a4b0abcb"
+}

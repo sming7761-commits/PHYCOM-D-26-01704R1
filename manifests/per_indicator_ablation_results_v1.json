@@ -1,0 +1,68 @@
+{
+  "schema": "phyguard.per_indicator_ablation_results_manifest.v1",
+  "status": "PASS",
+  "protocol_sha256": "fd9ee2a74f533ea0d14dcbd9e87259c87cc3cc1deaa1deeed07df2bded2f4131",
+  "implementation_audit_manifest_sha256": "25bcad2167d24ef33f2edf597c538719e8df4813c54580de1f53f8384374fe7d",
+  "feature_builder_sha256": "b665765bbdb317f0568d77a5004e41075e4a2e037fc5f6caa8102f6c932fc4f7",
+  "evaluate_suite_sha256": "7e39206a48dcd507d7b58e3ac8d1c57f20c8ad1b14ffa853aa46b2dd536afd65",
+  "evaluation_common_sha256": "afa1f3387c272dee075f72f481e012572813892976c54dc860901114f8080cdd",
+  "locked_archive_sha256": "5d08fc3b8265789819b0f49c1f93a9c79c8fe44ce7ec4aec8f1fa603a08c241b",
+  "classification": "PACKET_BLOCK_ERROR_INDICATOR_NOT_ESSENTIAL",
+  "files": [
+    {
+      "path": "artifacts/per_indicator_ablation_results_v1/aggregate_variant_metrics.csv",
+      "size_bytes": 1448,
+      "sha256": "fb463716e7f01087379a3f0522506f316983d246b6a3c7eb9b43ee60de945de6"
+    },
+    {
+      "path": "artifacts/per_indicator_ablation_results_v1/factorial_effects.csv",
+      "size_bytes": 251,
+      "sha256": "d96fda811b49dad6295472e27da8cc1ee2cd55a3de8e6d762e53f1fd87df73a3"
+    },
+    {
+      "path": "artifacts/per_indicator_ablation_results_v1/feature_mask.json",
+      "size_bytes": 1082,
+      "sha256": "eedcf17b88ad8704c7c8c7d70979e2f5af1b0cb61090509874fd7ee8eb3bc98f"
+    },
+    {
+      "path": "artifacts/per_indicator_ablation_results_v1/paired_bootstrap_distributions.npz",
+      "size_bytes": 430801,
+      "sha256": "8bd586f0dd39dd219c4f43c1d1c74e8033e0c2729aea8e2ac9fffa96ddd8b0aa"
+    },
+    {
+      "path": "artifacts/per_indicator_ablation_results_v1/paired_primary_deltas.csv",
+      "size_bytes": 1439,
+      "sha256": "10bb361edd265acbdb017372883dd0164d722236b59ac7182e17f4ab69029bdf"
+    },
+    {
+      "path": "artifacts/per_indicator_ablation_results_v1/paired_repeat_deltas.csv",
+      "size_bytes": 2503,
+      "sha256": "3031655d0053cbf4b49a78544877dffd68b7730f6d3c31f160d491fcd3b86e25"
+    },
+    {
+      "path": "artifacts/per_indicator_ablation_results_v1/sionna_per_repeat_metrics_all_variants.csv",
+      "size_bytes": 3325,
+      "sha256": "2dc3e32efc306013d29d1d114e4d517a1b582b0b69d60752a9afeb8423d03951"
+    },
+    {
+      "path": "artifacts/per_indicator_ablation_results_v1/sionna_predictions_all_variants.csv",
+      "size_bytes": 1383971,
+      "sha256": "13cc3e11caf94339b352610bf3de60122ca58fd98a9e82474018016944335b51"
+    },
+    {
+      "path": "artifacts/per_indicator_ablation_results_v1/source_per_repeat_metrics_all_variants.csv",
+      "size_bytes": 2846,
+      "sha256": "cad070712d9d17f66d3c1782cb4f281cb703a3cde0ecf2188805fd3b0e9d3761"
+    },
+    {
+      "path": "artifacts/per_indicator_ablation_results_v1/source_predictions_all_variants.csv",
+      "size_bytes": 483746,
+      "sha256": "18ccd5060f174d78ad3b3890b8439c2fc54cd7c4cbbb4750365aac2ae5468999"
+    },
+    {
+      "path": "artifacts/per_indicator_ablation_results_v1/summary.json",
+      "size_bytes": 3463,
+      "sha256": "061d88946d8544b096d0fbeb9784c904b7f2703437dbc9d6555594cd7a536b3c"
+    }
+  ]
+}

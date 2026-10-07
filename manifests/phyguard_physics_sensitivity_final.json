@@ -1,0 +1,915 @@
+{
+  "schema": "phyguard.physics_sensitivity_final_manifest.v1",
+  "created_at_utc": "2026-08-01T02:47:12.991978+00:00",
+  "status": "PASS",
+  "archive_path": "/root/phyguard_revision/results/phyguard_physics_sensitivity_final.zip",
+  "archive_size_bytes": 982535,
+  "archive_sha256": "9e102f00118643fccd5a3f7fcf05f9237bd537d8d943d707107549e8e556bea5",
+  "archived_file_count": 176,
+  "protocol": {
+    "formula_variant_count": 13,
+    "threshold_policy_count": 9
+  },
+  "execution": {
+    "fixed_model_inference_task_count": 65,
+    "training_task_count": 0,
+    "threshold_policy_evaluation_count": 45
+  },
+  "uncertainty": {
+    "bootstrap_replicates": 10000,
+    "cluster_count": 726,
+    "paired_comparison_count": 84
+  },
+  "integrity": {
+    "default_prediction_match": true,
+    "source_models_modified": false,
+    "test_used_for_threshold_selection": false,
+    "all_formula_configs_reported": true,
+    "all_threshold_policies_reported": true,
+    "confirmatory_significance_claim_allowed": false,
+    "failed_debug_artifacts_excluded": true
+  },
+  "formal_hardware": "NVIDIA GeForce RTX 3080 10 GB",
+  "files": [
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_protocol_amendment_v1/summary.json",
+      "size_bytes": 1805,
+      "sha256": "3a67194dd0394571a0fbc488fc54d8da90906fff7b7449f48cd56b3447b027f4"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/aggregate_metrics.csv",
+      "size_bytes": 4530,
+      "sha256": "ff48629ff8be076f5d3ccb058ae423b8783b80f4510074404e2f64814dde2f5f"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/all_test_predictions.csv",
+      "size_bytes": 1826231,
+      "sha256": "5ecc58b2c9e902008d05012ae55fd5e9d348c3afc68ce9f7a817d6f102b65857"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/compatibility_audit.json",
+      "size_bytes": 401771,
+      "sha256": "861067f66573cd611a2b8c6c4db1873e7bfc91d704ed138897d6d7bfd2bea753"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/default_reproduction_audit.json",
+      "size_bytes": 417,
+      "sha256": "51c0c6b4b4ada5560a2951e4ee84bb480c99a27c6c2fbf67b5321e3c759c2f29"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/per_repeat_metrics.csv",
+      "size_bytes": 37773,
+      "sha256": "24f0f12ce679dd82d47ee2ad047570f2e035275ec1238fef322166c5721091e7"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_0p5__repeat_0.csv",
+      "size_bytes": 28841,
+      "sha256": "53ed5197a52eef8588fff7826d9c4c83ff40e6270d1ca4714097a42cc4159891"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_0p5__repeat_1.csv",
+      "size_bytes": 28958,
+      "sha256": "ebdcd4d0d8943b6288f8fda94f44e0b427b51271c6412228c5e1c2f700ae58b6"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_0p5__repeat_2.csv",
+      "size_bytes": 28789,
+      "sha256": "cd602f8fbba904a441ca77a493e17c86e46d07e0881b00a24e93d74c926980e2"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_0p5__repeat_3.csv",
+      "size_bytes": 28654,
+      "sha256": "5437a622e203aaae4b6b649d9530abdc58bead9e1b9bccf1d4d5b61cb38d0e2f"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_0p5__repeat_4.csv",
+      "size_bytes": 28732,
+      "sha256": "e5bb669cd8979356847ac4cc2a8bcea13ebc854684f95aadd212c8cbf21c2a12"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_0p75__repeat_0.csv",
+      "size_bytes": 28939,
+      "sha256": "c94359874e683e3826e3bf1cec230f5447d1f832ed010f88233dea3cb8e0071e"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_0p75__repeat_1.csv",
+      "size_bytes": 29154,
+      "sha256": "4ecacebc057dc7b674e8841241f93bda050958a02ae79f45a56b2c70fd923a03"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_0p75__repeat_2.csv",
+      "size_bytes": 29045,
+      "sha256": "e4a53ec26f9769c43a0d005d50650495e6af5f0ef1e59752af5f105a8f82b82d"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_0p75__repeat_3.csv",
+      "size_bytes": 28756,
+      "sha256": "b0d3c9d5cbff881414e3ed7f67bb2479a51a063d649a2f0729132f3507e35d92"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_0p75__repeat_4.csv",
+      "size_bytes": 28954,
+      "sha256": "31d6648fe95f5a66394344502c9bd913c4b5784db2516eb973f66b0a638e298f"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_1p25__repeat_0.csv",
+      "size_bytes": 28741,
+      "sha256": "14ae14c5ecee216957f2c997004538a9bf231aa195837120dbf5b505fb092470"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_1p25__repeat_1.csv",
+      "size_bytes": 28978,
+      "sha256": "a1aeb82f50604f7b9191911d6e57628faa2fa7e6a93cab64b3ce685ecd65fbc1"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_1p25__repeat_2.csv",
+      "size_bytes": 28997,
+      "sha256": "300bb065762b126646dc32e0d1fe0a982c617c94c064dd387a605289f12815cd"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_1p25__repeat_3.csv",
+      "size_bytes": 29248,
+      "sha256": "1d50380a47bbc648bff95e59fc1b83b75a064acf41ebd1ed465b0ec812a9e2d2"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_1p25__repeat_4.csv",
+      "size_bytes": 29122,
+      "sha256": "51614f44ad87caac8ce0b5aac5672ece1052eb12e2518bdee653964f2de10371"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_1p5__repeat_0.csv",
+      "size_bytes": 28574,
+      "sha256": "45408b670ad29c94442471bc3808fd5ded398ba94d34ba2f64c87b81bf4a6973"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_1p5__repeat_1.csv",
+      "size_bytes": 28931,
+      "sha256": "1dead443d949a6fe153ed604bbcad5e1ad0f1004d06e925445047606402e4ab2"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_1p5__repeat_2.csv",
+      "size_bytes": 28845,
+      "sha256": "1c0d812c250c5e3ab1c3e0c899b022d8e529d31b7408854cce9fd6d9ee1bccab"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_1p5__repeat_3.csv",
+      "size_bytes": 28814,
+      "sha256": "7bd5279e8cbdbb35a9f9cc457fd5f3496a59787a494f25a017fd6571e29c5d20"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/ADAPT_GAP_WEIGHT_1p5__repeat_4.csv",
+      "size_bytes": 28717,
+      "sha256": "fae2c915428de58ec872e066e237ca3c93b324df3e5c3cbcdeadc5067bfa79d2"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/DEFAULT__repeat_0.csv",
+      "size_bytes": 24031,
+      "sha256": "8a4b79c4ae53dcda3a13506d2aefa8ec60903ff00818d77a1afe92245a6aaebb"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/DEFAULT__repeat_1.csv",
+      "size_bytes": 24181,
+      "sha256": "be7fb2aa150e9e05a9a41cacf9aad4fe2194c3f36acec38410eebbba621497f8"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/DEFAULT__repeat_2.csv",
+      "size_bytes": 24068,
+      "sha256": "a2a14b111571f5b327fe7c8dcfc7fe75d1fd7d5c807d2bffa6122a848958a1a2"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/DEFAULT__repeat_3.csv",
+      "size_bytes": 23846,
+      "sha256": "ab235f0f3d349862d4c2bbbb7096996c4b1f932427351b2e66dbe752c4f10596"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/DEFAULT__repeat_4.csv",
+      "size_bytes": 23951,
+      "sha256": "57a5fc5fb0e60646759fb22c0caeca9f999fcd51c847c67ccfff665d93f2fb17"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p0__repeat_0.csv",
+      "size_bytes": 30985,
+      "sha256": "b68e33f5367f59fd85e33abc67f35b9d826fb506b0f42066ee75b328de9a0482"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p0__repeat_1.csv",
+      "size_bytes": 30699,
+      "sha256": "2f195781e2f2a0fadf04ee5c94dff8bd53ad8f0935f4a721c6dcfcca088169af"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p0__repeat_2.csv",
+      "size_bytes": 30619,
+      "sha256": "742e1363360a7a454c74a424bb85457a936293490466e9243cfd05a9aaedacc5"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p0__repeat_3.csv",
+      "size_bytes": 30482,
+      "sha256": "579f9e4d8dab2ff68b7f89d218048e3c35883ad30481f055caea443952a5295e"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p0__repeat_4.csv",
+      "size_bytes": 30388,
+      "sha256": "cab13f3e997b88f0b43d788cfaf4f81726f6956926c46e0edcbe37a0bbd7868b"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p175__repeat_0.csv",
+      "size_bytes": 31131,
+      "sha256": "ee8025a57ac7cedf6458af8ce3f7209254760a2de0a79933e7952e211d0b7b68"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p175__repeat_1.csv",
+      "size_bytes": 31266,
+      "sha256": "64d99bcdc63deb76cc2d752c5a23a20a00c2363f5674062389deb33814cc437c"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p175__repeat_2.csv",
+      "size_bytes": 31496,
+      "sha256": "4881ada6b9fec2a86f8b91a392e8cc945d5d115222164d56fcd1836d45702454"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p175__repeat_3.csv",
+      "size_bytes": 30975,
+      "sha256": "6c91b5b46be371393dbceaa60e2e20db2c7fd59b16d4165406f2cab7686faf16"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p175__repeat_4.csv",
+      "size_bytes": 31079,
+      "sha256": "32179c9ee3f7a930f1f4ba36c4e0c95286937e4c730fa9d8a87bda2741fdcf49"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p525__repeat_0.csv",
+      "size_bytes": 31280,
+      "sha256": "1d37b75b6d6a34ff2f91a5248eaea28c111a53ade08a59965dfe01e1f5c0c2f7"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p525__repeat_1.csv",
+      "size_bytes": 31271,
+      "sha256": "b43be099767d4633d0c8e6e1e7ab47a6c848ed82481e028c78bf75d043416e7f"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p525__repeat_2.csv",
+      "size_bytes": 31138,
+      "sha256": "b5291181f3915ca72760c4704eda78a7139bf18927659af35ddcfb162067b83d"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p525__repeat_3.csv",
+      "size_bytes": 31097,
+      "sha256": "44136df3b2f0da8d350d1002da7f6f7fe4c1f2eaaa39e2c38d853d9e8b6e2540"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p525__repeat_4.csv",
+      "size_bytes": 31306,
+      "sha256": "142e0ae2c93ad96c7eb3e016ecf392be1ed11fb5843d56760a1805cf2f7f0c94"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p7__repeat_0.csv",
+      "size_bytes": 30814,
+      "sha256": "9aec368f348a33aa6d6be4474bbe8d34f8498b446ef0fbada8a6593cdaa34d09"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p7__repeat_1.csv",
+      "size_bytes": 30837,
+      "sha256": "6bdf6f908dda71ed50c9d2448d000c865dbfb59ed947ec29a61c46e1d2d83b69"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p7__repeat_2.csv",
+      "size_bytes": 30741,
+      "sha256": "54ea43c0bbf9fdfd95a465d89d588a727601d007afa46aff7f17b76c56c7cba7"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p7__repeat_3.csv",
+      "size_bytes": 30666,
+      "sha256": "9655c27138047e286abd45feff410a9a0e0df039d7316eb10415831f3ea5ee25"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/MCS_DROP_PENALTY_0p7__repeat_4.csv",
+      "size_bytes": 30638,
+      "sha256": "9f39b3fcc2dc00da98e2869697878fbf0cab0e4fa30dc97931a0ce88c32d01fc"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_1p0__repeat_0.csv",
+      "size_bytes": 25788,
+      "sha256": "ffee8df38977a59976de84aa88e20310f4177939a99ea92310d1957026b25424"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_1p0__repeat_1.csv",
+      "size_bytes": 25727,
+      "sha256": "23c82adbe238bf768054069b8adfa80e3ea236dda3ab78155cd22dc177c59098"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_1p0__repeat_2.csv",
+      "size_bytes": 25773,
+      "sha256": "706adea0679662b42bb4e29815c524431ce84aa5855942a8464e0f44d9149a14"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_1p0__repeat_3.csv",
+      "size_bytes": 25854,
+      "sha256": "7971a934831e075ba38789f7883bcba73b899f15f33ebb0b275f2e89002837b9"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_1p0__repeat_4.csv",
+      "size_bytes": 25673,
+      "sha256": "7a47cab86d511218452855f05fd8f67eb70477f2c3ae379d1f2db7cfbb7d22d4"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_1p25__repeat_0.csv",
+      "size_bytes": 26030,
+      "sha256": "b9837ae1a7e98955127106cde428312bd9f7f09e55d3cbae09f436acb254f1d3"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_1p25__repeat_1.csv",
+      "size_bytes": 26087,
+      "sha256": "57bb98027034b9c01351c31fd713f3b0138e189e905d8ece9b9a14a2c7fafc85"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_1p25__repeat_2.csv",
+      "size_bytes": 25709,
+      "sha256": "023d99c5a295113a4e4bd05969c23377ce6dd49ecb7bc96bace5f3c545e5ef0c"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_1p25__repeat_3.csv",
+      "size_bytes": 25847,
+      "sha256": "56266edf89434ba2b5d609f9b0a9426722aee01f798548a53df438e9da20083f"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_1p25__repeat_4.csv",
+      "size_bytes": 25895,
+      "sha256": "afe1457edf0e633fdbc7df820fae0a4e39d175882af35bdd0e177dc5b38bf533"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_2p0__repeat_0.csv",
+      "size_bytes": 25687,
+      "sha256": "42487c360581a431cc69eb5e4a5ac5f3d5885a1b594b81ea79bfef8fba0e3f3a"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_2p0__repeat_1.csv",
+      "size_bytes": 25757,
+      "sha256": "dfca9852e477f8a23346bc72802ca6ec25db380d2a94b39d6cf363ad00162654"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_2p0__repeat_2.csv",
+      "size_bytes": 25949,
+      "sha256": "92d8053262577f80ed4d19d9929cd6ab87b2ce7da96f8f422b6e436993df7b18"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_2p0__repeat_3.csv",
+      "size_bytes": 25982,
+      "sha256": "697dc36bf3024bab614e2b990a5a8f14e68fd83672c5a80720a44d2a49bb7426"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_2p0__repeat_4.csv",
+      "size_bytes": 25976,
+      "sha256": "84444c9b8ca59f67fd76bb28d368bc6e5fb117e48d286667f37867f4fad05657"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_2p5__repeat_0.csv",
+      "size_bytes": 25637,
+      "sha256": "62c37ff2a4497b008f42a9e7946373611efa244e2bb7efa90f744b0ec03b566f"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_2p5__repeat_1.csv",
+      "size_bytes": 25733,
+      "sha256": "2d6ea9e171218806ad117676f29f8d8741e2ea1dc77aff76f7494e8f4a7e2a35"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_2p5__repeat_2.csv",
+      "size_bytes": 25709,
+      "sha256": "b7bfb1d89453f645c9f93d7bdce32accab8b86081a00921fd73b2b42735640af"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_2p5__repeat_3.csv",
+      "size_bytes": 25668,
+      "sha256": "ff3d6c150556111deaa2cdba64e4e67740e959d0819b3f401f99e1f0942be5b7"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/predictions/PHI_SCALE_2p5__repeat_4.csv",
+      "size_bytes": 25888,
+      "sha256": "a01f6929ea28957acb94e10691a10c4e30dcbf35ca8c57bfd6825912d864345c"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/progress.json",
+      "size_bytes": 255,
+      "sha256": "08b60eafe10052051e454541707938d1de0476b8877f8fac958a55372293d9b6"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/summary.json",
+      "size_bytes": 2222,
+      "sha256": "9f0e3a4c86da3a046f0dc2fb8a4f4f27096410213cc4396ee34e99d1be4601d4"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_0p5__repeat_0.json",
+      "size_bytes": 1071,
+      "sha256": "837935b7546f6e9fea8bbd8fb6e14cd1835775a2ae30ecf44d7a7c2b1c0a794f"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_0p5__repeat_1.json",
+      "size_bytes": 1070,
+      "sha256": "3725db8e7add8101ebecaa210aeca03cc2339a97003c0c592d7ddb3c4b4a7bdf"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_0p5__repeat_2.json",
+      "size_bytes": 1034,
+      "sha256": "83401a1c30ab9d30265638585a79c59af2d57035f15171a5a17363e38db2e7c2"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_0p5__repeat_3.json",
+      "size_bytes": 1070,
+      "sha256": "7ec322de57fc8ea276e927fbe3191aee16ed31fcf4fb8fd115f7d1f099338afa"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_0p5__repeat_4.json",
+      "size_bytes": 1070,
+      "sha256": "00ea979e8fa9aa97dcb464fea4dda8ed4cf23acefe55827226d2b2cdfdcceffa"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_0p75__repeat_0.json",
+      "size_bytes": 1072,
+      "sha256": "ad99dcbed04da743f7345c0a167bfc0420c74e3c21e94906622df156a608a0f5"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_0p75__repeat_1.json",
+      "size_bytes": 1074,
+      "sha256": "fb6b6ab7eff40fa37a25af531710927ffa76203c71d063218fcf34780de7dbbc"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_0p75__repeat_2.json",
+      "size_bytes": 1049,
+      "sha256": "04f4824b7801540b87d791522b8b980ee79fec29a19af7a4a146aba220a3e89e"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_0p75__repeat_3.json",
+      "size_bytes": 1072,
+      "sha256": "67f823bac3e59eb1ddfff7d1734a303d2a90670e83345c84e29d86d0fe9c49ec"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_0p75__repeat_4.json",
+      "size_bytes": 1074,
+      "sha256": "7676c992b5462cb0552a5d92a7170ef22de440e9c3eebe14d6968b1e5a59a385"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_1p25__repeat_0.json",
+      "size_bytes": 1072,
+      "sha256": "6b24a70c75277518d71f447f328dc1a4277048061681335fd45637e3f22e0b0e"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_1p25__repeat_1.json",
+      "size_bytes": 1072,
+      "sha256": "b7ccae228bce07dd663bccfaf659cb302036f5c85e11edc4ecee0f20629ec691"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_1p25__repeat_2.json",
+      "size_bytes": 1074,
+      "sha256": "0340be8ba8083a41dc30b81a2556505bf8b975320108f92911b67dae7c22c430"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_1p25__repeat_3.json",
+      "size_bytes": 1060,
+      "sha256": "d9597099f0917a019a770907ffc7f416b7126abd21585d46533bee2ff5c10d20"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_1p25__repeat_4.json",
+      "size_bytes": 1074,
+      "sha256": "0a6ab1e1859130d78bd418c8c85dabc03c6c130d5bf79a46e9f959ff1e34deae"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_1p5__repeat_0.json",
+      "size_bytes": 1056,
+      "sha256": "d17d73afe42fb55b1eec80900f29a4b499ca3deb94b53b3c5aa8c230f62ec0ef"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_1p5__repeat_1.json",
+      "size_bytes": 1071,
+      "sha256": "e18d1ca9eb28e3b236783e7ac00b9d6ae5dd9fedd72aaf5344709ba564971293"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_1p5__repeat_2.json",
+      "size_bytes": 1070,
+      "sha256": "14c7f6be000f28e85f722dd2fec89463f7fc22e9dfb10248996b649c839df060"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_1p5__repeat_3.json",
+      "size_bytes": 1044,
+      "sha256": "5e734fca1bd89839738754e70cc0639b8d9aa542979d6fc6b79a2bcf2e67101b"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/ADAPT_GAP_WEIGHT_1p5__repeat_4.json",
+      "size_bytes": 1070,
+      "sha256": "b1e80b84f188ec23b8ca26621650d3f670fd76608a8da90692cac155554023fb"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/DEFAULT__repeat_0.json",
+      "size_bytes": 1035,
+      "sha256": "557280e1f14837a9dff982b42bc97c7c3fd5db8e1faaf3367a36b289e51c58bc"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/DEFAULT__repeat_1.json",
+      "size_bytes": 1036,
+      "sha256": "ae6c4ca850f519d30b228f2c9a92939d7e168b50df890e2ec6d02e1ba426254e"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/DEFAULT__repeat_2.json",
+      "size_bytes": 1036,
+      "sha256": "a506b269ce20b5c3b2eaa9af06dda1d34a5a3322cb8cf734287251104c33fe57"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/DEFAULT__repeat_3.json",
+      "size_bytes": 1033,
+      "sha256": "1c1105fd534cb4a95bff54cde9e8add434c18a51b13be9319d3539d258c412db"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/DEFAULT__repeat_4.json",
+      "size_bytes": 1035,
+      "sha256": "e13721e847ea769743f7ee91cae823b30c1c8bd225126ec97f5f670734e6d370"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p0__repeat_0.json",
+      "size_bytes": 1051,
+      "sha256": "5c91c08e8abd6015184c58bbf0a06966db6ae0f3c2e13846453db68bce5779d0"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p0__repeat_1.json",
+      "size_bytes": 1066,
+      "sha256": "82c0ef20f31654b3eb569f672a7996cf2aa07466698a31109ba20d73db59033a"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p0__repeat_2.json",
+      "size_bytes": 1045,
+      "sha256": "bc0438e990590273b752bd9f0722e0a9a676caabe1b8350c1d1827a2852002ca"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p0__repeat_3.json",
+      "size_bytes": 1077,
+      "sha256": "78e2b54afefc44d96bf5d49fc5c2f11547fe3b443104ab868499c7afefe8cfb4"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p0__repeat_4.json",
+      "size_bytes": 1077,
+      "sha256": "1c16c6d7cfb7784fefbc2b266be7d9cd28173327a5caa52b77a44b3d9882b6ff"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p175__repeat_0.json",
+      "size_bytes": 1084,
+      "sha256": "c0b1034888a1b48823814f171961e915814d684ca82b1d9fa62cae0a4ec3dd39"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p175__repeat_1.json",
+      "size_bytes": 1085,
+      "sha256": "ea0c8e046a8090a9a8902d9a565436e08bc4d5d4253b3a3ac6e8855b5b6034fb"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p175__repeat_2.json",
+      "size_bytes": 1085,
+      "sha256": "1a1880c5a07cbf2a0f6a4e48ffaa7492c088b1a9483170e57480ab4b95c8bdd2"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p175__repeat_3.json",
+      "size_bytes": 1082,
+      "sha256": "df94796d58c3f05a757dc8cc826f12eba130bb867414cd0340817e6b3f0db8d5"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p175__repeat_4.json",
+      "size_bytes": 1084,
+      "sha256": "a339c823b05f45e1be203ca52902397478fad8606386fab6070bba863ede9840"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p525__repeat_0.json",
+      "size_bytes": 1084,
+      "sha256": "67bef20243385690acd8c3f3a659fb0efd573cea733ed20094bac7fe32e3b281"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p525__repeat_1.json",
+      "size_bytes": 1085,
+      "sha256": "961f8fe7e00130306876a72c3af1d09c45a10620d408bfc21b909bfbff11a516"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p525__repeat_2.json",
+      "size_bytes": 1085,
+      "sha256": "01fdd743a1faba2f3e36cee85fa359bdbc009b1ca1167420bc877178a499f33d"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p525__repeat_3.json",
+      "size_bytes": 1056,
+      "sha256": "3c8d3342444a038607ba81fadd491a247a7f40525fa00e2aa34ef41342f51e29"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p525__repeat_4.json",
+      "size_bytes": 1086,
+      "sha256": "af08fb91936ab1196665db46d0af9783a63c323118661c5896c6d06817b9c17f"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p7__repeat_0.json",
+      "size_bytes": 1078,
+      "sha256": "66aca7bf1594d2aa092f56d16c10ec42922bd82d4fbc5c82942dfe48eea26559"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p7__repeat_1.json",
+      "size_bytes": 1065,
+      "sha256": "f7673e22fa7fd7181af1f223bc34b0a16f19236667e11c84b5dd4de5d6e0fd3c"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p7__repeat_2.json",
+      "size_bytes": 1079,
+      "sha256": "51791eb7a82274f108f14a67d732fc32966b370e34468a491904a456bb3099a0"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p7__repeat_3.json",
+      "size_bytes": 1050,
+      "sha256": "d0ee80ad3b3d946a01420eda8035cadb340d43ecf99b92f80d81bb90a07b165e"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/MCS_DROP_PENALTY_0p7__repeat_4.json",
+      "size_bytes": 1079,
+      "sha256": "f21c6e85a33dfb8f7b0f5b12872092ede874807e1e91f436469134738d47c5fc"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_1p0__repeat_0.json",
+      "size_bytes": 1049,
+      "sha256": "84c06d25f70effb8dddefd704a0e2b520ff0f08168816b88b4621e323b6098be"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_1p0__repeat_1.json",
+      "size_bytes": 1049,
+      "sha256": "2eec1bb508c400e5851286e5ac36dbdc193cf11bd7a9ef4284829ea39764f5ec"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_1p0__repeat_2.json",
+      "size_bytes": 1026,
+      "sha256": "b8405da614744a6e3f201768c9057057659cd8e02dbf736de08bbc7872a088d1"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_1p0__repeat_3.json",
+      "size_bytes": 1048,
+      "sha256": "3dec01fe67e8ac6e997c1ff3f171b0c4f83c562db919b4044ced7985d4a0408b"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_1p0__repeat_4.json",
+      "size_bytes": 1050,
+      "sha256": "7a462619263a415acd3e4423748ab36705f9f9bffacd5a81d51229eeb4d9c1f3"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_1p25__repeat_0.json",
+      "size_bytes": 1052,
+      "sha256": "0ea90cfc033953f817364fcc4c10c3b9271c7192d631ab3ecc217d3b46671cc3"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_1p25__repeat_1.json",
+      "size_bytes": 1053,
+      "sha256": "709837e07402b1fef40fb9b93ac4b3eee873d4afd2c52e2ce595c9069b906c3a"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_1p25__repeat_2.json",
+      "size_bytes": 1052,
+      "sha256": "6ecd50c6709ba0a70c680e5f2f6bd709f2440764fcfb07706f8a6ad7cf668607"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_1p25__repeat_3.json",
+      "size_bytes": 1050,
+      "sha256": "c577b44f3d123e5b97d209477bb43acf9642f81372ce7bce93bc4f0eda1f344b"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_1p25__repeat_4.json",
+      "size_bytes": 1052,
+      "sha256": "8bbcf59c4d13f654fea9eb078d696d2f32438b49ba01e1d6896ca49b726733d8"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_2p0__repeat_0.json",
+      "size_bytes": 1049,
+      "sha256": "5d6daff3fcd1ee080af97077f6d3cd8ef288475d13dbf213f364f771918e2543"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_2p0__repeat_1.json",
+      "size_bytes": 1049,
+      "sha256": "072e1d49a1b2d0678ab5c1118912ede78fcf1cc9525d61c13a1f975cc0624e0e"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_2p0__repeat_2.json",
+      "size_bytes": 1037,
+      "sha256": "5eaf891ce817d3c1d0088f7dc40767bf2ced66eda8565a830580da5ce3d9fb38"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_2p0__repeat_3.json",
+      "size_bytes": 1036,
+      "sha256": "bb4d4d5c274952685ae2973f54a2c55c6dfda7e26b63b55b454d3dc67dc0d4d4"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_2p0__repeat_4.json",
+      "size_bytes": 1051,
+      "sha256": "548bd1ef2348dd04c5c7abd79d79fbe7ed975df2bda2fd15d60874a92bd45418"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_2p5__repeat_0.json",
+      "size_bytes": 1049,
+      "sha256": "1e4949eb1045e4290fb2c19a5904871227674e3606dcc96560ecf57175a37795"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_2p5__repeat_1.json",
+      "size_bytes": 1048,
+      "sha256": "134bd85caf2c013e18b53a68a448c774a462a8e9153ace70ea3aed5aba0f1920"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_2p5__repeat_2.json",
+      "size_bytes": 1026,
+      "sha256": "12eab70c8faebdf256d45c2a373d4e2d213deb3caaaa1b57029d78fa97e349b1"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_2p5__repeat_3.json",
+      "size_bytes": 1048,
+      "sha256": "21624cc766139a95749c7936a58c5ad0c487f7e0a3b5a956ceeea847bff19c67"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/tasks/PHI_SCALE_2p5__repeat_4.json",
+      "size_bytes": 1050,
+      "sha256": "0acd72467c2c893df95814026f50f57a15acf9e6503c7dae040daf63abbceaee"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/threshold_policy_aggregate_metrics.csv",
+      "size_bytes": 3169,
+      "sha256": "056b36a8b7b3203bb43eac6ced93cfff69ee805258353d51d5228c8d155c42e3"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_fixed_model_results_v1/threshold_policy_per_repeat_metrics.csv",
+      "size_bytes": 8260,
+      "sha256": "73a336270acc58624ca3d6272110fb34d72a7b2bce7f9091b315ce20693f9179"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_forest_probability_compatibility_amendment_v1/summary.json",
+      "size_bytes": 1777,
+      "sha256": "d1c50c3fc414e01bd2cdf93192937585c8bc4327b95eccbc03212c1f31da90d3"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_manuscript_assets_v1/claim_boundary.json",
+      "size_bytes": 580,
+      "sha256": "5149f0f7e09b7435b52ffdc24276e83c2bce1385774f54ed960711ded2e4cb49"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_manuscript_assets_v1/excluded_debug_artifacts.json",
+      "size_bytes": 1177,
+      "sha256": "c97ac66ca2c043f78361798b1abbc0a27f2b0a1bca3e0c32736565646f436f67"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_manuscript_assets_v1/freeze_summary.json",
+      "size_bytes": 702,
+      "sha256": "f6b257ba5e5affa92a248839f3cbc992a461da7e61ceeacf7bb4e94b5cc32dd8"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_manuscript_assets_v1/key_results.json",
+      "size_bytes": 2407,
+      "sha256": "c8684bc33bf643eb178c662fd3214eaac9cb5fa2f94eec83e1d6b7bf75867e2f"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_manuscript_assets_v1/main_table_formula_factor_ranges.csv",
+      "size_bytes": 3107,
+      "sha256": "4ad3796b122b353c530b60aab2e5fcfe2855d9caf668e3ff167ded10944ad7ad"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_manuscript_assets_v1/main_table_threshold_policy_sa_0p90.csv",
+      "size_bytes": 1252,
+      "sha256": "8cf4f8e56e448371ae7baa26305b53c31d9cf5b0ea54de77bd0eeb1f8cf6e02d"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_manuscript_assets_v1/manuscript_results_draft.txt",
+      "size_bytes": 2376,
+      "sha256": "ed8ada8de0a547c7895a1055e114df05453feb6a162fc5a1367ed386c4f26525"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_manuscript_assets_v1/paired_formula_uncertainty.csv",
+      "size_bytes": 18007,
+      "sha256": "60cb0fa70cc0a6a12cc198d0f4216df075b4eacced930fc0628c2e3431fb1799"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_manuscript_assets_v1/reviewer_response_draft.txt",
+      "size_bytes": 1803,
+      "sha256": "d415ddc29ade1e0771bcad7e47ea1f9664d1a13c99ac1c4fa323fed4a99accb1"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_manuscript_assets_v1/supplementary_all_13_formula_configs.csv",
+      "size_bytes": 4350,
+      "sha256": "40b88b9e3a88841d9467794277d691a2c0114dce486a33706bf73ed1ed0b3868"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_manuscript_assets_v1/supplementary_all_9_threshold_policies.csv",
+      "size_bytes": 3059,
+      "sha256": "85f21a86af80eb66c8e48bff05caff141cc8304de81bfeeef09cb0a440854439"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_protocol_phi_assertion_no_import_amendment_v1/summary.json",
+      "size_bytes": 1039,
+      "sha256": "6ce0816577714a923efdfccae1739a2c0fde381443c3deac4668b3eb43fcf736"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_protocol_v1/baseline_equivalence.json",
+      "size_bytes": 754,
+      "sha256": "42f8f422de6c2f0d0f66bb2db77fc156d8e320e11b63f92d87ab210b3f66c562"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_protocol_v1/source_assertions.json",
+      "size_bytes": 516,
+      "sha256": "8409ad55f05c9c5ef5bb5ea7ea2dd7bde4368a89added801852ba92116d38685"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_protocol_v1/summary.json",
+      "size_bytes": 749,
+      "sha256": "810d1c2b1d5f95fe7bef1ffdbd893253dd78f190336ee4b0bb13401582686cbd"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_uncertainty_v1/claim_boundary.json",
+      "size_bytes": 580,
+      "sha256": "5149f0f7e09b7435b52ffdc24276e83c2bce1385774f54ed960711ded2e4cb49"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_uncertainty_v1/factor_operating_ranges.csv",
+      "size_bytes": 3107,
+      "sha256": "4ad3796b122b353c530b60aab2e5fcfe2855d9caf668e3ff167ded10944ad7ad"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_uncertainty_v1/main_table_formula_factor_ranges.csv",
+      "size_bytes": 3107,
+      "sha256": "4ad3796b122b353c530b60aab2e5fcfe2855d9caf668e3ff167ded10944ad7ad"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_uncertainty_v1/main_table_threshold_policy_sa_0p90.csv",
+      "size_bytes": 1252,
+      "sha256": "8cf4f8e56e448371ae7baa26305b53c31d9cf5b0ea54de77bd0eeb1f8cf6e02d"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_uncertainty_v1/manuscript_results_draft.txt",
+      "size_bytes": 2376,
+      "sha256": "ed8ada8de0a547c7895a1055e114df05453feb6a162fc5a1367ed386c4f26525"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_uncertainty_v1/paired_formula_uncertainty.csv",
+      "size_bytes": 18007,
+      "sha256": "60cb0fa70cc0a6a12cc198d0f4216df075b4eacced930fc0628c2e3431fb1799"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_uncertainty_v1/progress.json",
+      "size_bytes": 247,
+      "sha256": "8034e756d7097c3124e66fa9e06e4cd8aab00a344bf77e37774edd4e91ae5e76"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_uncertainty_v1/reviewer_response_draft.txt",
+      "size_bytes": 1803,
+      "sha256": "d415ddc29ade1e0771bcad7e47ea1f9664d1a13c99ac1c4fa323fed4a99accb1"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_uncertainty_v1/summary.json",
+      "size_bytes": 3336,
+      "sha256": "890f62e80fac508e1f78b3aa84ca6ae74db0bfe3817fd27290eef85957d4f128"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_uncertainty_v1/supplementary_all_13_formula_configs.csv",
+      "size_bytes": 4350,
+      "sha256": "40b88b9e3a88841d9467794277d691a2c0114dce486a33706bf73ed1ed0b3868"
+    },
+    {
+      "path": "artifacts/physics_sensitivity_uncertainty_v1/supplementary_all_9_threshold_policies.csv",
+      "size_bytes": 3059,
+      "sha256": "85f21a86af80eb66c8e48bff05caff141cc8304de81bfeeef09cb0a440854439"
+    },
+    {
+      "path": "configs/physics_sensitivity_protocol_v1.json",
+      "size_bytes": 7252,
+      "sha256": "adac6d99ae472e88cc90aacba9e71ee0e37ad792993afc6f04b3ad64d8683a4b"
+    },
+    {
+      "path": "manifests/physics_sensitivity_fixed_model_results_v1.json",
+      "size_bytes": 33312,
+      "sha256": "ca62bf1425fdd4d89557bfae7eee8d0f7eeccf655356a32786eb53529365e2a7"
+    },
+    {
+      "path": "manifests/physics_sensitivity_uncertainty_v1.json",
+      "size_bytes": 3059,
+      "sha256": "6bd9ed1ebd6260d8fd286176406779150b8799011402ca2a80e588bc372ced9d"
+    },
+    {
+      "path": "scripts/61c_freeze_physics_sensitivity_protocol.py",
+      "size_bytes": 22192,
+      "sha256": "b2db1cdad5747d736a683de818faa4345338635d0e5b98dc041502dc6499c219"
+    },
+    {
+      "path": "scripts/61d4_check_fixed_model_physics_sensitivity.py",
+      "size_bytes": 2491,
+      "sha256": "4539c6f7e7e62984b096dde154d3a1676232e2ba3807460df9925c956b077fd4"
+    },
+    {
+      "path": "scripts/61d4_run_fixed_model_physics_sensitivity.py",
+      "size_bytes": 47125,
+      "sha256": "0104c476065a73b3ce215f8c24127b8f2a67adb27310735abca7138e19d737e3"
+    },
+    {
+      "path": "scripts/61d5_patch_forest_probability_compatibility.py",
+      "size_bytes": 8923,
+      "sha256": "8bf49e93a9a95facd209898e165b35415a5a99ac9331fee66fe422fea6e4a352"
+    },
+    {
+      "path": "scripts/61e_check_physics_sensitivity_uncertainty.py",
+      "size_bytes": 2408,
+      "sha256": "69259fd03ee22595f4864b6ced0c46cb179bdb8f2aaa2b6dae508b23f4f5dbdd"
+    },
+    {
+      "path": "scripts/61e_run_physics_sensitivity_uncertainty.py",
+      "size_bytes": 39437,
+      "sha256": "f7b31eab98a1bf9d75b4de21b74d78235e7ef00f376ddb56a055112995f9bb25"
+    }
+  ]
+}

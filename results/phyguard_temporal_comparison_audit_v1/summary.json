@@ -1,0 +1,37 @@
+{
+  "schema": "phyguard.temporal_comparison_audit.v1",
+  "created_at_utc": "2026-08-01T00:47:16.892399+00:00",
+  "status": "PASS",
+  "phyguard_method_identified": "PhyGuard",
+  "method_match_maximum_difference": 0.0,
+  "recomputed_core_maximum_difference": 1.1102230246251565e-16,
+  "prediction_alignment": "PASS",
+  "phyguard_aggregate": {
+    "selected_accuracy": 0.9431826836122583,
+    "coverage": 0.8319444444444445,
+    "false_specific_rate": 0.05555555555555556,
+    "macro_f1": 0.8558496033643058,
+    "balanced_accuracy": 0.7847222222222222,
+    "physical_selection_rate": 0.8319444444444445,
+    "physical_exact_match": 0.7847222222222221,
+    "control_abstention": 0.9444444444444444
+  },
+  "baseline_models_with_higher_selected_accuracy": [
+    "MINIROCKET",
+    "MULTIROCKET",
+    "MULTIROCKET_HYDRA",
+    "TCN"
+  ],
+  "baseline_models_with_lower_false_specific_rate": [
+    "BIGRU",
+    "BILSTM"
+  ],
+  "baseline_models_with_higher_control_abstention": [
+    "BIGRU",
+    "BILSTM"
+  ],
+  "baseline_pareto_dominators_core_three": [],
+  "baseline_pareto_dominators_full_five": [],
+  "formal_hardware": "NVIDIA GeForce RTX 3080 10 GB",
+  "interpretation_boundary": "This is an exact same-split descriptive comparison. No statistical superiority claim is made at this stage."
+}

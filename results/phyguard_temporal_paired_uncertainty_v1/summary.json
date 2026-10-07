@@ -1,0 +1,767 @@
+{
+  "schema": "phyguard.temporal_paired_uncertainty.v1",
+  "created_at_utc": "2026-08-01T01:06:08.521350+00:00",
+  "status": "PASS",
+  "formal_hardware": "NVIDIA GeForce RTX 3080 10 GB",
+  "bootstrap": {
+    "method": "Paired cluster bootstrap over original sample index, retaining all occurrences of each index across the five repeats.",
+    "replicates": 10000,
+    "seed": 64041,
+    "cluster_count": 726
+  },
+  "phyguard_means": {
+    "selected_accuracy": 0.9431826836122583,
+    "coverage": 0.8319444444444445,
+    "false_specific_rate": 0.05555555555555556,
+    "physical_exact_match": 0.7847222222222221,
+    "control_abstention": 0.9444444444444444
+  },
+  "models_with_higher_point_selected_accuracy": [
+    "MINIROCKET",
+    "MULTIROCKET",
+    "MULTIROCKET_HYDRA",
+    "TCN"
+  ],
+  "models_with_accuracy_safety_tradeoff": [
+    "MINIROCKET",
+    "MULTIROCKET",
+    "MULTIROCKET_HYDRA",
+    "TCN"
+  ],
+  "models_with_statistically_supported_phyguard_selected_accuracy_advantage": [
+    "HYDRA",
+    "BIGRU",
+    "BILSTM"
+  ],
+  "model_results": {
+    "ROCKET": {
+      "selected_accuracy": {
+        "delta": -0.004223685008029898,
+        "ci": [
+          -0.02985859498525988,
+          0.021501155887361262
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.7496,
+        "signflip_p": 0.5
+      },
+      "coverage": {
+        "delta": 0.10277777777777775,
+        "ci": [
+          0.07438059611105408,
+          0.13271301815122238
+        ],
+        "classification": "BASELINE_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "false_specific_rate": {
+        "delta": 0.044444444444444446,
+        "ci": [
+          -0.0019171895895557986,
+          0.09226215992296599
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.061,
+        "signflip_p": 0.125
+      },
+      "physical_exact_match": {
+        "delta": 0.09305555555555556,
+        "ci": [
+          0.060688766103050754,
+          0.12718166712926834
+        ],
+        "classification": "BASELINE_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "control_abstention": {
+        "delta": -0.04444444444444444,
+        "ci": [
+          -0.09226215992296607,
+          0.0019171895895558014
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.061,
+        "signflip_p": 0.125
+      }
+    },
+    "MINIROCKET": {
+      "selected_accuracy": {
+        "delta": 0.010091054435640956,
+        "ci": [
+          -0.017731995645750884,
+          0.03793982443565842
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.4796,
+        "signflip_p": 0.375
+      },
+      "coverage": {
+        "delta": 0.11666666666666667,
+        "ci": [
+          0.08569777243793715,
+          0.15020205516214266
+        ],
+        "classification": "BASELINE_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "false_specific_rate": {
+        "delta": 0.07777777777777778,
+        "ci": [
+          0.02681253729691854,
+          0.13115164345099717
+        ],
+        "classification": "PHYGUARD_LOWER_RISK",
+        "bootstrap_p": 0.0026,
+        "signflip_p": 0.0625
+      },
+      "physical_exact_match": {
+        "delta": 0.11944444444444442,
+        "ci": [
+          0.0863013613490456,
+          0.15483915678821114
+        ],
+        "classification": "BASELINE_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "control_abstention": {
+        "delta": -0.07777777777777777,
+        "ci": [
+          -0.13115164345099717,
+          -0.026812537296918647
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0026,
+        "signflip_p": 0.0625
+      }
+    },
+    "MULTIROCKET": {
+      "selected_accuracy": {
+        "delta": 0.01842772867159208,
+        "ci": [
+          -0.005293575409585,
+          0.043248869687006614
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.1354,
+        "signflip_p": 0.125
+      },
+      "coverage": {
+        "delta": 0.11111111111111109,
+        "ci": [
+          0.08061483574897625,
+          0.14386636976696615
+        ],
+        "classification": "BASELINE_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "false_specific_rate": {
+        "delta": 0.07222222222222223,
+        "ci": [
+          0.02509565032152257,
+          0.12194564045520663
+        ],
+        "classification": "PHYGUARD_LOWER_RISK",
+        "bootstrap_p": 0.0034,
+        "signflip_p": 0.0625
+      },
+      "physical_exact_match": {
+        "delta": 0.1222222222222222,
+        "ci": [
+          0.09100848858683928,
+          0.15546920930415775
+        ],
+        "classification": "BASELINE_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "control_abstention": {
+        "delta": -0.07222222222222219,
+        "ci": [
+          -0.12194564045520696,
+          -0.025095650321522518
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0034,
+        "signflip_p": 0.0625
+      }
+    },
+    "HYDRA": {
+      "selected_accuracy": {
+        "delta": -0.40005761132449535,
+        "ci": [
+          -0.42580500743043187,
+          -0.37401715191137996
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "coverage": {
+        "delta": -0.2888888888888889,
+        "ci": [
+          -0.3218675455701569,
+          -0.25392031822721306
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.5
+      },
+      "false_specific_rate": {
+        "delta": 0.075,
+        "ci": [
+          0.032686125156546744,
+          0.11871390426440727
+        ],
+        "classification": "PHYGUARD_LOWER_RISK",
+        "bootstrap_p": 0.001,
+        "signflip_p": 0.375
+      },
+      "physical_exact_match": {
+        "delta": -0.29305555555555557,
+        "ci": [
+          -0.3297108218544537,
+          -0.2549745685775347
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.4375
+      },
+      "control_abstention": {
+        "delta": -0.07499999999999996,
+        "ci": [
+          -0.11871390426440721,
+          -0.03268612515654669
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.001,
+        "signflip_p": 0.375
+      }
+    },
+    "MULTIROCKET_HYDRA": {
+      "selected_accuracy": {
+        "delta": 0.02150159680501773,
+        "ci": [
+          -0.003016399349598852,
+          0.04654653484037777
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.085,
+        "signflip_p": 0.125
+      },
+      "coverage": {
+        "delta": 0.10833333333333335,
+        "ci": [
+          0.07799188921235503,
+          0.1404375799217684
+        ],
+        "classification": "BASELINE_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "false_specific_rate": {
+        "delta": 0.08055555555555556,
+        "ci": [
+          0.030661525974025963,
+          0.13320711789484893
+        ],
+        "classification": "PHYGUARD_LOWER_RISK",
+        "bootstrap_p": 0.0012,
+        "signflip_p": 0.0625
+      },
+      "physical_exact_match": {
+        "delta": 0.12222222222222219,
+        "ci": [
+          0.09059267113093727,
+          0.15500531273117818
+        ],
+        "classification": "BASELINE_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "control_abstention": {
+        "delta": -0.08055555555555556,
+        "ci": [
+          -0.13320711789484904,
+          -0.03066152597402613
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0012,
+        "signflip_p": 0.0625
+      }
+    },
+    "ARSENAL": {
+      "selected_accuracy": {
+        "delta": -0.0015390823007364717,
+        "ci": [
+          -0.02407616055617935,
+          0.02153270143919359
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.8902,
+        "signflip_p": 0.8125
+      },
+      "coverage": {
+        "delta": 0.09166666666666665,
+        "ci": [
+          0.06372947307771937,
+          0.12169820744689047
+        ],
+        "classification": "BASELINE_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "false_specific_rate": {
+        "delta": 0.044444444444444446,
+        "ci": [
+          -0.004020656732780542,
+          0.09577195061983802
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.077,
+        "signflip_p": 0.125
+      },
+      "physical_exact_match": {
+        "delta": 0.08472222222222221,
+        "ci": [
+          0.05409715087631361,
+          0.11802718638298437
+        ],
+        "classification": "BASELINE_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "control_abstention": {
+        "delta": -0.04444444444444442,
+        "ci": [
+          -0.09577195061983802,
+          0.004020656732780417
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.077,
+        "signflip_p": 0.125
+      }
+    },
+    "FCN1D": {
+      "selected_accuracy": {
+        "delta": -0.00019445945698299828,
+        "ci": [
+          -0.027434294329869168,
+          0.02709123677570977
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.9838,
+        "signflip_p": 1.0
+      },
+      "coverage": {
+        "delta": 0.036111111111111135,
+        "ci": [
+          -0.00022978471393915413,
+          0.07337072829801944
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.0518,
+        "signflip_p": 0.1875
+      },
+      "false_specific_rate": {
+        "delta": 0.061111111111111116,
+        "ci": [
+          0.017197244123542288,
+          0.10523888413601816
+        ],
+        "classification": "PHYGUARD_LOWER_RISK",
+        "bootstrap_p": 0.0052,
+        "signflip_p": 0.25
+      },
+      "physical_exact_match": {
+        "delta": 0.033333333333333326,
+        "ci": [
+          -0.004926257334417266,
+          0.07155709527142752
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.0884,
+        "signflip_p": 0.1875
+      },
+      "control_abstention": {
+        "delta": -0.061111111111111074,
+        "ci": [
+          -0.10523888413601816,
+          -0.01719724412354227
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0052,
+        "signflip_p": 0.25
+      }
+    },
+    "RESNET1D": {
+      "selected_accuracy": {
+        "delta": -0.010214586303378393,
+        "ci": [
+          -0.03826998151032361,
+          0.01772060297260821
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.4798,
+        "signflip_p": 0.5
+      },
+      "coverage": {
+        "delta": 0.04027777777777779,
+        "ci": [
+          0.0037886285637232044,
+          0.0778357818988135
+        ],
+        "classification": "BASELINE_HIGHER",
+        "bootstrap_p": 0.0294,
+        "signflip_p": 0.0625
+      },
+      "false_specific_rate": {
+        "delta": 0.08611111111111111,
+        "ci": [
+          0.037322892158772575,
+          0.13616293878914199
+        ],
+        "classification": "PHYGUARD_LOWER_RISK",
+        "bootstrap_p": 0.0006,
+        "signflip_p": 0.0625
+      },
+      "physical_exact_match": {
+        "delta": 0.029166666666666674,
+        "ci": [
+          -0.01026555192684914,
+          0.0696097764886229
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.142,
+        "signflip_p": 0.5
+      },
+      "control_abstention": {
+        "delta": -0.08611111111111107,
+        "ci": [
+          -0.1361629387891422,
+          -0.037322892158772616
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0006,
+        "signflip_p": 0.0625
+      }
+    },
+    "INCEPTIONTIME_LITE": {
+      "selected_accuracy": {
+        "delta": -0.006192915609015604,
+        "ci": [
+          -0.032571628425800817,
+          0.02061502598592557
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.6368,
+        "signflip_p": 0.6875
+      },
+      "coverage": {
+        "delta": 0.11805555555555555,
+        "ci": [
+          0.08683760206259543,
+          0.1517768933626554
+        ],
+        "classification": "BASELINE_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "false_specific_rate": {
+        "delta": 0.04166666666666667,
+        "ci": [
+          -0.002950431953764611,
+          0.08710477576780695
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.0664,
+        "signflip_p": 0.25
+      },
+      "physical_exact_match": {
+        "delta": 0.10555555555555556,
+        "ci": [
+          0.07132319775058538,
+          0.14121828792933952
+        ],
+        "classification": "BASELINE_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "control_abstention": {
+        "delta": -0.04166666666666667,
+        "ci": [
+          -0.08710477576780706,
+          0.0029504319537647546
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.0664,
+        "signflip_p": 0.25
+      }
+    },
+    "LITE1D": {
+      "selected_accuracy": {
+        "delta": -0.007579838833029507,
+        "ci": [
+          -0.03455058344180807,
+          0.019518083083638792
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.5808,
+        "signflip_p": 0.25
+      },
+      "coverage": {
+        "delta": -0.013888888888888885,
+        "ci": [
+          -0.052684098128760924,
+          0.025279597469202383
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.4904,
+        "signflip_p": 0.6875
+      },
+      "false_specific_rate": {
+        "delta": 0.06388888888888891,
+        "ci": [
+          0.01983918089425785,
+          0.10856963632359197
+        ],
+        "classification": "PHYGUARD_LOWER_RISK",
+        "bootstrap_p": 0.0044,
+        "signflip_p": 0.1875
+      },
+      "physical_exact_match": {
+        "delta": -0.019444444444444466,
+        "ci": [
+          -0.060338363692454676,
+          0.022100435115480266
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.3684,
+        "signflip_p": 0.5
+      },
+      "control_abstention": {
+        "delta": -0.06388888888888884,
+        "ci": [
+          -0.10856963632359216,
+          -0.019839180894257954
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0044,
+        "signflip_p": 0.1875
+      }
+    },
+    "TCN": {
+      "selected_accuracy": {
+        "delta": 0.0015191479252501638,
+        "ci": [
+          -0.027522980835613626,
+          0.030340247516725205
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.927,
+        "signflip_p": 0.9375
+      },
+      "coverage": {
+        "delta": 0.00277777777777779,
+        "ci": [
+          -0.035995232182987835,
+          0.042261428891062526
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.8798,
+        "signflip_p": 1.0
+      },
+      "false_specific_rate": {
+        "delta": 0.08333333333333334,
+        "ci": [
+          0.03685918736243281,
+          0.1304874037871041
+        ],
+        "classification": "PHYGUARD_LOWER_RISK",
+        "bootstrap_p": 0.0004,
+        "signflip_p": 0.0625
+      },
+      "physical_exact_match": {
+        "delta": 0.004166666666666652,
+        "ci": [
+          -0.0387319700458944,
+          0.046013562646768646
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.8484,
+        "signflip_p": 0.9375
+      },
+      "control_abstention": {
+        "delta": -0.0833333333333333,
+        "ci": [
+          -0.13048740378710402,
+          -0.03685918736243289
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0004,
+        "signflip_p": 0.0625
+      }
+    },
+    "BIGRU": {
+      "selected_accuracy": {
+        "delta": -0.7031826836122584,
+        "ci": [
+          -0.9430938627274852,
+          -0.49653782090813725
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "coverage": {
+        "delta": -0.8194444444444444,
+        "ci": [
+          -0.8557475039545753,
+          -0.7816234350064775
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "false_specific_rate": {
+        "delta": -0.025,
+        "ci": [
+          -0.053923874054773745,
+          0.0026633828621158598
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.0752,
+        "signflip_p": 0.3125
+      },
+      "physical_exact_match": {
+        "delta": -0.7805555555555556,
+        "ci": [
+          -0.8206442237241869,
+          -0.73983303211824
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "control_abstention": {
+        "delta": 0.025000000000000043,
+        "ci": [
+          -0.002663382862115984,
+          0.05392387405477365
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.0752,
+        "signflip_p": 0.3125
+      }
+    },
+    "BILSTM": {
+      "selected_accuracy": {
+        "delta": -0.5691650883043404,
+        "ci": [
+          -0.6311810915256673,
+          -0.47175826244699476
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "coverage": {
+        "delta": -0.6347222222222222,
+        "ci": [
+          -0.6748972824329923,
+          -0.5936938550883009
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "false_specific_rate": {
+        "delta": -0.022222222222222223,
+        "ci": [
+          -0.052910737822503016,
+          0.0066760836441743625
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.1434,
+        "signflip_p": 0.5
+      },
+      "physical_exact_match": {
+        "delta": -0.6263888888888889,
+        "ci": [
+          -0.667676698814148,
+          -0.5847834381949164
+        ],
+        "classification": "PHYGUARD_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "control_abstention": {
+        "delta": 0.022222222222222233,
+        "ci": [
+          -0.006676083644174316,
+          0.05291073782250288
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.1434,
+        "signflip_p": 0.5
+      }
+    },
+    "TINY_TRANSFORMER": {
+      "selected_accuracy": {
+        "delta": -0.00143294504605187,
+        "ci": [
+          -0.02566754934559404,
+          0.022829562107967525
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.8964,
+        "signflip_p": 0.8125
+      },
+      "coverage": {
+        "delta": 0.07777777777777779,
+        "ci": [
+          0.04277070274734349,
+          0.11468064905738987
+        ],
+        "classification": "BASELINE_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "false_specific_rate": {
+        "delta": 0.03611111111111111,
+        "ci": [
+          -0.00574141798083691,
+          0.07917817032404112
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.0946,
+        "signflip_p": 0.25
+      },
+      "physical_exact_match": {
+        "delta": 0.07222222222222222,
+        "ci": [
+          0.034953769391614424,
+          0.11175559056187077
+        ],
+        "classification": "BASELINE_HIGHER",
+        "bootstrap_p": 0.0,
+        "signflip_p": 0.0625
+      },
+      "control_abstention": {
+        "delta": -0.036111111111111094,
+        "ci": [
+          -0.07917817032404122,
+          0.0057414179808367655
+        ],
+        "classification": "INCONCLUSIVE",
+        "bootstrap_p": 0.0946,
+        "signflip_p": 0.25
+      }
+    }
+  },
+  "interpretation_boundary": "A positive baseline-minus-PhyGuard selected-accuracy delta indicates higher conditional accuracy for the baseline. A positive false-specific-rate delta and negative control-abstention delta indicate a safety penalty relative to PhyGuard. Claims must preserve this multi-objective interpretation."
+}

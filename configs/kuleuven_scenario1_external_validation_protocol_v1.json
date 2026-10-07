@@ -1,0 +1,103 @@
+{
+  "schema": "phyguard.kuleuven.scenario1_external_validation_protocol.v1",
+  "created_at_utc": "2026-07-30T16:14:46.320368+00:00",
+  "status": "LOCKED_BEFORE_FULL_SCENARIO1_DOWNLOAD",
+  "dataset_role": "mechanism-specific external real-measurement validation",
+  "task": "sequence-level presence of a physical link-blockage event",
+  "not_claimed_tasks": [
+    "per-symbol blockage localization ground truth",
+    "continuous blockage over the full ten-second sequence",
+    "four-class PhyGuard diagnosis",
+    "end-to-end anomaly localization"
+  ],
+  "population": {
+    "scenario": 1,
+    "activity_count": 32,
+    "repetitions_per_activity": 5,
+    "sequence_count": 160,
+    "positive_sequence_count": 100,
+    "negative_sequence_count": 60,
+    "total_download_size_bytes": 2048000000
+  },
+  "label_contract": {
+    "positive_label": "BLOCKAGE_EVENT_PRESENT",
+    "positive_activities": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      21,
+      22,
+      25,
+      26,
+      29,
+      30
+    ],
+    "negative_label": "NO_LINK_BLOCKAGE",
+    "negative_activities": [
+      3,
+      4,
+      11,
+      12,
+      19,
+      20,
+      23,
+      24,
+      27,
+      28,
+      31,
+      32
+    ],
+    "source": "Official Description of Comms Data activity definitions",
+    "label_independent_of_model_outputs": true,
+    "label_independent_of_signal_thresholds": true
+  },
+  "evaluation_boundary": {
+    "all_160_sequences_reserved_for_external_evaluation": true,
+    "model_fitting_on_kuleuven_data": false,
+    "threshold_selection_on_kuleuven_data": false,
+    "performance_based_file_selection": false,
+    "candidate_interval_policy": "UNRESOLVED_PENDING_LOCKED_SIGNAL_AUDIT",
+    "feature_adapter_policy": "UNRESOLVED_PENDING_LOCKED_SIGNAL_AUDIT"
+  },
+  "binary_contract": {
+    "shape": [
+      2000,
+      100,
+      2,
+      8
+    ],
+    "complex_samples_per_file": 3200000,
+    "bytes_per_complex_sample": 4,
+    "storage": "big-endian int16 imaginary followed by big-endian int16 real",
+    "scale_divisor": 16384.0
+  },
+  "file_manifest_path": "/root/phyguard_revision/artifacts/kuleuven_scenario1_external_validation_protocol_v1/scenario1_file_manifest.csv",
+  "file_manifest_sha256": "eb10f5d1e1383b96fc3e9103c71302bdafda9efe4bed243b88cee38a573b233d",
+  "source_assets": {
+    "inventory_sha256": "e8a3ba0197dc86616893e11576fb5c9d78b7803c241c49a11b3e79f673fde087",
+    "documentation_sha256": "0c72d9e1fe4193e06ca7f3ad2531041dd56dc78d1f1244bd296928d654f45f00",
+    "pilot_summary_sha256": "083be9953c06e7aaa1cf5f20891c013be32316c554f3aec7605fb12040bcc773",
+    "pilot_manifest_sha256": "abc66b4933a12159a67ec0c681f99c42350f43633418c3356971dafe61f13085"
+  },
+  "methodological_boundary": {
+    "full_scenario1_downloaded": false,
+    "models_trained": false,
+    "model_predictions_computed": false,
+    "classification_performance_computed": false,
+    "thresholds_selected": false,
+    "event_intervals_inferred": false,
+    "existing_sionna_assets_modified": false,
+    "existing_locked_models_modified": false
+  }
+}
